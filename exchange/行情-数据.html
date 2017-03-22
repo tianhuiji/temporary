@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://m.miaoa.com/quotation -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>行情</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/main_1.css">
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/handlebars.min.js"></script>-->
+    <script src="js/config.js"></script>
+    <style>ul {
+        padding: 0;
+        text-align: left;
+        margin: .05rem;
+    }
+
+    li {
+        list-style-type: none
+    }
+
+    .headImg {
+        width: 6rem;
+        height: 6rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .tabBg {
+        background: #262834;
+        width: 100%;
+        height: 6rem;
+        line-height: 6rem;
+    }
+
+    .tabItem {
+        float: left;
+        width: 20%;
+    }
+
+    .tabItem div {
+        width: 7.5rem;
+        margin: auto;
+        color: #999;
+        font-size: 2.4rem;
+    }
+
+    .top {
+        background: #1E1E26;
+        font-size: 2.5rem;
+        padding: 1.5rem;
+        color: #999;
+        border: 1px solid #262834;
+    }
+
+    .topAll {
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    #clickDiv1 {
+        float: left;
+        width: 45%;
+    }
+
+    #clickDiv2 {
+        float: left;
+        width: 20%;
+        text-align: center;
+    }
+
+    #sortImg1 {
+        margin-top: -.2rem;
+        margin-left: 2rem;
+    }
+
+    #sortImg2 {
+        margin-top: -.2rem;
+    }
+
+    #priceDw {
+        font-size: 1.8rem;
+        margin-left: .5rem;
+    }
+
+    #imgAdd {
+        margin-top: 40%;
+    }
+
+    #imgAdd img {
+        width: 30%;
+    }
+
+    .clear {
+        clear: both;
+    }</style>
+</head>
+<body style="background-color:#1E1E26">
+<div id="main" style="background-color:#1E1E26;padding-bottom:10rem">
+    <div class="tabBg">
+        <div  class="tabItem">
+            <div id="tab1" style="color: rgb(153, 153, 153); border: none;">自选</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab2"
+                 style="color: rgb(0, 122, 255); border-style: none none solid; border-bottom-width: 0.4rem; border-bottom-color: rgb(0, 122, 255);">
+                企业家
+            </div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab3" style="color: rgb(153, 153, 153); border: none;">创业者</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab4" style="color: rgb(153, 153, 153); border: none;">艺人</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab5" style="color: rgb(153, 153, 153); border: none;">牛人</div>
+        </div>
+    </div>
+    <div class="top">
+        <div class="topAll">全部</div>
+        <div id="clickDiv1"><span id="priceText">最新价</span><span id="priceDw" >元/小时</span><img
+                id="sortImg1"  src="js/ic_sort_normal.png"></div>
+        <div id="clickDiv2" ><span id="updownText">涨跌幅</span><img id="sortImg2"
+                                                                                        src="js/ic_sort_normal.png">
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="wrapper" style="padding:0 1.5rem;">
+        <ul id="events-list">
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/7qDhsvXqMuZ.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">潘彦妃</div>
+                        <div style="font-size:2rem;color:#999">500028</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#fff;line-height:6rem;height:6rem;overflow:hidden;">900</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#1E1E26;padding:.5rem 0;margin-top:.8rem">
+                            申购中
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/prFDWtiUjY.jpg&#39;);">
+
+                        </div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">武星宇</div>
+                        <div style="font-size:2rem;color:#999">700026</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#fff;line-height:6rem;height:6rem;overflow:hidden;">180</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#1E1E26;padding:.5rem 0;margin-top:.8rem">
+                            申购中
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/4tl53llhcCm.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">刘正</div>
+                        <div style="font-size:2rem;color:#999">800012</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#FF2D41;line-height:6rem;height:6rem;overflow:hidden;">4068</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#FF2D41;padding:.5rem 0;margin-top:.8rem">
+                            1.80%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/Qk2aUMbP6y.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">朱晔</div>
+                        <div style="font-size:2rem;color:#999">800018</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#FF2D41;line-height:6rem;height:6rem;overflow:hidden;">29124</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#FF2D41;padding:.5rem 0;margin-top:.8rem">
+                            0.75%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/9DAiNoQTbJs.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">姜华</div>
+                        <div style="font-size:2rem;color:#999">800005</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#FF2D41;line-height:6rem;height:6rem;overflow:hidden;">10512</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#FF2D41;padding:.5rem 0;margin-top:.8rem">
+                            0.00%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/73Stan9pHcb.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">杨石头</div>
+                        <div style="font-size:2rem;color:#999">800004</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">60300</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -0.18%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/BYhL8D90ews.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">梁静</div>
+                        <div style="font-size:2rem;color:#999">800009</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">3204</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -1.11%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/85jVcJ1Cu3C.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">陈昊</div>
+                        <div style="font-size:2rem;color:#999">800007</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">8100</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -1.75%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/9Xr7MpoUtes.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">史晓燕</div>
+                        <div style="font-size:2rem;color:#999">800006</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">7920</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -1.79%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/8GoVim0nYyt.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">金星</div>
+                        <div style="font-size:2rem;color:#999">800019</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">3564</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -1.98%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/1h2qt7V9WoJ.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">王赟明</div>
+                        <div style="font-size:2rem;color:#999">800011</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">2448</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -2.86%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/8NShvGajHB4.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">王思明</div>
+                        <div style="font-size:2rem;color:#999">800003</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">7920</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -3.08%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/8NSiB6RX0WK.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">奉佑生</div>
+                        <div style="font-size:2rem;color:#999">800017</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">12888</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -3.50%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/74wV3e1xD2g.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">冯军</div>
+                        <div style="font-size:2rem;color:#999">800008</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">17496</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -5.63%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+            <li style="padding:1.5rem 0; font-size:2.4rem;">
+                <a href="####">
+                    <div style="float:left;width:12%;">
+                        <div class="headImg" 
+                             style="background-image:url(&#39;https://sjs.miaoa.com:1010/avatar/8o3W0oI764o.jpg&#39;);"></div>
+                    </div>
+                    <div style="float:left;width:50%;padding-left:1rem;padding-top:.4rem;">
+                        <div style="line-height:3.4rem;color:#fff;height:3.4rem;overflow:hidden;">文洁</div>
+                        <div style="font-size:2rem;color:#999">800010</div>
+                    </div>
+                    <div style="float:left;width:19%;">
+                        <div style="color:#28C99F;line-height:6rem;height:6rem;overflow:hidden;">5292</div>
+                    </div>
+                    <div style="float:left;width:19%;height:6rem;overflow:hidden;font-size:2.2rem;">
+                        <div style="text-align:center;border-radius:.5rem;color:#fff;background:#28C99F;padding:.5rem 0;margin-top:.8rem">
+                            -7.55%
+                        </div>
+                    </div>
+                    <div style="clear:both"></div>
+                </a>
+            </li>
+        </ul>
+        <div id="lastSpan"></div>
+    </div>
+    <div id="imgAdd"  hidden="" style="display: none;"><img src="js/ic_index_add.png"></div>
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+        <div class="am-navbar-navs"><a href="####">
+            <div class="float4"><img src="js/footer_tey_0.png">
+                <div>资讯</div>
+            </div>
+        </a>
+            <div class="float4"><img src="js/footer_blue_1.png">
+                <div style="color:#007AFF">行情</div>
+            </div>
+            <a href="####">
+                <div  class="float4"><img src="js/footer_tey_2.png">
+                    <div>买卖</div>
+                </div>
+            </a><a href="####">
+                <div  class="float4"><img src="js/footer_tey_3.png">
+                    <div>我的</div>
+                </div>
+            </a>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

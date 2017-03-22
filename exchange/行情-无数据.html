@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://m.miaoa.com/quotation -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>行情</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/main_1.css">
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/handlebars.min.js"></script>-->
+    <script src="js/config.js"></script>
+    <style>ul {
+        padding: 0;
+        text-align: left;
+        margin: .05rem;
+    }
+
+    li {
+        list-style-type: none
+    }
+
+    .headImg {
+        width: 6rem;
+        height: 6rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .tabBg {
+        background: #262834;
+        width: 100%;
+        height: 6rem;
+        line-height: 6rem;
+    }
+
+    .tabItem {
+        float: left;
+        width: 20%;
+    }
+
+    .tabItem div {
+        width: 7.5rem;
+        margin: auto;
+        color: #999;
+        font-size: 2.4rem;
+    }
+
+    .top {
+        background: #1E1E26;
+        font-size: 2.5rem;
+        padding: 1.5rem;
+        color: #999;
+        border: 1px solid #262834;
+    }
+
+    .topAll {
+        float: left;
+        width: 35%;
+        text-align: left;
+        padding-left: 1rem;
+    }
+
+    #clickDiv1 {
+        float: left;
+        width: 45%;
+    }
+
+    #clickDiv2 {
+        float: left;
+        width: 20%;
+        text-align: center;
+    }
+
+    #sortImg1 {
+        margin-top: -.2rem;
+        margin-left: 2rem;
+    }
+
+    #sortImg2 {
+        margin-top: -.2rem;
+    }
+
+    #priceDw {
+        font-size: 1.8rem;
+        margin-left: .5rem;
+    }
+
+    #imgAdd {
+        margin-top: 40%;
+    }
+
+    #imgAdd img {
+        width: 30%;
+    }
+
+    .clear {
+        clear: both;
+    }</style>
+</head>
+<body style="background-color:#1E1E26">
+<div id="main" style="background-color:#1E1E26;padding-bottom:10rem">
+    <div class="tabBg">
+        <div  class="tabItem">
+            <div id="tab1" style="color: rgb(153, 153, 153); border: none;">自选</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab2"
+                 style="color: rgb(0, 122, 255); border-style: none none solid; border-bottom-width: 0.4rem; border-bottom-color: rgb(0, 122, 255);">
+                企业家
+            </div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab3" style="color: rgb(153, 153, 153); border: none;">创业者</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab4" style="color: rgb(153, 153, 153); border: none;">艺人</div>
+        </div>
+        <div  class="tabItem">
+            <div id="tab5" style="color: rgb(153, 153, 153); border: none;">牛人</div>
+        </div>
+    </div>
+    <div class="top">
+        <div class="topAll">全部</div>
+        <div id="clickDiv1"><span id="priceText">最新价</span><span id="priceDw" >元/小时</span><img
+                id="sortImg1"  src="js/ic_sort_normal.png"></div>
+        <div id="clickDiv2" ><span id="updownText">涨跌幅</span><img id="sortImg2"
+                                                                                        src="js/ic_sort_normal.png">
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="wrapper" style="padding:0 1.5rem;">
+        <ul id="events-list"></ul>
+        <div id="lastSpan"></div>
+    </div>
+    <div id="imgAdd" onclick="clickAdd()" hidden="" style="display: block;">
+        <img src="js/ic_index_add.png">
+    </div>
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+        <div class="am-navbar-navs"><a href="####">
+            <div class="float4"><img src="js/footer_tey_0.png">
+                <div>资讯</div>
+            </div>
+        </a>
+            <div class="float4"><img src="js/footer_blue_1.png">
+                <div style="color:#007AFF">行情</div>
+            </div>
+            <a href="####">
+                <div  class="float4"><img src="js/footer_tey_2.png">
+                    <div>买卖</div>
+                </div>
+            </a><a href="####">
+                <div  class="float4"><img src="js/footer_tey_3.png">
+                    <div>我的</div>
+                </div>
+            </a>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
