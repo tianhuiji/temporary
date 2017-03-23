@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>资产管理</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/main_1.css">
+    <script src="js/jquery.min.js"></script>
+    <style>.btn {
+        line-height: 7rem;
+        width: 92%;
+        margin-left: 4%;
+        font-size: 2.6rem;
+        margin-top: 2rem;
+        border-radius: .3rem
+    }
+
+    .tip {
+        color: #666;
+        font-size: 2.4rem;
+        margin-top: 6rem
+    }
+
+    .set {
+        color: #007AFF;
+        font-size: 2.6rem;
+        padding: 1rem
+    }
+
+    .other {
+        float: right
+    }
+
+    .menu {
+        font-size: 2.4rem;
+        margin-right: 3rem;
+        margin-top: 2rem;
+        float: left
+    }
+
+    #noPayPwd {
+        padding-top: 2rem;
+    }
+
+    .valueItem {
+        border-top: 1px solid #ccc;
+        line-height: 8rem;
+        height: 8rem;
+    }
+
+    .line {
+        width: 1px;
+        height: 4rem;
+        margin-top: 2rem;
+        background-color: #ccc;
+        float: left;
+    }
+    </style>
+</head>
+<body style="background-color:#f5f5f5">
+<div style="background-color:#fff;margin-bottom:3rem"><img src="js/my_f.png" style="padding-top:10rem">
+    <div style="padding:2rem">
+        <div style="color:#333;font-size:3.2rem;">余额</div>
+        <div id="cash" style="color:#333;font-size:6rem;padding-top:.5rem;">0.00</div>
+    </div>
+    <div class="valueItem">
+        <div id="value1" style="color:#666;font-size:2.6rem;width:50%;float:left">持仓市值：0</div>
+        <div class="line"></div>
+        <div id="value2" style="color:#666;font-size:2.6rem;">可用余额：0.00</div>
+    </div>
+</div>
+<div onclick="recharge()" style="background-color:#007AFF;color:#fff;margin-top:1rem;" class="btn">充值</div>
+<div onclick="withdraw()" style="background-color:#fff;color:#666;" class="btn">提现</div>
+<div class="other">
+    <a href="####">
+        <div class="menu">密码管理</div>
+    </a>
+    <a href="####">
+        <div class="menu">交易记录</div>
+    </a>
+    </div>
+<div id="noPayPwd" hidden="" style="display: block;">
+    <div class="tip">您还未设置六位支付密码，暂时不能使用余额支付</div>
+    <a href="####">
+        <div class="set">开始设置</div>
+    </a>
+</div>
+</body>
+</html>
