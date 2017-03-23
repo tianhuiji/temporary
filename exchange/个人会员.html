@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/personal.css">
+    <script src="js/jquery.min.js"></script>
+
+    <style>.top {
+        background-size: cover;
+        background-position: center;
+        height: 40rem;
+        padding-top: 7rem;
+    }
+
+    .item {
+        padding: 0 2rem;
+        background-color: #fff;
+        color: #000;
+        text-align: left;
+        font-size: 2.7rem;
+        line-height: 8rem;
+    }
+
+    .item span {
+        margin-left: 1rem
+    }
+
+    .formBg {
+        top: 7rem;
+        position: absolute;
+        width: 100%;
+    }
+
+    #uploadForm {
+        font-size: 4rem;
+        color: #f00;
+        margin: auto;
+    }
+
+    #file {
+        filter: alpha(opacity=0);
+        -moz-opacity: 0;
+        opacity: 0;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 50%;
+    }
+
+    #headImg {
+        width: 12rem;
+        height: 12rem;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .nick {
+        color: #fff;
+        font-size: 3rem;
+        text-align: center;
+        line-height: 10rem;
+        height: 10rem;
+        padding-left: 5rem
+    }
+
+    #inputNick {
+        width: 16rem;
+        font-size: 3rem;
+        color: #333;
+        padding: .2rem .5rem
+    }
+
+    .nickImg {
+        width: 5rem;
+        padding: 1rem;
+    }
+
+    .line1 {
+        background: #fff;
+        height: 1px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+    }
+
+    .center {
+        height: 12rem;
+        padding: 2rem 0;
+    }
+
+    .centerL {
+        float: left;
+        width: 49%
+    }
+
+    .centerLine {
+        float: left;
+        width: 2%
+    }
+
+    .centerLine div {
+        background-color: #ffffff;
+        width: 1px;
+        height: 80px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+    }
+
+    .centerR {
+        float: left;
+        width: 49%
+    }
+
+    .value1 {
+        color: #ffffff;
+        font-size: 30px;
+        text-align: center
+    }
+
+    .value2 {
+        color: #ffffff;
+        font-size: 24px;
+        text-align: center;
+        opacity: 0.6;
+        filter: alpha(opacity=60);
+    }</style>
+</head>
+<body>
+<div id="main" style="background:#F5F5F5;font-size:2.6rem;padding-bottom:10rem">
+    <div style="background-image: url(js/my_a.jpg);" class="top">
+        <div class="formBg">
+            <form id="uploadForm" enctype="multipart/form-data" method="post" name="fileinfo">
+                <input id="file" type="file"  name="file" accept="image/*">
+            </form>
+        </div>
+        <div id="headImg"  style="background-image: url(js/uuheadImg.png);"></div>
+        <div class="nick">
+            <span id="nickname" style="display: none;"></span>
+            <input id="inputNick" type="text" placeholder="请设置昵称" style="padding: 0.5rem; font-size: 2.6rem; display: inline-block;" hidden="">
+            <img src="js/my_b.png"  class="nickImg">
+        </div>
+        <div class="line1"></div>
+        <div class="center">
+            <div  class="centerL">
+                <div id="number" class="value1">0</div>
+                <div class="value2">投资人数</div>
+            </div>
+            <div class="centerLine">
+                <div></div>
+            </div>
+            <div  class="centerR">
+                <div id="value" class="value1">0.00</div>
+                <div class="value2">资产总额</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <a >
+        <div class="item"><img src="js/my_d.png"><span>资产管理</span>
+            <div style="float:right;"><img src="js/ic_search_more.png"></div>
+            <div class="clear"></div>
+        </div>
+    </a>
+    <a >
+        <div style="margin-top:1.6rem;border-bottom:1px solid #E5E5E5" class="item"><img src="js/my_i.png"><span>我约的发行人</span>
+            <div style="float:right;"><img src="js/ic_search_more.png"></div>
+            <div class="clear"></div>
+        </div>
+    </a>
+    <a  hidden="">
+        <div style="border-bottom:1px solid #E5E5E5" class="item"><img src="js/xxx.png"><span>我的评价</span>
+            <div style="float:right;"><img src="js/ic_search_more.png"></div>
+            <div class="clear"></div>
+        </div>
+    </a>
+    <div  class="item"><img src="js/my_h.png"><span>我的经纪人</span>
+        <div style="float:right;"><img src="js/ic_search_more.png"></div>
+        <div id="haveAgent" style="float: right; margin-right: 1rem; color: rgb(153, 153, 153); display: none;"
+             hidden="">已添加
+        </div>
+        <div class="clear"></div>
+    </div>
+    <a >
+        <div style="margin-top:1.6rem;border-bottom:1px solid #E5E5E5" class="item"><img
+                src="js/my_x.png"><span>联系客服</span>
+            <div style="float:right;"><img src="js/ic_search_more.png"></div>
+            <div class="clear"></div>
+        </div>
+    </a>
+    <a >
+        <div class="item"><img src="js/my_e.png"><span>设置</span>
+            <div style="float:right;"><img src="js/ic_search_more.png"></div>
+            <div class="clear"></div>
+        </div>
+    </a>
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+        <div class="am-navbar-navs"><a >
+            <div class="float5"><img src="js/footer_tey_0.png">
+                <div>资讯</div>
+            </div>
+        </a><a >
+            <div class="float5"><img src="js/footer_tey_1.png">
+                <div>行情</div>
+            </div>
+        </a><a >
+            <div class="float5"><img src="js/footer_tey_2.png">
+                <div>买卖</div>
+            </div>
+        </a><a >
+            <div class="float5"><img src="js/footer_tey_4.png">
+                <div>秒说</div>
+            </div>
+        </a>
+            <div class="float5"><img src="js/footer_blue_3.png">
+                <div style="color:#007AFF">我的</div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
