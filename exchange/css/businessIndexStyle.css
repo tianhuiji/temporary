@@ -1,0 +1,511 @@
+.textColorRed {
+    color: #FF2D41;
+}
+
+.textColorGreen {
+    color: #04C192;
+}
+
+.textColorBlue {
+    color: #007AFF;
+}
+
+.textColorOrange {
+    color: #FF9500;
+}
+
+.bgRed {
+    background: #FF2D41;
+}
+
+.bgBlue {
+    background: #007AFF;
+}
+
+.clear {
+    clear: both;
+}
+
+ul {
+    padding: 0;
+    text-align: left;
+    margin: .05rem;
+}
+
+li {
+    list-style-type: none
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none
+}
+
+input {
+    text-align: center;
+    height: 90%;
+    width: 90%;
+    border: none;
+    outline: medium;
+    background: #fff;
+}
+
+.tabClick {
+    background: #fff;
+    overflow: hidden;
+}
+
+.tabClick li {
+    height: 6rem;
+    line-height: 6rem;
+    width: 20%;
+    float: left;
+    text-align: center;
+    font-size: 2.6rem;
+    color: #666;
+}
+
+.tabClick li.active {
+    transition: 0.1s;
+    color: #007AFF;
+}
+
+.tabCon {
+    overflow: hidden
+}
+
+.tabBox {
+    position: relative
+}
+
+.tabList {
+    word-break: break-all;
+    width: 100%;
+    float: left;
+    text-align: center;
+    color: #333;
+    font-size: 2.6rem;
+}
+
+.lineBorder {
+    height: .3rem;
+    overflow: hidden;
+    background: #fff
+}
+
+.lineDivParent {
+    height: .3rem;
+    width: 20%;
+    float: left;
+}
+
+.lineDiv {
+    background: #fff;
+    height: .3rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lineDiv.active{
+    background: #007AFF;
+}
+
+.lineGray {
+    height: 1px;
+    width: 100%;
+    background: #E5E5E5;
+}
+
+.floatL {
+    float: left;
+}
+
+.floatR {
+    float: right;
+}
+
+.top {
+    background: #fff;
+    height: 4.6rem;
+    font-size: 2.2rem;
+    line-height: 4.6rem;
+    text-align: left;
+    padding: 0 2rem;
+}
+
+.topText {
+    margin-left: 2rem;
+}
+
+.topImg {
+    width: 2.3rem;
+    height: 2.3rem;
+    float: right;
+    margin-top: 1rem;
+}
+
+.center {
+    background: #fff;
+    margin-top: 1.8rem;
+    height: 41rem;
+}
+
+.centerLeft {
+    width: 60%;
+    height: 100%;
+    float: left;
+    padding: 2rem 0 0 1.4rem;
+}
+
+.centerRight {
+    width: 40%;
+    height: 100%;
+    float: left;
+    padding: 2rem 1.4rem;
+}
+
+.buyCLItem {
+    line-height: 6rem;
+    width: 98%;
+    height: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    padding: 0;
+}
+
+.buyTimeBg {
+    margin-top: .1rem;
+}
+
+.buyCLK {
+    border: 1px solid #FF2D41;
+}
+
+.sellCLK {
+    border: 1px solid #007AFF;
+}
+
+.buyPriceItem {
+    margin-top: 2rem;
+}
+
+.btnMinus {
+    width: 18%;
+    height: 6rem;
+    line-height: 6rem;
+    color: white;
+    font-size: 3rem;
+    float: left;
+}
+
+.buyInputBg {
+    height: 100%;
+    width: 64%;
+    float: left;
+    border-top: 1px solid #FF2D41;
+    border-bottom: 1px solid #FF2D41;
+}
+
+.sellInputBg {
+    height: 100%;
+    width: 64%;
+    float: left;
+    border-top: 1px solid #007AFF;
+    border-bottom: 1px solid #007AFF;
+}
+
+.btnPlus {
+    width: 18%;
+    height: 6rem;
+    line-height: 6rem;
+    color: white;
+    font-size: 3rem;
+    float: right;
+}
+
+.expTipItem {
+    height: 5rem;
+    width: 100%;
+    line-height: 5rem;
+    color: #666;
+    font-size: 1.8rem;
+    text-align: left;
+    padding: 0 .3rem;
+    margin-top: .1rem
+}
+
+.expTipItemText {
+    padding-left: 1rem;
+}
+
+.canBuyTime {
+    color: #333;
+}
+
+.buyBtn {
+    background: #FF2D41;
+    border-radius: .2rem;
+    color: white;
+}
+
+.sellBtn {
+    background: #007AFF;
+    border-radius: .2rem;
+    color: white;
+}
+
+.centerRightN {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #E5E5E5;
+    padding: 1rem;
+    font-size: 1.8rem;
+}
+
+.centerRText {
+    margin-top: .3rem;
+    width: 100%;
+    height: 8.6%;
+}
+
+.centerRL {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.centerRC {
+    width: 25%;
+    float: left;
+    text-align: right;
+}
+
+.centerRR {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.bottom {
+    background: #fff;
+}
+
+.bottomTitle {
+     width: 100%;
+    height: 5rem;
+    font-size: 2.2rem;
+    line-height: 5rem;
+    color: #666;
+}
+
+.bottomTitleT {
+    height: 8rem;
+    line-height: 3rem;
+    padding: 1rem 0;
+}
+
+.cntItem {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.bottomContentT {
+    padding-top: 1rem;
+}
+
+.bottomContentB {
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    margin-top: .2rem;
+    color: #999;
+}
+
+.bottomContentBtns {
+    font-size: 2rem;
+    color: #999;
+    height: 5rem;
+    line-height: 5rem;
+}
+
+.cntItemBtn {
+    width: 24.5%;
+    float: left;
+    text-align: center;
+}
+
+.cntItemImg {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.lineVertical {
+    width: 1px;
+    height: 3rem;
+    margin-top: 1rem;
+    float: left;
+    background: #eee;
+}
+
+.ccTop {
+    width: 100%;
+    height: 10rem;
+    background: white;
+    margin: 1.8rem 0;
+}
+
+.ccTopItem {
+    width: 49.5%;
+    float: left;
+    padding: 2rem 4rem;
+    text-align: left;
+    line-height: 3.4rem;
+}
+
+.ccTopImg {
+    width: 6rem;
+    height: 6rem;
+    float: left;
+    padding: 1.5rem;
+}
+
+.ccTopText1 {
+    font-size: 2.4rem;
+    color: #333;
+}
+
+.ccTopText2 {
+    font-size: 2rem;
+    color: #999;
+}
+
+.ccTopLine {
+    width: 1px;
+    height: 6rem;
+    margin-top: 2rem;
+    background: #E5E5E5;
+    float: left;
+}
+
+.search {
+    display: none;
+    width: 57%;
+    max-height: 32rem;
+    overflow: scroll;
+    margin-top: 6rem;
+    margin-left: -.1rem;
+    border: 1px solid #E5E5E5;
+    background-color: #fff;
+}
+
+.search li {
+    padding: 1rem;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.search li:hover {
+    background-color: #eee;
+}
+
+#surePay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 10000;
+}
+
+.sureTop {
+    height: 100%;
+    background: #000;
+    -moz-opacity: 0.7;
+    opacity: .70;
+    filter: alpha(opacity=70);
+}
+
+.sureBottom {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    text-align: left;
+    padding-bottom: 3rem;
+    position: fixed;
+    bottom: 0;
+}
+
+.sureItemTitle {
+    border-bottom: 1px solid #eee;
+    line-height: 8rem;
+    font-size: 2.5rem;
+    padding: 0 2rem;
+    color: #333;
+    text-align: center;
+}
+
+.sureItemTitle img {
+    float: left;
+    height: 5rem;
+    margin-top: 1.5rem;
+}
+
+.sureItem {
+    border-bottom: 1px solid #eee;
+    line-height: 6.6rem;
+    font-size: 2.4rem;
+    padding: 0 1rem;
+    margin-left: 1rem;
+    color: #666;
+}
+
+.sureItem input {
+    width: 60%;
+    text-align: left;
+}
+
+.sureTip {
+    color: #999;
+    font-size: 1.9rem;
+    padding: 2rem;
+}
+
+.sureBtn {
+    background: #ccc;
+    width: 90%;
+    margin: 1rem 5%;
+    color: white;
+    font-size: 2.5rem;
+    line-height: 7rem;
+    text-align: center;
+    border-radius: .3rem;
+}
+
+#cashSt {
+    color: #f00;
+    margin-left: 2rem;
+}
+
+.searchResultItem{
+    line-height: 5rem;
+}
+
+.searchWeituo{
+    text-align: left;
+}
+
+.searchWeituo div{
+    background: #fff;
+    padding: 2rem;
+    border-bottom: 1px solid #E5E5E5;
+    color: #333;
+}
+
+.marginTop{
+    margin-top: 2rem;
+}

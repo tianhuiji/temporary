@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>买卖</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/main_maimai.css">
+    <link rel="stylesheet" href="css/businessIndexStyle.css">
+    <script src="js/jquery.min.js"></script>
+
+</head>
+<body style="background:#F5F5F5">
+<div id="main" style="background:#F5F5F5;font-size:2.6rem">
+    <div id="wrap" style="margin-bottom:10rem" class="wrap">
+        <ul class="tabClick">
+            <li id="tabText1"  class="active">购买</li>
+            <li id="tabText2" >转让</li>
+            <li id="tabText3" >订单</li>
+            <li id="tabText4" >已购</li>
+            <li id="tabText5" >明细</li>
+        </ul>
+        <div class="lineBorder">
+            <div class="lineDivParent">
+                <div id="tabLine1" class="lineDiv active"></div>
+            </div>
+            <div class="lineDivParent">
+                <div id="tabLine2" class="lineDiv"></div>
+            </div>
+            <div class="lineDivParent">
+                <div id="tabLine3" class="lineDiv"></div>
+            </div>
+            <div class="lineDivParent">
+                <div id="tabLine4" class="lineDiv"></div>
+            </div>
+            <div class="lineDivParent">
+                <div id="tabLine5" class="lineDiv"></div>
+            </div>
+        </div>
+        <div class="tabCon">
+            <div id="tab1"  class="tabList">
+                <div class="lineGray"></div>
+                <div id="buyTop" hidden="" class="top"><span id="buyTopInfo1"></span><span id="buyTopInfo2"
+                                                                                           class="topText textColorRed"></span><span
+                        id="buyTopInfo3" class="topText textColorRed"></span><span id="buyTopInfo4"
+                                                                                   class="topText textColorRed"></span><img
+                        id="buyRefreshImg" src="js/buy_c.png"  class="topImg"></div>
+                <div class="center">
+                    <div class="centerLeft">
+                        <div id="buyNameForm" class="buyCLItem buyCLK"><input id="buyName" type="text"
+                                                                              placeholder="发行人姓名/代码"></div>
+                        <div class="buyCLItem buyPriceItem">
+                            <div  class="btnMinus bgRed">-</div>
+                            <div class="buyInputBg"><input id="buyPrice" type="number" placeholder="购买价格(元)"></div>
+                            <div  class="btnPlus bgRed">+</div>
+                        </div>
+                        <div class="expTipItem"><span class="floatL">跌停</span><span id="buyMinPrice"
+                                                                                    class="floatL textColorGreen expTipItemText">-</span><span
+                                id="buyMaxPrice" class="floatR textColorRed expTipItemText">-</span><span
+                                class="floatR">涨停</span></div>
+                        <div class="buyCLItem buyTimeBg">
+                            <div  class="btnMinus bgRed">-</div>
+                            <div class="buyInputBg"><input id="buyTime" type="number" placeholder="购买时间(秒)"></div>
+                            <div  class="btnPlus bgRed">+</div>
+                        </div>
+                        <div class="expTipItem canBuyTime"><span>可买</span><span id="buyMaxTime" class="textColorOrange">-</span><span>秒</span>
+                        </div>
+                        <div  class="buyCLItem buyBtn">购买</div>
+                        <div id="buySearch" class="search">
+                            <ul id="buySearchResult"></ul>
+                        </div>
+                    </div>
+                    <div class="centerRight">
+                        <div class="centerRightN">
+                            <div class="centerRText">
+                                <div class="centerRL">卖5</div>
+                                <div id="bCRTopPrice4" class="centerRC">-</div>
+                                <div id="bCRTopNum4" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖4</div>
+                                <div id="bCRTopPrice3" class="centerRC">-</div>
+                                <div id="bCRTopNum3" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖3</div>
+                                <div id="bCRTopPrice2" class="centerRC">-</div>
+                                <div id="bCRTopNum2" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖2</div>
+                                <div id="bCRTopPrice1" class="centerRC">-</div>
+                                <div id="bCRTopNum1" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖1</div>
+                                <div id="bCRTopPrice0" class="centerRC">-</div>
+                                <div id="bCRTopNum0" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div style="margin:1rem 0" class="lineGray"></div>
+                            <div class="centerRText">
+                                <div class="centerRL">买1</div>
+                                <div id="bCRBottomPrice0" class="centerRC">-</div>
+                                <div id="bCRBottomNum0" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买2</div>
+                                <div id="bCRBottomPrice1" class="centerRC">-</div>
+                                <div id="bCRBottomNum1" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买3</div>
+                                <div id="bCRBottomPrice2" class="centerRC">-</div>
+                                <div id="bCRBottomNum2" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买4</div>
+                                <div id="bCRBottomPrice3" class="centerRC">-</div>
+                                <div id="bCRBottomNum3" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买5</div>
+                                <div id="bCRBottomPrice4" class="centerRC">-</div>
+                                <div id="bCRBottomNum4" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="bottom">
+                    <div class="lineGray"></div>
+                    <div class="bottomTitle">
+                        <div class="cntItem">名称代码</div>
+                        <div class="cntItem">持有/可转</div>
+                        <div class="cntItem">现价/成本</div>
+                        <div class="cntItem">盈亏</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="lineGray"></div>
+                    <div id="chiCangListBuy"></div>
+                </div>
+            </div>
+            <div id="tab2" hidden="" class="tabList">
+                <div class="lineGray"></div>
+                <div id="sellTop" hidden="" class="top">
+                    <span id="sellTopInfo1"></span>
+                    <span id="sellTopInfo2" class="topText textColorRed"></span>
+                    <span id="sellTopInfo3" class="topText textColorRed"></span>
+                    <span id="sellTopInfo4" class="topText textColorRed"></span>
+                    <img id="sellRefreshImg" src="js/buy_c.png" class="topImg">
+                </div>
+                <div class="center">
+                    <div class="centerLeft">
+                        <div id="sellNameForm" class="buyCLItem sellCLK">
+                            <input id="sellName" type="text"   placeholder="发行人姓名/代码">
+                        </div>
+                        <div class="buyCLItem buyPriceItem">
+                            <div class="btnMinus bgBlue">-</div>
+                            <div class="sellInputBg"><input id="sellPrice" type="number" placeholder="转让价格(元)"></div>
+                            <div class="btnPlus bgBlue">+</div>
+                        </div>
+                        <div class="expTipItem">
+                            <span class="floatL">跌停</span>
+                            <span id="sellMinPrice"  class="floatL textColorGreen expTipItemText">-</span>
+                            <span  id="sellMaxPrice" class="floatR textColorRed expTipItemText">-</span>
+                            <span  class="floatR">涨停</span>
+                        </div>
+                        <div class="buyCLItem buyTimeBg">
+                            <div class="btnMinus bgBlue">-</div>
+                            <div class="sellInputBg">
+                                <input id="sellTime" type="number" placeholder="转让时间(秒)">
+                            </div>
+                            <div class="btnPlus bgBlue">+</div>
+                        </div>
+                        <div class="expTipItem canBuyTime">
+                            <span>可转</span>
+                            <span id="sellMaxTime"  class="textColorOrange">-</span>
+                            <span>秒</span>
+                        </div>
+                        <div class="buyCLItem sellBtn">转让</div>
+                        <div id="sellSearch" class="search">
+                            <ul id="sellSearchResult"></ul>
+                        </div>
+                    </div>
+                    <div class="centerRight">
+                        <div class="centerRightN">
+                            <div class="centerRText">
+                                <div class="centerRL">卖5</div>
+                                <div id="sCRTopPrice4" class="centerRC">-</div>
+                                <div id="sCRTopNum4" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖4</div>
+                                <div id="sCRTopPrice3" class="centerRC">-</div>
+                                <div id="sCRTopNum3" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖3</div>
+                                <div id="sCRTopPrice2" class="centerRC">-</div>
+                                <div id="sCRTopNum2" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖2</div>
+                                <div id="sCRTopPrice1" class="centerRC">-</div>
+                                <div id="sCRTopNum1" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">卖1</div>
+                                <div id="sCRTopPrice0" class="centerRC">-</div>
+                                <div id="sCRTopNum0" style="color:#04C192" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div style="margin:1rem 0" class="lineGray"></div>
+                            <div class="centerRText">
+                                <div class="centerRL">买1</div>
+                                <div id="sCRBottomPrice0" class="centerRC">-</div>
+                                <div id="sCRBottomNum0" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买2</div>
+                                <div id="sCRBottomPrice1" class="centerRC">-</div>
+                                <div id="sCRBottomNum1" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买3</div>
+                                <div id="sCRBottomPrice2" class="centerRC">-</div>
+                                <div id="sCRBottomNum2" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买4</div>
+                                <div id="sCRBottomPrice3" class="centerRC">-</div>
+                                <div id="sCRBottomNum3" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="centerRText">
+                                <div class="centerRL">买5</div>
+                                <div id="sCRBottomPrice4" class="centerRC">-</div>
+                                <div id="sCRBottomNum4" style="color:#FF2D41" class="centerRR">-</div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="bottom">
+                    <div class="lineGray"></div>
+                    <div class="bottomTitle">
+                        <div class="cntItem">名称代码</div>
+                        <div class="cntItem">持有/可转</div>
+                        <div class="cntItem">现价/成本</div>
+                        <div class="cntItem">盈亏</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="lineGray"></div>
+                    <div id="chiCangListSell"></div>
+                </div>
+            </div>
+            <div id="tab3" style="margin-top: 1.8rem;" hidden="" class="tabList">
+                <div class="bottom">
+                    <div class="lineGray"></div>
+                    <div class="bottomTitle">
+                        <div class="cntItem">名称代码</div>
+                        <div class="cntItem">委托价/时间</div>
+                        <div class="cntItem">委托量/成交量</div>
+                        <div class="cntItem">状态</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="lineGray"></div>
+                    <div id="cheDanList"></div>
+                </div>
+                <div id="cheDanEmpty" style="padding:3rem;color:#333;font-size:2.5rem" hidden="">暂无数据</div>
+            </div>
+            <div id="tab4" hidden="" class="tabList">
+                <div class="ccTop">
+                    <div class="ccTopItem"><img src="js/chichang_a.png" class="ccTopImg"><span
+                            class="ccTopText1">可用余额(元)</span><br><span id="userPurse" class="ccTopText2"></span></div>
+                    <div class="ccTopLine"></div>
+                    <div class="ccTopItem"><img src="js/chichang_b.png" class="ccTopImg"><span
+                            class="ccTopText1">持仓市值(元)</span><br><span id="positionPrice" class="ccTopText2"></span>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="lineGray"></div>
+                    <div class="bottomTitle">
+                        <div class="cntItem">名称/市值(元)</div>
+                        <div class="cntItem">持有/可转(秒)</div>
+                        <div class="cntItem">现价/成本(元)</div>
+                        <div class="cntItem">盈亏(元)</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="lineGray"></div>
+                    <div id="chiCangList"></div>
+                </div>
+            </div>
+            <div id="tab5" hidden="" class="tabList">
+                <div hidden="" class="bottom">
+                    <div class="lineGray"></div>
+                    <div class="bottomTitle bottomTitleT">
+                        <div style="line-height: 6rem;" class="cntItem">名称代码</div>
+                        <div class="cntItem">
+                            <div>委托价格</div>
+                            <div>委托时长</div>
+                        </div>
+                        <div class="cntItem">
+                            <div>委托量</div>
+                            <div>成交量</div>
+                        </div>
+                        <div style="line-height: 6rem;" class="cntItem">状态</div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="lineGray"></div>
+                    <ul id="weiTuoList"></ul>
+                </div>
+                <div show="" class="searchWeituo"><a href="####">
+                    <div class="marginTop">当日委托</div>
+                </a><a href="####">
+                    <div>当日成交</div>
+                </a><a href="####">
+                    <div class="marginTop">历史委托</div>
+                </a><a href="####">
+                    <div>历史成交</div>
+                </a></div>
+            </div>
+        </div>
+    </div>
+    <div data-am-widget="navbar" class="am-navbar am-cf am-navbar-default">
+        <div class="am-navbar-navs"><a href="####">
+            <div class="float5"><img src="js/footer_tey_0.png">
+                <div>资讯</div>
+            </div>
+            </a><a href="####">
+                <div class="float5"><img src="js/footer_tey_1.png">
+                    <div>行情</div>
+                </div>
+            </a>
+            <div class="float5"><img src="js/footer_blue_2.png">
+                <div style="color:#007AFF">买卖</div>
+            </div>
+            <a href="####">
+                <div class="float5"><img src="js/footer_tey_4.png">
+                    <div>秒说</div>
+                </div>
+            </a><a href="####">
+                <div class="float5"><img src="js/footer_tey_3.png">
+                    <div>我的</div>
+                </div>
+            </a>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
