@@ -1,0 +1,508 @@
+body {
+	background: #f5f5f5;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.form-group p {
+	padding: 0;
+}
+
+.form-group label {
+	font-weight: normal;
+}
+
+label.error {
+	font-size: 12px;
+	padding-left: 0.3rem;
+	color: #FF2D41;
+}
+
+.form-group .col-sm-1 {
+	width: 15%;
+}
+
+.circular:before {
+	display: block;
+	content: "";
+	width: 0.05rem;
+	height: 0.05rem;
+	clear: both;
+	border-radius: 50%;
+	position: absolute;
+	left: 15%;
+	top: 45%;
+	background: #F15353;
+}
+
+input, button, textarea {
+	background: none;
+	outline: none;
+	border: 1px solid #e5e5e5;
+}
+
+/**/
+.m_content_top {
+	width: 19.2rem;
+	background: url("../img/asset/asset.png") no-repeat center;
+	background-size: cover;
+	color: #fff;
+	padding: 0.2rem 0;
+	font-size: 0.18rem;
+
+}
+
+.m_content_top img {
+	width: 1rem;
+}
+
+.m_content_top dd {
+	line-height: 0.5rem;
+	padding-left: 0.23rem;
+}
+
+.m_content_center {
+	background: #fff;
+	padding: 0.15rem 0 0.4rem;
+}
+
+.m_content_center .panel-default {
+	border: none;
+	border-bottom: 1px solid #e5e5e5;
+	border-radius: 0;
+}
+
+.m_confirm {
+	color: #666666;
+}
+
+.form-group {
+	line-height: 0.4rem;
+}
+
+.m_button {
+	line-height: 0.35rem;
+}
+
+.m_button button {
+	float: left;
+	width: 0.34rem;
+	text-indent: 0;
+}
+
+.m_button input {
+	float: left;
+	width: 1rem;
+	border-left: none;
+	border-right: none;
+	text-align: center;
+	text-indent: 0;
+}
+
+.m_button span {
+	font-size: 12px;
+	color: #999;
+	margin-left: 0.15rem;
+}
+
+.m_reservation_type li {
+	width: 1rem;
+	border: 1px solid #e5e5e5;
+	text-align: center;
+	display: inline-block;
+	margin-right: 0.1rem;
+	line-height: 0.5rem;
+	font-size: 12px;
+	margin-bottom: 0.1rem;
+
+}
+
+.m_reservation_type li.active {
+	background: url("../img/sjs_recharge/recharge.png") no-repeat;
+	background-size: 100% 100%;
+	border: 1px solid #fff;
+}
+
+.m_reservation_type li a {
+	width: 100%;
+	font-size: 14px;
+	color: #666;
+	display: inline-block;
+}
+
+textarea {
+	border: 1px solid #e5e5e5;
+	width: 5.5rem;
+	height: 1rem;
+	resize: none;
+
+}
+
+.u_iphone input {
+	width: 3rem;
+}
+
+.u_rule {
+	font-size: 12px;
+	color: #98999A;
+}
+
+.u_rule a {
+	color: #007AFF;
+}
+
+.m_payment {
+	margin-top: 0.25rem;
+	line-height: 0.55rem;
+	font-size: 0.16rem;
+}
+
+.m_payment .col-sm-10, .col-sm-2 {
+	padding: 0;
+}
+
+.m_payment .m_payment_inner {
+	background: #E5E5E5;
+}
+
+.m_payment button {
+	width: 1.7rem;
+	line-height: 0.55rem;
+	background: #F15353;
+	color: #fff;
+	border: none;
+}
+
+/*订单详情*/
+.m_content_orderdetails {
+	padding-bottom: 0.5rem;
+}
+
+.m_content_orderdetails {
+	background: #fff;
+}
+
+.m_orderdetail {
+	margin-bottom: 0.1rem;
+	color: #666;
+}
+
+.m_orderdetail > .panel-heading {
+	padding: 10px 0;
+	margin: 0 15px;
+	background: none;
+
+}
+
+.panel-default > .panel-heading span {
+	color: #007AFF;
+	margin-right: 0.1rem;
+}
+
+.panel-default > .panel-heading b {
+	margin-right: 0.1rem;
+	color: #666666;
+}
+
+.m_content_orderdetails .h1 {
+	line-height: 0.4rem;
+	font-size: 0.18rem;
+	color: #333;
+	font-weight: bold;
+}
+
+.m_order_right {
+	width: 5rem;
+	background: url("../img/sjs_time/1_1.png") no-repeat left bottom;
+	background-size: contain;
+	margin-top: 0.2rem;
+}
+
+.m_order_right li {
+	width: 1rem;
+	float: left;
+	text-align: center;
+	padding-bottom: 0.3rem;
+	font-size: 12px;
+
+}
+
+.m_orderdetails {
+	font-size: 0.2rem;
+	line-height: 0.4rem;
+}
+
+.m_orderdetails .well {
+	background: #F7F9FA;
+	border: none;
+	margin-bottom: 0.1rem;
+}
+
+.u_evaluate_content {
+	display: none;
+}
+
+.u_gold {
+	color: #FF9500;
+}
+.u_evaluate img{
+	width:0.5rem;
+	height:0.5rem;
+	margin-right: 0.2rem;
+}
+.m_orderdetails button {
+	width: 1.3rem;
+	line-height: 0.35rem;
+	font-size: 12px;
+	color: #999;
+	border-radius: 2px;
+}
+
+.m_orderdetails .active {
+	color: #fff;
+	background: #007AFF;
+}
+
+.m_orderdetail p {
+	line-height: 0.4rem;
+	font-size: 0.18rem;
+}
+
+.m_orderdetail i {
+	color: #F15353;
+	display: inline-block;
+	width: 0.3rem;
+	text-align: center;
+}
+
+.m_orderdetail .panel-body span {
+	display: inline-block;
+	width: 0.8rem;
+	margin-right: 0.1rem;
+}
+
+.m_orderdetail .u_green {
+	color: #04C192;
+}
+
+.u_meet {
+	display: none;
+}
+
+.m_orderdetail .u_evaluate p {
+	font-size: 14px;
+	line-height: 0.3rem;
+}
+
+.u_comment {
+	padding: 0;
+}
+
+.u_comment_background {
+	display: none;
+	background: url("../img/sjs_time/background.png") no-repeat left;
+	background-size: cover;
+	padding: 0.1rem;
+}
+#d_orderdetail p{
+	display: none;
+}
+
+
+/*评论*/
+#d_evaluate .modal-body {
+	width: 4rem;
+	margin: 0 auto;
+}
+
+#d_evaluate .modal-body dl {
+	padding-bottom: 0.2rem;
+}
+
+#d_evaluate .modal-body dt, #d_evaluate .modal-body dd {
+	float: left;
+	padding-right: 0.15rem;
+	font-size: 14px;
+	line-height: 0.27rem;
+}
+
+#d_evaluate .u_comment_top_avatar img {
+	width: 0.58rem;
+	height: 0.58rem;
+}
+
+#d_evaluate .u_comment_top_avatar i {
+	display: inline-block;
+	width: 0.2rem;
+	height: 0.2rem;
+	background: url("../img/sjs_time/Coffee.png") no-repeat;
+	background-size: cover;
+	vertical-align: middle;
+	margin-right: 0.1rem;
+}
+
+#d_evaluate .u_comment_top_avatar span {
+	font-size: 12px;
+	color: #666;
+}
+
+#d_evaluate .modal-body p {
+	color: #999;
+	font-size: 12px;
+	line-height: 0.5rem;
+}
+
+#d_evaluate .modal-body p img {
+	width: 100%;
+}
+
+#d_evaluate .modal-body h2 {
+	color: #333;
+	font-size: 20px;
+	line-height: 0.6rem;
+}
+
+#d_evaluate .modal-body textarea {
+	height: 2rem;
+	font-size: 12px;
+	line-height: 0.3rem;
+	margin-bottom: 0.1rem;
+}
+
+#d_evaluate .modal-body .u_button {
+	line-height: 0.44rem;
+	background: #007AFF;
+	font-size: 12px;
+	color: #fff;
+	border:none;
+	margin-top: 0.2rem;
+}
+
+#d_evaluate .modal-content {
+	width: 5.6rem;
+	height: auto;
+}
+
+.comment_content_bottoml {
+	float: left;
+	overflow: hidden;
+}
+
+.comment_content_bottoml form {
+	width: 0.44rem;
+	height: 0.44rem;
+	float: left;
+	position: relative;
+}
+
+.comment_content_bottoml input {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+
+.comment_content_bottoml img {
+	width: 0.44rem;
+	height: 0.44rem;
+}
+
+#d_evaluate .comment_content_bottoml #upload {
+	width: 0.44rem;
+	height: 0.44rem;
+	background: url("../img/sjs_time/tianjia.png") no-repeat center;
+	background-size: contain;
+}
+
+.comment_content_bottoml .addimg {
+	float: left;
+}
+
+.comment_content_bottoml .addimg img {
+	width: 0.44rem;
+	height: 0.44rem;
+	margin:0 0.08rem;
+}
+
+
+/*预约列表*/
+.g_order_content {
+	width: 8rem;
+	margin: 0 auto;
+	padding-top: 0.4rem;
+}
+
+.m_content_list .panel-heading {
+	background: none;
+}
+
+.m_content_list li {
+	float: left;
+	width: 1.35rem;
+	text-align: center;
+	border-right: 1px solid #e5e5e5;
+	height: 1.3rem;
+	font-size: 12px;
+}
+
+.m_content_list span {
+	display: inline-block;
+	line-height: 1.3rem;
+	color: #666;
+
+}
+
+.m_content_list .u_first {
+	width: 3.9rem;
+	text-align: left;
+	margin: 0;
+}
+
+.m_content_list dt, .m_content_list dd {
+	float: left;
+}
+
+.u_lineHeight {
+	padding-top: 0.2rem;
+}
+
+.m_content_list img {
+	width: 0.87rem;
+	height: 0.87rem;
+	margin: 0.2rem;
+	margin-top: 0;
+}
+
+.m_content_list .panel-body {
+	padding: 0;
+}
+
+.u_lineHeight span {
+	line-height: 0.4rem;
+}
+
+.m_content_list .u_border_right {
+	border-right: none;
+}
+
+.m_content_list a {
+	color: #666;
+}
+.pagination > li > a {
+	float: inherit;
+}
+
+
+
+
+
+
+
+
+
+

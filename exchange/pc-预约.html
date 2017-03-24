@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html  style="font-size: 71.1458333333333px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>秒啊</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sjs_global.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sjs_booking_order.css">
+    <link rel="stylesheet" href="css/layer.css" >
+</head>
+<body>
+<div class="sjs_header navbar-fixed-top clear">
+    <div class="sjs_header_inner">
+        <div class="sjs_header_left clear">
+            <a href="####">
+                <img src="images/logo.png" alt=""></a>
+        </div>
+        <div class="sjs_header_right clear">
+            <ul class="clear">
+                <li>
+                    <a id="pc_user_transaction"
+                       href="####">交易</a>
+                </li>
+                <li>
+                    <a id="pc_user_asset" href="####">资产管理</a>
+                </li>
+                <li>
+                    <a id="pc_order_list"
+                       href="####">我的发行人</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_load" href="####">登录</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_register"
+                       href="####">注册</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/default_avatar.png" alt="" class="uu_avtar" id="user_avatar"
+                             style="display: inline;"></a>
+                </li>
+                <li>
+                    <a id="release_btn" href="javascript:;" style="display: inline;">[退出]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!---->
+<div class="g_height"></div>
+<!---->
+
+<div class="g_content clear">
+    <div class="m_content_top">
+        <div class="m_content_top_inner">
+            <dl class="clear">
+                <dt class="pull-left"><img src="images/Qk2aUMbP6y.jpg" alt=""></dt>
+                <dd class="pull-left">
+                    <span>发行人：朱晔</span>
+                    <br>
+                    <span>编号：800018</span>
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+    <div class="m_content_center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                确认订单信息
+            </div>
+        </div>
+        <div class="m_confirm">
+            <form id="confirmForm" role="form" novalidate="novalidate">
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right circular">市值</label>
+                    <div class="col-sm-10">
+                        <p id="u_time">8.14元/秒</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right circular">预约时间</label>
+                    <div class="col-sm-10">
+                        <div class="m_button clear">
+                            <button type="button">-</button>
+                            <input type="text" id="d_time" name="d_time" disabled="disabled" value="600">
+                            <button type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right circular">预约类型</label>
+                    <div class="col-sm-10 m_reservation_type">
+                        <ol id="m_reservation_type">
+                            <li class="active"><a href="javascript:;">照片</a></li>
+                            <li><a href="javascript:;">语音</a></li>
+                            <li><a href="javascript:;">视频</a></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        联系人信息
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right">姓名</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="d_name" name="d_name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right">手机</label>
+                    <div class="col-sm-10 u_iphone">
+                        <input type="text" name="d_iphone" id="d_iphone"
+                                                           onkeyup="this.value=this.value.replace(/[^\d]/g,&#39;&#39;) ">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-1 control-label text-right">备注</label>
+                    <div class="col-sm-10">
+                        <textarea rows="10" name="d_remarks" id="d_remarks"></textarea>
+                    </div>
+                </div>
+                <p class="col-md-offset-1 u_rule">详细规则请查看 <a
+                        href="####">《约见规则》</a></p>
+                <div class="form-group m_payment">
+                    <div class="col-sm-8 m_payment_inner col-md-offset-1 clear">
+                        <span class="pull-right">支付：600秒</span>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="submit" id="d_appointment">立即预约</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
