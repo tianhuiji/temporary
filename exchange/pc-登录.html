@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en" style="font-size: 71.1458333333333px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>秒啊</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/sjs_load.css">
+
+<link rel="stylesheet" href="css/layer/layer.css" id="layui_layer_csslayerlayercss"></head>
+<body>
+
+<div class="g_header clear">
+	<div class="m_header_left pull-left">
+		<a href="####">
+			<div>logo</div>
+			<span>秒啊</span>
+		</a>
+	</div>
+	<div class="m_header_right pull-right">
+		<ul class="clear">
+			<li><a href="####">秒啊首页</a></li>
+			<li class="u_iphone_hover">
+				<a href="javascript:;"><i class=" icon-mobile-phone"></i>手机秒啊</a>
+				<div class="u_iphone_code">
+					<p>秒啊客户端</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="g_content" style="background-color: gainsboro;">
+	<div class="m_conteng_inner clear">
+		<div class="m_login_interface pull-right">
+			<form id="loadForm" action="" method="POST">
+				<h4>密码登录</h4>
+				<div class="alert col-sm-12 alert-info u_alert_info" role="alert"><i class="icon-remove-sign"></i><span>您输入的密码和账户名不匹配</span>
+				</div>
+				<div class="form-group user_name clear">
+					<label for="get_user_name" class="col-sm-2"><i class=" icon-mobile-phone icon-large"></i></label>
+					<div class="col-sm-10">
+						<input type="tel" name="userTel" class="form-control" id="get_user_name" placeholder="账号" onkeyup="btn_keyup(this)">
+					</div>
+				</div>
+				<div class="form-group user_password clear">
+					<label for="get_user_password" class="col-sm-2"><i class="icon-lock icon-large"></i></label>
+					<div class="col-sm-10">
+						<input type="password" name="userPassword" class="form-control" id="get_user_password" placeholder="密码" onkeyup="full_half(this)">
+					</div>
+				</div>
+				<div class="form-group clear u_padding">
+					<div class="col-sm-12">
+						<input type="button" class="form-control" id="user_load" value="登录">
+					</div>
+				</div>
+				<div class="user_foot">
+					<a href="####">免费注册</a>
+					<a class="foot_last_child" href="#####">忘记密码</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="g_foot">
+	<div class="m_foot_left col-sm-8">
+		<p>京ICP备09111452号-1</p>
+	</div>
+
+</div>
+<!-- 验证码弹出层 -->
+<div class="veryCodeContainer" id="layer_code">
+	<div class="close_btn_container">
+		<span id="closeAllLayer"></span>
+	</div>
+	<div class="title_container text-center">
+		输入验证码
+	</div>
+	<div class="status_msg text-center">验证码已发送到您的手机</div>
+	<div class="send_btn_container text-center">
+		<button type="button" class="btn btn-default" id="sendCode_again">48s后重发</button>
+	</div>
+	<div class="input_container text-center">
+		<input type="text" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,&#39;&#39;)" id="load_addCode_input">
+	</div>
+</div>
+
+
+
+
+</body>
+</html>
