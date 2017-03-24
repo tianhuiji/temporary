@@ -1,0 +1,270 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	background: #f5f5f5;
+}
+
+.col-sm-2 {
+	padding: 0 !important;
+	text-align: center;
+	background: #E5E5E5;
+	color: #999;
+	line-height: 0.51rem;
+	border-radius: 0;
+	margin: 0;
+}
+
+.form-control:focus {
+	box-shadow: none;
+	border-bottom: none;
+	border-color: transparent;
+	border: 1px solid #e5e5e5;
+
+
+}
+
+.form-group {
+	margin-bottom: 0.2rem;
+}
+
+.form-group div {
+	padding: 0;
+}
+
+.form-group input {
+	padding: 0 6px;
+	border: 1px solid #E5E5E5;
+	border-radius: 0;
+	font-size: 14px;
+	height: 0.5rem;
+	box-shadow: none;
+}
+
+/**/
+.g_header {
+	width: 12rem;
+	margin: 0 auto;
+	padding: 0.2rem 0;
+}
+
+.m_header_left img{
+	vertical-align:top;
+	margin-right: 0.13rem;
+}
+.m_header_left span{
+	line-height: 0.5rem;
+	font-size: 0.32rem;
+}
+
+.g_header b {
+	vertical-align: middle;
+	font-size: 0.24rem;
+	margin-left: 0.1rem;
+}
+
+.m_header_right li {
+	float: left;
+	padding-left: 0.4rem;
+	line-height:0.5rem;
+}
+
+.m_header_right li a {
+	color: #666666;
+	font-size: 0.16rem;
+}
+
+.m_header_right li a i {
+	margin-right: 0.05rem;
+	font-size: 0.24rem;
+	vertical-align: text-top;
+}
+
+/**/
+.u_iphone_hover{
+	position: relative;
+}
+.u_iphone_code{
+	width:1.55rem;
+	height:2rem;
+	position: absolute;
+	top:0.4rem;
+	left:0;
+	background: url("../img/sjs_load/code.png") no-repeat center;
+	background-size: cover;
+	padding:0.1rem;
+	z-index: 5;
+	display: none;
+}
+.u_iphone_code p{
+	font-size: 14px;
+}
+.u_iphone_code img{
+	width:1.35rem;
+
+}
+
+/**/
+
+.g_content {
+	width: 19.2rem;
+	height: 6.2rem;
+	background-color: transparent;
+	background-image: url("../img/sjs_load/1.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.m_conteng_inner {
+	width: 12rem;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.m_login_interface {
+	width: 3.7rem;
+	height: 4.4rem;
+	background: #fff;
+	margin-top: 1rem;
+	padding: 0 0.25rem;
+}
+
+.m_login_interface h4 {
+	font-size: 0.2rem;
+	line-height: 0.6rem;
+	color: #333;
+}
+.m_login_interface .click_code a{
+	font-size: 12px;
+	line-height:0.48rem;
+	color: #007AFF;
+}
+.m_click_code{
+	border:1px solid #e5e5e5;
+	text-align: center;
+}
+.m_click_code input{
+	border:none;
+	outline: none;
+	height: 0.48rem;
+}
+
+
+#user_load {
+	background: #007AFF;
+	color: #fff;
+}
+
+.user_foot {
+	text-align: right;
+}
+
+.user_foot a {
+	color: #999;
+	font-size: 12px;
+	padding-left: 0.1rem;
+}
+
+.col-sm-10 label {
+	font-size: 12px;
+	color: #FF2D41;
+	font-weight: normal;
+}
+
+/**/
+.g_foot {
+	width: 12rem;
+	margin: 0.3rem auto;
+}
+
+.m_foot_left p {
+	font-size: 12px;
+	color: #999;
+	line-height: 25px;
+}
+
+/*注册*/
+form{
+	position: relative;
+}
+.u_alert_info{
+	padding:0;
+	margin:0;
+	border-radius: 0;
+	line-height: 0.44rem;
+	font-size: 12px;
+	position: absolute;
+	top:0.1rem;
+	z-index: 5;
+	display: none;
+}
+.u_alert_info i{
+	padding:0 0.1rem;
+	color: #FF2D41;
+	font-size: 0.16rem;
+}
+.user_name{
+	position: relative;
+}
+.user_name  .u_register_city {
+	border: 1px solid #e5e5e5;
+	line-height: 0.49rem;
+	font-size: 12px;
+	color: #999;
+	padding: 0 6px;
+	cursor: pointer;
+}
+.user_name label{
+	font-size: 0.25rem;
+}
+.u_citys{
+	height:1.8rem;
+	border:1px solid #e5e5e5;
+	background: #fff;
+	position: absolute;
+	right:0;
+	top:0.49rem;
+	z-index: 3;
+	overflow-x: hidden;
+	display: none;
+}
+.user_name .u_citys li {
+	padding: 0 5px;
+	height: 0.35rem;
+}
+.u_citys li a{
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+	line-height:0.35rem;
+	font-size: 12px;
+	color: #999;
+}
+.user_name .u_citys li.active, .user_name .u_citys li:hover {
+	background: #007AFF;
+}
+.user_name .u_citys li.active a, .user_name .u_citys li:hover a {
+	color: #fff;
+}
+
+#areaCode{
+	font-size: 12px;
+}
+.agreement{
+	font-size: 12px;
+	color:#999;
+}
+.agreement a{
+	color:#007AFF;
+}
+.agreement label{
+	width:100%;
+}
+.agreement .u_padding_l{
+	margin-left: 0.1rem;
+	color: #999;
+	float: right;
+}
+.agreement .col-sm-12{
+	padding:0;
+}
