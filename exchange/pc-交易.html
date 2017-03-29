@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html style="font-size: 66.6667px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="description" content="Simple, easy, customisable autocomplete plugin (one more alternative).">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>秒啊</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sjs_global.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/sjs_transaction.css">
+    <script type="text/javascript">
+        function import_price(obj) {
+            obj.value = obj.value.replace(/\D/g, '');
+            if (obj.value > 10000000) {
+                obj.value = 10000000;
+            }
+        }
+        function clearNoNum(obj) {
+            obj.value = obj.value.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符
+            obj.value = obj.value.replace(/^\./g, "");  //验证第一个字符是数字而不是.
+            obj.value = obj.value.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+            obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+            obj.value = obj.value.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数
+        }
+    </script>
+    <link rel="stylesheet" href="css/layer.css" id="layui_layer_csslayerlayercss">
+</head>
+<body>
+<div class="sjs_header clear">
+    <div class="sjs_header_inner">
+        <div class="sjs_header_left clear">
+            logo
+        </div>
+        <div class="sjs_header_right clear">
+            <ul class="clear">
+                <li class="active">
+                    <a class="active" id="pc_user_transaction"
+                       href="####">交易</a>
+                </li>
+                <li>
+                    <a id="pc_user_asset" href="####">资产管理</a>
+
+                </li>
+
+                <li>
+                    <a id="pc_order_list" href="####">我的发行人</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_load" href="####">登录</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_register"
+                       href="####">注册</a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/default_avatar.png" alt="" class="uu_avtar" id="user_avatar"
+                             style="display: inline;"></a>
+                </li>
+                <li>
+                    <a id="release_btn" href="javascript:;" style="display: inline;">[退出]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="transaction_tab">
+    <div class="transaction_tab_inner">
+        <a href="####" class="active" role="button">买入</a>
+        <a href="####" role="button">卖出</a>
+        <a href="####" role="button">委托</a>
+    </div>
+</div>
+<div class="sjs_content sjs_transaction_content clear">
+    <!--买入、卖出-->
+   <div style="display:block;">
+        <div class="transaction_content_left">
+            <div class="transaction_content_top">
+                <div class="transaction_left_l">
+                    <form id="purchaseForm" class="required-validate"
+                          action="https://sjs.miaoa.com/html/sjs_transaction_buy.html?0.9712739274886686" method="POST"
+                          novalidate="novalidate">
+                        <ul>
+                            <li class="first">买入时间</li>
+                            <li>
+                                <span>发行人</span>
+                                <div class="sjs_button first_button">
+                                    <input id="code_ipt" name="code_ipt" type="text" placeholder="搜索发行人"
+                                           class="ui-autocomplete-input" autocomplete="off">
+                                    <input type="hidden" name="investorsCode" value="" id="code_ipt_hide"></div>
+                            </li>
+                            <li>
+                                <span>价格</span>
+                                <div class="sjs_button">
+                                    <input id="price_number" name="buyerOrderPrice" type="text" value="" placeholder="元"
+                                           onkeyup="clearNoNum(this)">
+                                    <div class="time_button clear">
+                                        <button id="price_add" type="button"></button>
+                                        <button id="price_remove" type="button"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span></span> <b id="buy_rise">--</b> <b style="text-align: right;">--</b>
+                            </li>
+                            <li>
+                                <span>时间</span>
+                                <div class="sjs_button">
+                                    <input id="time_number" name="buyerOrderNum" type="text" value="" placeholder="秒"
+                                           onkeyup="import_price(this)">
+                                    <div class="time_button clear ">
+                                        <button id="time_add" type="button"></button>
+                                        <button id="time_remove" type="button"></button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span></span> <strong>可买 <i>--</i>
+                                秒</strong>
+                            </li>
+                            <li class="reset">
+                                <a href="javascript:;" class="reset_button">重填</a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <button type="submit" id="purchase_buy" class="sjs_purchase_button">确定买入</button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+                <div class="transaction_left_r">
+                    <div class="order" id="sjs_right_sell">
+                        <ul>
+                            <li>
+                                卖
+                                <b>5</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                卖
+                                <b>4</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                卖
+                                <b>3</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                卖
+                                <b>2</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                卖
+                                <b>1</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                    <div class="sell" id="sjs_right_buy">
+                        <ul>
+                            <li>
+                                买
+                                <b>1</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                买
+                                <b>2</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                买
+                                <b>3</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                买
+                                <b>4</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                        <ul>
+                            <li>
+                                买
+                                <b>5</b>
+                            </li>
+                            <li>...</li>
+                            <li>...</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="transaction_content_center">
+                <p>
+                    <span></span>
+                </p>
+                <div class="top_price">
+                    <div class="top_line" id="main_chart"></div>
+                    <div class="top_line" id="main_chart2"></div>
+                </div>
+
+            </div>
+        </div>
+        <div class="transaction_content_right">
+            <div class="transaction_right_positions">
+                <div class="position_top clear">
+                    <a href="javascript:;" class="pull-left active" role="button">持仓</a>
+                    <a href="javascript:;" class="pull-left" role="button">委托</a>
+                </div>
+                <div class="position_inner" id="whole_positions">
+                    <div class="position_inner_title">
+                        <ul class="first_child">
+                            <li>发行人代码</li>
+                            <li>发行人姓名</li>
+                            <li>持有时间(秒)</li>
+                            <li>现价(元)</li>
+                            <li>可卖时间(秒)</li>
+                            <li>成本(元)</li>
+                            <li>盈亏</li>
+                            <li>可用余额(元)</li>
+                            <li>市值(元)</li>
+                        </ul>
+                    </div>
+                    <div id="whole_positions_scroll" tabindex="5000" style="overflow: hidden; outline: none;">
+                        <div class="position_inner_title">
+                            <ul class="first_child">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3(秒)</li>
+                                <li>4(元)</li>
+                                <li>5(秒)</li>
+                                <li>6(元)</li>
+                                <li>7</li>
+                                <li>8(元)</li>
+                                <li>9(元)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="position_inner" id="entrust_contaniner">
+                    <div class="position_inner_title">
+                        <ul>
+                            <li>委托日期</li>
+                            <li>委托时间</li>
+                            <li>发行人代码</li>
+                            <li>发行人姓名</li>
+                            <li>操作</li>
+                            <li>状态</li>
+                            <li>委托数量</li>
+                            <li>委托价格</li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div id="entrust_contaniner_scroll" tabindex="5001" style="overflow: hidden; outline: none;">
+
+                        <div class="position_inner_title">
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                                <li>6</li>
+                                <li>7</li>
+                                <li>8</li>
+                                <li></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+   </div>
+    <!--委托-->
+    <div class="transaction_entrust" style="display: none">
+        <div class="entrust_nav">
+            <label>
+                <input class="entrust_nav_check check" checked="checked" type="checkbox"> <b class="check_button active"></b>
+                <span>只显示可撤委托</span>
+            </label>
+            <a href="javascript:;" class="button">撤单</a>
+        </div>
+        <div class="entrust_inner" id="nav_entrust_contaniner">
+            <div class="position_inner_title">
+                <ul>
+                    <li>委托日期</li>
+                    <li>委托时间</li>
+                    <li>发行人代码</li>
+                    <li>发行人姓名</li>
+                    <li>操作</li>
+                    <li>状态</li>
+                    <li>委托数量</li>
+                    <li>委托价格</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div id="nav_withdraw_contaniner_scroll"  style="overflow: hidden; outline: none;">
+                <!---->
+                <div class="position_inner_title">
+                    <ul>
+                        <li>a</li>
+                        <li>b</li>
+                        <li>c</li>
+                        <li>d</li>
+                        <li>e</li>
+                        <li>f</li>
+                        <li>d</li>
+                        <li>k</li>
+                        <li>j</li>
+                    </ul>
+                </div>
+                <!---->
+            </div>
+        </div>
+    </div>
+    <!--end-->
+</div>
+
+<div class="modal_open">
+    <dl class="clear">
+        <dt>
+            <img src="images/logo.png" alt="">
+        </dt>
+        <dd>
+            <span>提示</span>
+            <p>您的买入委托吴凡（123456）已提交</p>
+        </dd>
+    </dl>
+
+</div>
+
+<!-- 买入 -->
+<div class="modal buy_button fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form id="submitForm" class="required-validate"
+                      action="" method="POST"
+                      novalidate="novalidate">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            买入委托
+                            <button type="button" class="close" data-dismiss="modal">
+                                <span aria-hidden="true">×</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        <div class="panel-body">
+                            <p>
+                                发行人：
+                                <b></b>
+                                <input type="hidden" name="investorsCode"></p>
+                            <p>
+                                买入价格：
+                                <b></b>
+                                <input name="buyerOrderPrice" type="hidden"></p>
+                            <p>
+                                买入数量：
+                                <b></b>
+                                <label></label>
+                                <input name="buyerOrderNum" type="hidden"></p>
+                            <p>
+                                支付金额:
+                                <b></b>
+                                <span></span>
+                            </p>
+                            <div class="payment_password">
+                                <p>支付密码</p>
+                                <p class="input_password">
+                                    <input type="password" id="passwordBtn" maxlength="6" minlength="6" name="PayWord"
+                                           onkeyup="value=value.replace(/[^\d]/g,&#39;&#39;) ">
+                                    <input type="hidden" id="passwordHid" maxlength="6" minlength="6"
+                                           name="userPayWord">
+                                    <a href="####">忘记密码</a>
+                                </p>
+                            </div>
+                            <div class="agreement clear">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">本人已阅读并同意
+                                        <a href="####">《秒啊风险提示涵》</a><br>
+                                        <a href="####">《秒啊买者自负承诺函》</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" id="buyBtn" disabled="">确认支付</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+
+
+
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+    style="display: none;"></ul>
+<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+
+
+<div id="ascrail2000" class="nicescroll-rails"
+     style="width: 3px; z-index: auto; position: absolute; top: 156.797px; left: 1237px; height: 459px; cursor: default; opacity: 0; display: none;">
+    <div style="position: relative; float: right; width: 3px; border: 0px; border-radius: 5px; height: 0px; top: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails"
+     style="height: 3px; z-index: auto; top: 612.797px; left: 413px; position: absolute; cursor: default; opacity: 0; display: none;">
+    <div style="position: relative; top: 0px; height: 3px; border: 0px; border-radius: 5px; width: 0px; left: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2001" class="nicescroll-rails"
+     style="width: 3px; z-index: auto; position: absolute; top: 0px; left: -3px; height: 95px; cursor: default; display: none;">
+    <div style="position: relative; top: 0px; float: right; width: 3px; height: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2001-hr" class="nicescroll-rails"
+     style="height: 3px; z-index: auto; top: 92px; left: 0px; position: absolute; cursor: default; display: none;">
+    <div style="position: relative; top: 0px; height: 3px; width: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+</body>
+</html>
