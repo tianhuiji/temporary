@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 66.6667px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="description" content="Simple, easy, customisable autocomplete plugin (one more alternative).">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="20000">
+    <title>秒啊</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sjs_global.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/sjs_index.css">
+    <script>
+        (function () {
+            var u = navigator.userAgent, app = navigator.appVersion;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if (isAndroid) {
+                window.location = 'http://m.miaoa.com/';
+            } else if (isiOS) {
+                window.location = 'http://m.miaoa.com/';
+            }
+        })();
+    </script>
+    <script type="text/javascript">
+        //设置全局变量
+        var swidth = document.documentElement.clientWidth || document.body.clientWidth;
+        var sheight = document.documentElement.clientHeight || document.body.clientHeight;
+        document.documentElement.style.fontSize = swidth / 19.2 + 'px';
+    </script>
+    <link rel="stylesheet" href="####" id="layui_layer_csslayerlayercss">
+</head>
+<body>
+<div class="sjs_header clear">
+    <div class="sjs_header_inner">
+        <div class="sjs_header_left clear">
+            logo
+            <div class="search" id="ipt_search">
+                <input type="text" name="nope" id="nope" placeholder="搜索发行人/代码/全拼" maxlength="20"
+                       class="ui-autocomplete-input" autocomplete="off">
+            </div>
+        </div>
+        <div class="sjs_header_right clear">
+            <ul class="clear">
+                <li>
+                    <a id="pc_user_transaction"
+                       href="####">交易</a>
+                </li>
+                <li>
+                    <a id="pc_user_asset" href="####">资产管理</a>
+                </li>
+                <li>
+                    <a id="pc_order_list"
+                       href="####">我的发行人</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_load" href="####">登录</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_register"
+                       href="####">注册</a>
+                </li>
+                <li>
+                    <a href="####" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/default_avatar.png" alt="" class="uu_avtar" id="user_avatar"
+                             style="display: inline;"></a>
+                </li>
+                <li>
+                    <a id="release_btn" href="####" style="display: inline;">[退出]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- -->
+<div class="sjs_content clear">
+    <div class="sjs_content_left">
+
+
+        <!--增加分版块 -->
+
+        <div class="index_tabs">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" id="index_tab">
+                <li role="presentation" class="active"><a
+                        href="####" aria-controls="optional"
+                        role="tab" data-toggle="tab" class="tab_btn" data-type="0" aria-expanded="true">自选</a></li>
+                <li role="presentation" class=""><a href="####"
+                                                    aria-controls="investor" role="tab" data-toggle="tab"
+                                                    class="tab_btn" data-type="8" aria-expanded="false">企业家</a></li>
+                <li role="presentation" class=""><a
+                        href="####"
+                        aria-controls="entrepreneur" role="tab" data-toggle="tab" class="tab_btn" data-type="7"
+                        aria-expanded="false">创业者</a></li>
+                <li role="presentation" class=""><a
+                        href="####"
+                        aria-controls="onlineStar" role="tab" data-toggle="tab" class="tab_btn" data-type="5"
+                        aria-expanded="false">艺人</a></li>
+                <li role="presentation" class=""><a href="####"
+                                                    aria-controls="star" role="tab" data-toggle="tab" class="tab_btn"
+                                                    data-type="2" aria-expanded="false">牛人</a></li>
+            </ul>
+            <div class="row content_filter" id="filter_data" data-sort="3">
+                <div class="col-xs-2 filter_all">全部</div>
+                <div class="col-xs-4 text-right switch_btn col-xl-offset-1" id="time_type" data-click="1"
+                     style="color: rgb(0, 122, 255);">最新元/秒
+                </div>
+                <div class="col-xs-1 v_line text-center">|</div>
+                <div class="col-xs-1 text-center arrow_tags" id="time_type_arrow" data-click="0"></div>
+                <div class="col-xs-2 text-center switch_btn2" id="sort_type" data-click="1"
+                     style="color: rgb(0, 122, 255);">涨跌幅
+                </div>
+                <div class="col-xs-1 text-center arrow_tags" id="sort_type_arrow"
+                     style=""></div>
+            </div>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!-- 自选容器 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner active" id="optional" data-scrollflag="0"
+                     data-page="1" tabindex="5000" style="overflow: hidden; outline: none;">
+                    <div>
+                        <div class="main_data active">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 投资人 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner" id="investor" data-scrollflag="1" data-page="2"
+                     tabindex="5001" style="overflow: hidden; outline: none;">
+                    <div>
+                        <div class="main_data active">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>金星</b><br><b class="b2_investorsCode">800019</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.85</span><span class="span_last"><b>3.66%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>王思明</b><br><b class="b2_investorsCode">800003</b></dd>
+                            </dl>
+                            <span class="ie_height red">2.09</span><span class="span_last"><b>2.96%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>奉佑生</b><br><b class="b2_investorsCode">800017</b></dd>
+                            </dl>
+                            <span class="ie_height red">3.39</span><span class="span_last"><b>0.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>王赟明</b><br><b class="b2_investorsCode">800011</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.51</span><span class="span_last"><b>0.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨石头</b><br><b class="b2_investorsCode">800004</b></dd>
+                            </dl>
+                            <span class="ie_height green">15.29</span><span class="span_last"><b class="back_green">-0.33%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>史晓燕</b><br><b class="b2_investorsCode">800006</b></dd>
+                            </dl>
+                            <span class="ie_height green">2.07</span><span class="span_last"><b class="back_green">-0.96%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>梁静</b><br><b class="b2_investorsCode">800009</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.80</span><span class="span_last"><b class="back_green">-1.23%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>文洁</b><br><b class="b2_investorsCode">800010</b></dd>
+                            </dl>
+                            <span class="ie_height green">1.45</span><span class="span_last"><b class="back_green">-2.03%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>陈昊</b><br><b class="b2_investorsCode">800007</b></dd>
+                            </dl>
+                            <span class="ie_height green">2.05</span><span class="span_last"><b class="back_green">-2.38%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>姜华</b><br><b class="b2_investorsCode">800005</b></dd>
+                            </dl>
+                            <span class="ie_height green">2.13</span><span class="span_last"><b class="back_green">-2.74%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>冯军</b><br><b class="b2_investorsCode">800008</b></dd>
+                            </dl>
+                            <span class="ie_height green">3.70</span><span class="span_last"><b class="back_green">-5.85%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>朱晔</b><br><b class="b2_investorsCode">800018</b></dd>
+                            </dl>
+                            <span class="ie_height green">7.13</span><span class="span_last"><b class="back_green">-8.24%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>慕岩</b><br><b class="b2_investorsCode">800001</b></dd>
+                            </dl>
+                            <span class="ie_height green">7.59</span><span class="span_last"><b class="back_green">-9.96%</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 企业家 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner" id="entrepreneur" data-scrollflag="1"
+                     data-page="2" tabindex="5002" style="overflow: hidden; outline: none;">
+                    <div>
+                        <div class="main_data active">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>刘若聪</b><br><b class="b2_investorsCode">700030</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b>100.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>晏天际</b><br><b class="b2_investorsCode">700025</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.17</span><span class="span_last"><b>13.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>赵晓朴</b><br><b class="b2_investorsCode">700021</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.28</span><span class="span_last"><b>12.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>李鹏</b><br><b class="b2_investorsCode">700024</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.19</span><span class="span_last"><b>11.76%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>娄池</b><br><b class="b2_investorsCode">700023</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.21</span><span class="span_last"><b>10.53%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许京凯</b><br><b class="b2_investorsCode">700022</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.23</span><span class="span_last"><b>9.52%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨泽熙</b><br><b class="b2_investorsCode">700006</b></dd>
+                            </dl>
+                            <span class="ie_height red">1.31</span><span class="span_last"><b>9.17%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨帆</b><br><b class="b2_investorsCode">700029</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.12</span><span class="span_last"><b>9.09%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>孙传涛</b><br><b class="b2_investorsCode">700028</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>8.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>小关</b><br><b class="b2_investorsCode">700027</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.14</span><span class="span_last"><b>7.69%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>武星宇</b><br><b class="b2_investorsCode">700026</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.15</span><span class="span_last"><b>7.14%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>李勃</b><br><b class="b2_investorsCode">700020</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.30</span><span class="span_last"><b>7.14%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>李志刚</b><br><b class="b2_investorsCode">700018</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.30</span><span class="span_last"><b>3.45%</b></span></div>
+                    </div>
+                </div>
+                <!-- 网红 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner" id="onlineStar" data-scrollflag="1"
+                     data-page="2" tabindex="5003" style="overflow: hidden; outline: none;">
+                    <div>
+                        <div class="main_data active">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>刘凯菲</b><br><b class="b2_investorsCode">500036</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>30.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>高语芯（无涨跌限制）</b><br><b class="b2_investorsCode">500006</b></dd>
+                            </dl>
+                            <span class="ie_height red">1.50</span><span class="span_last"><b>16.28%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>元气美战萌大大</b><br><b class="b2_investorsCode">500026</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.28</span><span class="span_last"><b>12.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>唐亦静</b><br><b class="b2_investorsCode">500035</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.11</span><span class="span_last"><b>10.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>陈潇</b><br><b class="b2_investorsCode">500029</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.47</span><span class="span_last"><b>9.30%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>武凌</b><br><b class="b2_investorsCode">500031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>8.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>隆莎</b><br><b class="b2_investorsCode">500033</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>8.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>韩欣茹</b><br><b class="b2_investorsCode">500030</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>8.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>周子诺</b><br><b class="b2_investorsCode">500032</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.13</span><span class="span_last"><b>8.33%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>刘心</b><br><b class="b2_investorsCode">500009</b></dd>
+                            </dl>
+                            <span class="ie_height red">1.44</span><span class="span_last"><b>8.27%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>洪冰瑶</b><br><b class="b2_investorsCode">500003</b></dd>
+                            </dl>
+                            <span class="ie_height red">1.90</span><span class="span_last"><b>5.56%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>冯璧晴</b><br><b class="b2_investorsCode">500024</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.50</span><span class="span_last"><b>2.04%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>靳庆玲 （无涨跌限制）</b><br><b class="b2_investorsCode">500019</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.66</span><span class="span_last"><b>1.54%</b></span></div>
+                    </div>
+                </div>
+                <!-- 明星 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner" id="star" data-scrollflag="0" data-page="1"
+                     tabindex="5004" style="overflow: hidden; outline: none;">
+                    <div>
+                        <div class="main_data active">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>于大宝</b><br><b class="b2_investorsCode">200005</b></dd>
+                            </dl>
+                            <span class="ie_height red">1.11</span><span class="span_last"><b>9.90%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>卢菲菲</b><br><b class="b2_investorsCode">200002</b></dd>
+                            </dl>
+                            <span class="ie_height red">0.99</span><span class="span_last"><b>0.00%</b></span></div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>孙伟</b><br><b class="b2_investorsCode">200003</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.72</span><span class="span_last"><b class="back_green">-4.00%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>逯爱岩</b><br><b class="b2_investorsCode">200007</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.47</span><span class="span_last"><b class="back_green">-9.62%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>陈秋实</b><br><b class="b2_investorsCode">200008</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.82</span><span class="span_last"><b class="back_green">-9.89%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>灵药LoveLing</b><br><b class="b2_investorsCode">200006</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.72</span><span class="span_last"><b class="back_green">-10.00%</b></span>
+                        </div>
+                        <div class="main_data">
+                            <dl>
+                                <dt><img src="images/edit.png"></dt>
+                                <dd><b>行走40国</b><br><b class="b2_investorsCode">200004</b></dd>
+                            </dl>
+                            <span class="ie_height green">0.52</span><span class="span_last"><b class="back_green">-10.34%</b></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- <div class="sjs_content_top clear">
+            <span>全部</span>
+            <span>
+                    最新价&nbsp;
+                    <img src="img/sjs_index/zang.png" alt=""></span>
+            <span>
+                    涨跌幅&nbsp;
+                    <img src="img/sjs_index/zang.png" alt=""></span>
+        </div>
+        <div class="sjs_content_inner" id="content_whole_inner"></div> -->
+    </div>
+
+    <div class="sjs_content_center clear" id="personal_content_center" tabindex=""
+         style="">
+        <div class="sjs_right_left_top clear">
+            <div class="sjs_top_left"><span style="color: rgb(204, 204, 204);">申购中</span><br><b
+                    style="color: rgb(204, 204, 204);">0.00</b><b style="padding-left: 10%; color: rgb(204, 204, 204);">0.00%</b>
+            </div>
+            <ul class="clear">
+                <li>最高：<i style="color:#ccc">0.00</i></li>
+                <li>最低：<i style="color:#ccc">0.00</i></li>
+                <li>今开：<i style="color:#ccc">0.00</i></li>
+                <li>换手：<i style="color:#ccc">0.00%</i></li>
+                <li style="color: rgb(204, 204, 204);">均价：0.00元/秒</li>
+                <li>最新：<i style="color: rgb(204, 204, 204);">0.00元/小时</i></li>
+                <li>额：<i style="color:#ccc">0.0万元</i></li>
+                <li>
+                    <button type="button">交易</button>
+                </li>
+            </ul>
+        </div>
+        <div class="sjs_right_left_center">
+            <div style="height: 200px; background-color: #fff;">
+                图表
+            </div>
+            <div class="sjs_content_foot">
+                <div class="personal_div personal_div1">
+                    <div class="clear personal_div_time">
+                        <div class="pull-left"><h1>龙虎榜</h1><a
+                                href="####">/更多</a></div>
+                        <div class="pull-right"><img src="images/default_avatar.png"></div>
+                    </div>
+                    <div class="personal_Worth_box">
+                        <div class="personal_div_time"><h1>秒啊身价</h1></div>
+                        <p><span>身价</span><b>0.00万元</b></p>
+                        <p>身价计算方式：<br>(男80 ,女85-现在的年龄)x365x24x3600x昨收+今年剩下的天数x24x3600x昨收</p>
+                        <p>注明：<br> 以社会的平均寿命，参考发行人每一秒的价格及当前年龄计算得出，仅供参考</p></div>
+                    <div class="personal_brief_box">
+                        <div class="personal_div_time"><h1>个人简介</h1></div>
+                        <p><span>中文名</span><b>许豪杰</b></p>
+                        <p><span>国籍</span><b>中国</b></p>
+                        <p><span>民族</span><b>汉族</b></p>
+                        <p><span>出生日期</span><b>1990-03-22</b></p>
+                        <p><span>职业</span><b>自媒体短视频原创作者</b></p>
+                        <p><span>毕业院校</span><b>上海工艺美术职业学院</b></p></div>
+                    <div class="personal_about_box">
+                        <div class="personal_div_time"><h1>主要经历</h1></div>
+                        <div class="about"><p>2013年参加安徽卫视《超级演说家》获得全国季军。
+                        </p>
+                            <p>
+                            </p>
+                            <p>2013、14年青年代表身份参与录制《开讲啦》，演讲嘉宾邓紫棋，建筑师王澍。
+                            </p>
+                            <p>
+                            </p>
+                            <p>2014年出版首部长篇小说《离下课，还有十秒》。
+                            </p>
+                            <p>
+                            </p>
+                            <p>2014年参与录制《头脑风暴》之《90后的婚姻经济学》、《90后财富观》。
+                            </p>
+                            <p>
+                            </p>
+                            <p>2015年受邀上海东广新闻台 FM90.9 担任特邀嘉宾评委
+                            </p>
+                            <p>
+                            </p>
+                            <p>2016年开通【许豪杰】微信公众号，开始自媒体原创短视频创业。
+                            </p>
+                            <p>
+                            </p>
+                            <p>2016年参与录制云南卫视《哈罗90后》《新媒体联播》</p></div>
+                    </div>
+                    <div class="personal_about_box">
+                        <div class="personal_div_time"><h1>主要成就</h1></div>
+                        <div class="about"><p>
+                            获得《超级演说家》全国季军之后，许豪杰认为演讲只是他表达方式的一种，是一种脱口秀的形式，同时他也希望通过小说、搞笑短视频，等形式，传递更多90后独特的想法和观点。
+                        </p>
+                            <p>
+                            </p>
+                            <p>
+                                无论是小说还是视频，许豪杰都喜欢通过一种讽刺幽默的形式来表达观点，所以所创作的《创业之神》周更短视频，更是直戳互联网痛点，幽默之中又透露着对当代互联网泡沫的一种讽刺和思考，快节奏的视频风格又很受年轻人喜欢，被网友调侃为“一本正经胡说八道的许豪杰”。
+                            </p>
+                            <p>
+                            </p>
+                            <p>许豪杰也认为，在这个时代，做出更好的内容，才是最重要的。所以比起“网红”这个词，他更喜欢“内容创业者”这个标签。
+                            </p>
+                            <p>
+                            </p>
+                            <p>在“购买的时间”里，许豪杰以在《超级演说家》中获奖的经验，可以与让你在最短的时间里，学会一些演讲的技巧，无论是在公司业务演讲还是表演讲段子上，都可以收获到很多许式幽默。
+                            </p>
+                            <p>
+                            </p>
+                            <p>在新媒体方面，许豪杰也可以知无不言地传授一些做公众号的经验，制作短视频的经验，让你了解现在的年轻人喜欢的新媒体，是什么样子，年轻人的思维方式，又是怎么样的。</p></div>
+                    </div>
+                    <div class="personal_about_box">
+                        <div class="personal_div_time"><h1>时间使用范围</h1></div>
+                        <div class="about"><p>许豪杰时间使用仅限以下几种情况：（常驻地：上海）
+                        </p>
+                            <p>
+                            </p>
+                            <p>
+                                公益活动；主持活动；商业咨询诊断；演讲授课；演讲分享；参加论坛；参加会议；参加沙龙；参加酒会；健身；录制节目；出席庆典开业；剪彩；合影；陪伴购物；午餐晚餐；下午茶；唱歌；旅游；视频交流；语音通话；微博转发；微信朋友圈转发；
+                            </p>
+                            <p>
+                            </p>
+                            <p>时间使用期间，双方必须保证行为合理合法。</p></div>
+                    </div>
+                    <div class="seamless_rolling">
+                        <div class="seamless_inner">
+                            <img class="rolling_img1" width="100" height="100" src="images/edit.png">
+                            <img  class="rolling_img2" width="100" height="100" src="images/edit.png">
+                            <img class="rolling_img3" width="100" height="100"  src="images/edit.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="personal_div personal_div2"></div>
+                <div class="personal_div personal_div3"></div>
+                <div class="personal_div personal_div4"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sjs_content_right  clear" tabindex="" style="position: relative; ">
+        <div class="sjs_right_r_top sjs_right_r_center">
+            <h3>卖盘五档</h3>
+            <ul id="sjs_right_sell">
+                <li><b>5</b><span>…</span><i>…</i></li>
+                <li><b>4</b><span>…</span><i>…</i></li>
+                <li><b>3</b><span>…</span><i>…</i></li>
+                <li><b>2</b><span>…</span><i>…</i></li>
+                <li><b>1</b><span>…</span><i>…</i></li>
+            </ul>
+        </div>
+        <div class="sjs_right_r_top">
+            <h3>买盘五档</h3>
+            <ul id="sjs_right_buy">
+                <li><b>1</b><span style="color: rgb(255, 45, 65);">0.10</span><i style="color: rgb(255, 45, 65);">864000+</i>
+                </li>
+                <li><b>2</b><span>…</span><i>…</i></li>
+                <li><b>3</b><span>…</span><i>…</i></li>
+                <li><b>4</b><span>…</span><i>…</i></li>
+                <li><b>5</b><span>…</span><i>…</i></li>
+            </ul>
+        </div>
+        <div class="sjs_right_r_foot">
+            <div class="foot_top">
+                <span>时间</span>
+                <span>价格</span>
+                <span>购买时长</span>
+            </div>
+            <div id="buy_sell_time_contaniner" tabindex="5005" style="overflow: hidden; outline: none;">
+                <table class="table" id="buy_sell_time">
+                    <tbody>
+                    <tr>
+                        <td>…</td>
+                        <td class="color_red">…</td>
+                        <td class="color_yellow">…</td>
+                    </tr>
+                    <tr>
+                        <td>…</td>
+                        <td class="color_red">…</td>
+                        <td class="color_yellow">…</td>
+                    </tr>
+                    <tr>
+                        <td>…</td>
+                        <td class="color_red">…</td>
+                        <td class="color_yellow">…</td>
+                    </tr>
+                    <tr>
+                        <td>…</td>
+                        <td class="color_red">…</td>
+                        <td class="color_yellow">…</td>
+                    </tr>
+                    <tr>
+                        <td>…</td>
+                        <td class="color_red">…</td>
+                        <td class="color_yellow">…</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="ascrail2005" class="nicescroll-rails"
+             style="width: 2px; z-index: auto; cursor: default; position: absolute; top: 425.641px; left: 247.078px; height: 186px; display: none;">
+            <div style="position: relative; top: 0px; float: right; width: 2px; height: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+        </div>
+        <div id="ascrail2005-hr" class="nicescroll-rails"
+             style="height: 2px; z-index: auto; top: 609.641px; left: 27.0781px; position: absolute; cursor: default; display: none;">
+            <div style="position: relative; top: 0px; height: 2px; width: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+        </div>
+    </div>
+
+</div>
+<!-- 新添加的低栏 -->
+<div class="index_foot row">
+    <div class="col-xs-6 text-center foot_left">
+        <ul class="foot_tag_ul">
+            <li class="foot_tag_li">
+                <ul class="foot_tags">
+                    <li>手机应用</li>
+                    <li class="v_line">|</li>
+                    <!-- 					<li>意见反馈</li>
+                    <li class="v_line">|</li> -->
+                    <li>联系我们</li>
+                    <li class="v_line">|</li>
+                    <li>关注我们</li>
+                    <li class="wechat">
+                        <div class="wechat_content">
+                            <div class="w_c_left">
+
+                            </div>
+                            <div class="w_c_right">
+                                <p>扫描左侧二维码或搜 索秒啊微信公众号： 秒啊时交所</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="xl_logo" id="xl_logo"></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-6 text-center foot_right">
+        <ul class="foot_tag_ul">
+            <li class="foot_tag_li">
+                <ul class="foot_tags">
+                    <li>秒啊（北京）科技有限公司</li>
+                    <li class="v_line">|</li>
+                    <li>京ICP备09111452号-1</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+<div id="ascrail2000" class="nicescroll-rails"
+     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 0px; left: 259px; height: 452px; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 0px; height: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails"
+     style="height: 0px; z-index: auto; top: 452px; left: 0px; position: absolute; cursor: default; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 0px; width: 0px; border: 0px; border-radius: 5px; left: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2001" class="nicescroll-rails"
+     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 0px; height: 170px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2001-hr" class="nicescroll-rails"
+     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2002" class="nicescroll-rails"
+     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 0px; height: 170px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2002-hr" class="nicescroll-rails"
+     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2003" class="nicescroll-rails"
+     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 0px; height: 167px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2003-hr" class="nicescroll-rails"
+     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2004" class="nicescroll-rails"
+     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 0px; height: 284px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2004-hr" class="nicescroll-rails"
+     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2006" class="nicescroll-rails"
+     style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 55.3906px; left: 1021px; height: 465px; display: block; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 3px; height: 144px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2006-hr" class="nicescroll-rails"
+     style="height: 3px; z-index: auto; top: 517.391px; left: 256px; position: absolute; cursor: default; display: none; opacity: 0; width: 765px;">
+    <div style="position: relative; top: 0px; height: 3px; width: 768px; border: 0px; border-radius: 5px; left: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2007" class="nicescroll-rails"
+     style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 55.3906px; left: 1277px; height: 465px; opacity: 0;">
+    <div style="position: relative; top: 0px; float: right; width: 3px; height: 412px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2007-hr" class="nicescroll-rails"
+     style="height: 3px; z-index: auto; top: 517.391px; left: 1024px; position: absolute; cursor: default; display: none; width: 253px; opacity: 0;">
+    <div style="position: relative; top: 0px; height: 3px; width: 256px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
+</div>
+<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
+    style="display: none;"></ul>
+<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
+</body>
+</html>
