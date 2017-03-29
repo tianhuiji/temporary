@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 66.6667px;">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>秒啊</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sjs_global.css">
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/sjs_wallet.css">
+    <link rel="stylesheet" href="css/layer.css" >
+</head>
+<body>
+<div class="sjs_header clear">
+    <div class="sjs_header_inner">
+        <div class="sjs_header_left clear">
+            logo
+        </div>
+        <div class="sjs_header_right clear">
+            <ul class="clear">
+                <li>
+                    <a id="pc_user_transaction"
+                       href="####">交易</a>
+                </li>
+                <li class="active">
+                    <a id="pc_user_asset" href="####">资产管理</a>
+                </li>
+                <li>
+                    <a id="pc_order_list" href="####">我的发行人</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_load" href="####">登录</a>
+                </li>
+                <li style="display: none;">
+                    <a id="pc_user_register"
+                       href="####">注册</a>
+                </li>
+                <li>
+                    <a href="####" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="images/default_avatar.png" alt="" class="uu_avtar" id="user_avatar"
+                             style="display: inline;"></a>
+                </li>
+                <li>
+                    <a id="release_btn" href="####" style="display: inline;">[退出]</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- tab-->
+<div class="transaction_tab">
+    <div class="transaction_tab_inner dropup">
+        <a href="####" class="active" role="button">我的钱包</a>
+        <a href="####" role="button">账户设置</a>
+    </div>
+</div>
+<!--我的钱包-->
+<div class="wallet_content" style="display: block;">
+    <div class="wallet_content_center">
+
+        <div class="my_money whole_tab" style="">
+            <div class="my_money_top">
+                <dl class="clear">
+                    <dt>
+                        <img id="useravatar" class="img-circle" src="images/default_avatar.png"></dt>
+                    <dd>
+                        <label for="username">
+                            <input id="username" name="dd" type="text" onkeyup="checkLength(this)" value="请设置用户名"
+                                   size="12">
+                            <img src="images/edit.png" alt=""></label>
+                        <span id="char">12</span>
+                        <br>
+                        <span id="asset_people">投资人数：0人</span>
+                        <span id="time_position">资产总额：0.00元</span>
+                        <span>总提现：0.00元</span><span>总充值：0.00元</span><span>总盈亏：0.00元</span></dd>
+                </dl>
+            </div>
+            <div class="my_money_center">
+                <h4>我的余额</h4> <b id="mine_money">0.00元</b>
+                <!--<a id="rechargeBtn" href="####">充值</a>-->
+                <a id="atmBtn" href="####">提现</a>
+            </div>
+            <!-- 交易记录 -->
+            <div class="my_money_foot">
+                <p class="bg-info">交易记录</p>
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td>创建时间</td>
+                        <td>名称</td>
+                        <td>金额</td>
+                        <td>状态</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="table_parent" id="table_parent" tabindex="5000" style="overflow: hidden; outline: none;">
+                    <table class="table" id="transaction_record">
+                        <tr>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                            <td>aa</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!--end-->
+<!--账户设置-->
+<div class="asset_content" style="display: none;">
+    <div class="asset_content_center">
+        <div class="asset_new_old">
+            <div class="asset_new asset_admin" style="display: block;">
+                <div class="Choice clear" style="    height: 100px;     line-height: 100px;    padding: 0px 30px; background-color: #fff;">
+                    <p class="pull-left">尚未设置支付密码</p>
+                    <a class="pull-right" href="####" type="button">立即重置</a>
+                </div>
+            </div>
+            <div class="asset_old asset_admin" style="display: none; ">
+                <div class="Choice clear" style="    height: 100px;     line-height: 100px;    padding: 0px 30px; background-color: #fff;">
+                    <p class="pull-left">我忘记密码了</p>
+                    <a class="pull-right" href="####" type="button">立即重置</a>
+                </div>
+                <div class="Choice clear" style="    height: 100px;     line-height: 100px;    padding: 0px 30px; background-color: #fff;">
+                    <p class="pull-left">我记得原密码</p>
+                    <a class="pull-right" href="####" type="button">立即重置</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--账户设置-end-->
+
+
+<script type="text/javascript" src="./秒啊_files/jquery.min.js"></script>
+<script type="text/javascript" src="./秒啊_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./秒啊_files/pageload.js"></script>
+<script type="text/javascript" src="./秒啊_files/layer.js"></script>
+<script type="text/javascript" src="./秒啊_files/sjs_landing.js"></script>
+<script type="text/javascript" src="./秒啊_files/sjs_wallet.js"></script>
+<script type="text/javascript" src="./秒啊_files/jquery.nicescroll.js"></script>
+<div id="ascrail2000" class="nicescroll-rails"
+     style="width: 3px; z-index: auto; position: absolute; top: 428.813px; left: 1237px; height: 247px; cursor: default; opacity: 1; display: none;">
+    <div style="position: relative; float: right; width: 3px; border: 0px; border-radius: 5px; height: 0px; top: 0px; background-color: rgb(204, 204, 204); background-clip: padding-box;"></div>
+</div>
+<div id="ascrail2000-hr" class="nicescroll-rails"
+     style="height: 3px; z-index: auto; top: 672.813px; left: 40px; position: absolute; cursor: default; opacity: 1; display: none;">
+    <div style="position: relative; top: 0px; height: 3px; border: 0px; border-radius: 5px; width: 0px; left: 0px; background-color: rgb(204, 204, 204); background-clip: padding-box;"></div>
+</div>
+</body>
+</html>
