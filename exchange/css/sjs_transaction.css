@@ -187,7 +187,7 @@ body{
 #price_add,#time_add,#purchase_sell_add,#time_sell_add{
 	width:100%;
 	height:12px;
-	/*background: url('../img/transaction/add.png') no-repeat;*/
+	background: url('../images/add.png') no-repeat;
 	border: none;
 	background-position: center;
 	outline: none;
@@ -195,7 +195,7 @@ body{
 #price_remove,#time_remove,#time_sell_remove,#purchase_sell_remove{
 	width:100%;
 	height:11px;
-	/*background: url('../img/transaction/remove.png') no-repeat;*/
+	background: url('../images/remove.png') no-repeat;
 	border: none;
 	background-position: center;
 	border-top: 1px solid #e5e5e5;

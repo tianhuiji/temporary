@@ -25,12 +25,7 @@
             }
         })();
     </script>
-    <!--<script type="text/javascript">-->
-        <!--//设置全局变量-->
-        <!--var swidth = document.documentElement.clientWidth || document.body.clientWidth;-->
-        <!--var sheight = document.documentElement.clientHeight || document.body.clientHeight;-->
-        <!--document.documentElement.style.fontSize = swidth / 19.2 + 'px';-->
-    <!--</script>-->
+
     <!--图表-->
     <script src="js/echarts.js"></script>
     <!--图表end-->
@@ -79,6 +74,7 @@
 </div>
 <!-- -->
 <div class="sjs_content clear">
+    <!--left-->
     <div class="sjs_content_left">
 
 
@@ -88,24 +84,24 @@
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist" id="index_tab">
-                <li role="presentation" class="active"><a
-                        href="####" aria-controls="optional"
-                        role="tab" data-toggle="tab" class="tab_btn" data-type="0" aria-expanded="true">自选</a></li>
-                <li role="presentation" class=""><a href="####"
-                                                    aria-controls="investor" role="tab" data-toggle="tab"
-                                                    class="tab_btn" data-type="8" aria-expanded="false">企业家</a></li>
-                <li role="presentation" class=""><a
-                        href="####"
-                        aria-controls="entrepreneur" role="tab" data-toggle="tab" class="tab_btn" data-type="7"
-                        aria-expanded="false">创业者</a></li>
-                <li role="presentation" class=""><a
-                        href="####"
-                        aria-controls="onlineStar" role="tab" data-toggle="tab" class="tab_btn" data-type="5"
-                        aria-expanded="false">艺人</a></li>
-                <li role="presentation" class=""><a href="####"
-                                                    aria-controls="star" role="tab" data-toggle="tab" class="tab_btn"
-                                                    data-type="2" aria-expanded="false">牛人</a></li>
+                <li role="presentation" class="active">
+                    <a href="####" aria-controls="optional" role="tab" data-toggle="tab" class="tab_btn" data-type="0" aria-expanded="true">自选</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="####"   aria-controls="investor" role="tab" data-toggle="tab"   class="tab_btn" data-type="8" aria-expanded="false">企业家</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="####"  aria-controls="entrepreneur" role="tab" data-toggle="tab" class="tab_btn" data-type="7"
+                        aria-expanded="false">创业者</a>
+                </li>
+                <li role="presentation" class="">
+                    <a   href="####"  aria-controls="onlineStar" role="tab" data-toggle="tab" class="tab_btn" data-type="5"  aria-expanded="false">艺人</a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="####"  aria-controls="star" role="tab" data-toggle="tab" class="tab_btn"  data-type="2" aria-expanded="false">牛人</a>
+                </li>
             </ul>
+            <!--小标题-->
             <div class="row content_filter" id="filter_data" data-sort="3">
                 <div class="col-xs-2 filter_all">全部</div>
                 <div class="col-xs-4 text-right switch_btn col-xl-offset-1" id="time_type" data-click="1"
@@ -119,12 +115,13 @@
                 <div class="col-xs-1 text-center arrow_tags" id="sort_type_arrow"
                      style=""></div>
             </div>
+            <!--小标题-end-->
 
-            <!-- Tab panes -->
+            <!-- Tab 选项卡 -->
             <div class="tab-content">
 
                 <!-- 自选容器 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner active" id="optional" data-scrollflag="0"
+                <div role="tabpanel" class="tab-pane sjs_content_inner " id="optional" data-scrollflag="0"
                      data-page="1" tabindex="5000" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -143,9 +140,8 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- 投资人 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner" id="investor" data-scrollflag="1" data-page="2"
+                <!-- 企业家 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner " id="investor" data-scrollflag="1" data-page="2"
                      tabindex="5001" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -252,8 +248,8 @@
                     </div>
                 </div>
 
-                <!-- 企业家 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner" id="entrepreneur" data-scrollflag="1"
+                <!-- 创业者 -->
+                <div role="tabpanel" class="tab-pane sjs_content_inner active" id="entrepreneur" data-scrollflag="1"
                      data-page="2" tabindex="5002" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -350,7 +346,7 @@
                             <span class="ie_height red">0.30</span><span class="span_last"><b>3.45%</b></span></div>
                     </div>
                 </div>
-                <!-- 网红 -->
+                <!-- 艺人 -->
                 <div role="tabpanel" class="tab-pane sjs_content_inner" id="onlineStar" data-scrollflag="1"
                      data-page="2" tabindex="5003" style="overflow: hidden; outline: none;">
                     <div>
@@ -448,7 +444,7 @@
                             <span class="ie_height red">0.66</span><span class="span_last"><b>1.54%</b></span></div>
                     </div>
                 </div>
-                <!-- 明星 -->
+                <!-- 牛人 -->
                 <div role="tabpanel" class="tab-pane sjs_content_inner" id="star" data-scrollflag="0" data-page="1"
                      tabindex="5004" style="overflow: hidden; outline: none;">
                     <div>
@@ -516,12 +512,12 @@
                     </div>
                 </div>
             </div>
-
+            <!--选项卡-end-->
         </div>
 
 
     </div>
-
+    <!--center-->
     <div class="sjs_content_center clear" id="personal_content_center" tabindex=""
          style="">
         <div class="sjs_right_left_top clear">
@@ -645,7 +641,7 @@
             </div>
         </div>
     </div>
-
+    <!--right-->
     <div class="sjs_content_right  clear" tabindex="" style="position: relative; ">
         <div class="sjs_right_r_top sjs_right_r_center">
             <h3>卖盘五档</h3>
@@ -715,9 +711,9 @@
             <div style="position: relative; top: 0px; height: 2px; width: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
         </div>
     </div>
-
+    <!--end-->
 </div>
-<!-- 新添加的低栏 -->
+<!-- footer -->
 <div class="index_foot row">
     <div class="col-xs-6 text-center foot_left">
         <ul class="foot_tag_ul">
@@ -757,69 +753,8 @@
         </ul>
     </div>
 </div>
+<!--footer-end-->
 
-
-
-
-<div id="ascrail2000" class="nicescroll-rails"
-     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 0px; left: 259px; height: 452px; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 0px; height: 0px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2000-hr" class="nicescroll-rails"
-     style="height: 0px; z-index: auto; top: 452px; left: 0px; position: absolute; cursor: default; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 0px; width: 0px; border: 0px; border-radius: 5px; left: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2001" class="nicescroll-rails"
-     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 0px; height: 170px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2001-hr" class="nicescroll-rails"
-     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2002" class="nicescroll-rails"
-     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 0px; height: 170px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2002-hr" class="nicescroll-rails"
-     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2003" class="nicescroll-rails"
-     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 0px; height: 167px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2003-hr" class="nicescroll-rails"
-     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2004" class="nicescroll-rails"
-     style="width: 0px; z-index: auto; cursor: default; position: absolute; top: 130.797px; left: 259px; height: 452px; display: none; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 0px; height: 284px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2004-hr" class="nicescroll-rails"
-     style="height: 0px; z-index: auto; top: 582.797px; left: 0px; position: absolute; cursor: default; display: none; width: 259px; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 0px; width: 259px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2006" class="nicescroll-rails"
-     style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 55.3906px; left: 1021px; height: 465px; display: block; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 3px; height: 144px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2006-hr" class="nicescroll-rails"
-     style="height: 3px; z-index: auto; top: 517.391px; left: 256px; position: absolute; cursor: default; display: none; opacity: 0; width: 765px;">
-    <div style="position: relative; top: 0px; height: 3px; width: 768px; border: 0px; border-radius: 5px; left: 0px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2007" class="nicescroll-rails"
-     style="width: 3px; z-index: auto; cursor: default; position: absolute; top: 55.3906px; left: 1277px; height: 465px; opacity: 0;">
-    <div style="position: relative; top: 0px; float: right; width: 3px; height: 412px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<div id="ascrail2007-hr" class="nicescroll-rails"
-     style="height: 3px; z-index: auto; top: 517.391px; left: 1024px; position: absolute; cursor: default; display: none; width: 253px; opacity: 0;">
-    <div style="position: relative; top: 0px; height: 3px; width: 256px; border: 0px; border-radius: 5px; background-color: rgb(153, 153, 153); background-clip: padding-box;"></div>
-</div>
-<ul id="ui-id-1" tabindex="0" class="ui-menu ui-widget ui-widget-content ui-autocomplete ui-front"
-    style="display: none;"></ul>
-<div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div>
 <!--图表配置-->
 <script type="text/javascript">
     var dom = document.getElementById("container");
