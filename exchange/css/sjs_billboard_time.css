@@ -1,0 +1,61 @@
+body,html{
+	overflow: inherit;
+	overflow-x: hidden;
+}
+/**/
+.m_content_top{
+	height:2.05rem;
+	width:19.2rem;
+	background: url("../images/1.png") no-repeat center;
+	background-size: cover;
+	position: relative;
+}
+.m_content_top_inner,.m_content_center{
+	width:12rem;
+	margin: 0 auto;
+}
+.m_content_top_inner ol{
+	position: absolute;
+	bottom:0;
+}
+.m_content_top_inner li{
+	display: inline-block;
+	line-height:0.45rem;
+	margin:0 0.1rem;
+	clear: both;
+}
+.m_content_top_inner li a{
+	color: #fff;
+	font-size: 0.14rem;
+}
+.m_content_top_inner li.active{
+	border-bottom:2px solid #007AFF;
+}
+.m_content_top_inner li.active a{
+	color: #007AFF;
+}
+.m_content_center li{
+	padding:0.18rem 0;
+	border-bottom: 1px solid #e5e5e5;
+	overflow: hidden;
+	line-height:0.78rem;
+}
+
+.m_content_center i{
+	font-size: 0.14rem;
+	margin:0 0.1rem;
+}
+.m_content_center img{
+	width:0.78rem;
+	height:0.78rem;
+	margin:0 0.2rem;
+}
+
+.u_kong{
+	display: none;
+}
+.u_kong img {
+	width: 1.64rem;
+	height: 1.92rem;
+	margin-top:20%;
+}
