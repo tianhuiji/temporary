@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="http://m.miaoa.com/stylesheets/main_1.css">
     <script src="js/jquery.min.js"></script>
 
-    <style>body {
+    <style>
+        body {
         font-size: 2.6rem;
         text-align: left;
         background: #1E1E26;
@@ -212,27 +213,37 @@
         text-align: center;
         padding: 3rem;
     }
+        #main>.tab>div.active>div{
+            color: rgb(0, 122, 255);
+            border-style: none none solid;
+            border-bottom-width: 0.4rem;
+            border-bottom-color: rgb(0, 122, 255);
+        }
+        #tab3{
+            color: #999999;
+            border: none;
+        }
     </style>
 </head>
 <body>
 <div id="main" style="background: #1E1E26;" class="pageindex">
-    <div class="tab">
-        <div class="tabItem">
-            <div id="tab1"  style="color: rgb(153, 153, 153); border: none;">买入日榜</div>
+    <div class="tab" data-type="waptitle">
+        <div class="tabItem active">
+            <div id="tab1"  >买入日榜</div>
         </div>
         <div class="tabItem">
-            <div id="tab2"  style="color: rgb(153, 153, 153); border: none;">卖出日榜</div>
+            <div id="tab2" >卖出日榜</div>
         </div>
-        <div class="tabItem">
-            <div id="tab3" 
-                 style="color: rgb(0, 122, 255); border-style: none none solid; border-bottom-width: 0.4rem; border-bottom-color: rgb(0, 122, 255);">
+        <div class="tabItem ">
+            <div id="tab3">
                 累计总榜
             </div>
         </div>
     </div>
     <!--数据列表-->
-    <div id="wrapper">
-        <ul id="events-list">
+    <div id="wrapper" data-type="waptable-box">
+        <!--1-->
+        <ul>
             <li>
                 <div class="top">
                     <div class="topLeft">
@@ -242,7 +253,7 @@
                         <div class="imgBottom"><img src="js/ic_No1Text.png"></div>
                     </div>
                     <div class="topRight">
-                        <div class="rightText1" style="color:#FF2D41">大话西游玩家</div>
+                        <div class="rightText1" style="color:#FF2D41">大话西游玩家1</div>
                         <div class="rightText2">
                             <img src="js/ic_No1Flower.png">
                             <span>持有174505秒 市值120408.45元</span>
@@ -307,6 +318,8 @@
                     </div>
                 </div>
             </li>
+
+
             <li>
                 <div class="bottom">
                     <div class="bottomContent">
@@ -324,100 +337,199 @@
                     </div>
                 </div>
             </li>
+
+        </ul>
+        <!--2-->
+        <ul style="display: none;">
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No1Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No1Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#FF2D41">大话西游玩家2</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No1Flower.png">
+                            <span>持有174505秒 市值120408.45元</span>
+                        </div>
+                    </div>
+                    <img class="imgCup" src="js/ic_cup.png">
+                    <div class="clear"></div>
+                </div>
+            </li>
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No2Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No2Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#FF9500"> 秒啊用户</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No2Flower.png">
+                            <span>持有145454秒 市值100363.26元</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No3Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No3Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#007AFF">小萱萱</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No3Flower.png">
+                            <span>持有24609秒 市值16980.21元</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
             <li>
                 <div class="bottom">
+                    <img class="line" src="js/ic_line.png">
                     <div class="bottomContent">
                         <div class="bottomLeft">
-                            <div class="bottomHead" 
+                            <div class="bottomHead"
                                  style="background-image:url(js/uuheadImg.png)"></div>
                             <div class="bottomNum">
-                                <span>06</span>
+                                <span>04</span>
                             </div>
                         </div>
                         <div class="bottomRight">
-                            <div class="rightText1">秒啊 用户</div>
-                            <div class="rightText2">持有6700秒 市值4623.00元</div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="bottom">
-                    <div class="bottomContent">
-                        <div class="bottomLeft">
-                            <div class="bottomHead"  style="background-image:url(js/uuheadImg.png)"></div>
-                            <div class="bottomNum">
-                                <span>07</span>
-                            </div>
-                        </div>
-                        <div class="bottomRight">
-                            <div class="rightText1">咿呀弯弯</div>
-                            <div class="rightText2">持有5700秒 市值3933.00元</div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="bottom">
-                    <div class="bottomContent">
-                        <div class="bottomLeft">
-                            <div class="bottomHead" 
-                                 style="background-image:url(js/uuheadImg.png)"></div>
-                            <div class="bottomNum">
-                                <span>08</span>
-                            </div>
-                        </div>
-                        <div class="bottomRight">
-                            <div class="rightText1">喵孙</div>
-                            <div class="rightText2">持有4800秒 市值3312.00元</div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="bottom">
-                    <div class="bottomContent">
-                        <div class="bottomLeft">
-                            <div class="bottomHead"  style="background-image:url(js/uuheadImg.png)"></div>
-                            <div class="bottomNum">
-                                <span>09</span>
-                            </div>
-                        </div>
-                        <div class="bottomRight">
-                            <div class="rightText1">秒啊用户</div>
-                            <div class="rightText2">持有4800秒 市值3312.00元</div>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="bottom">
-                    <div class="bottomContent">
-                        <div class="bottomLeft">
-                            <div class="bottomHead" 
-                                 style="background-image:url(js/uuheadImg.png)"></div>
-                            <div class="bottomNum">
-                                <span>10</span>
-                            </div>
-                        </div>
-                        <div class="bottomRight">
-                            <div class="rightText1">秒啊一姐</div>
-                            <div class="rightText2">持有4600秒 市值3174.00元</div>
+                            <div class="rightText1">我爱戴燕妮</div>
+                            <div class="rightText2">持有12300秒 市值8487.00元</div>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
             </li>
         </ul>
+        <!--3-->
+        <ul style="display: none;">
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No1Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No1Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#FF2D41">大话西游玩家3</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No1Flower.png">
+                            <span>持有174505秒 市值120408.45元</span>
+                        </div>
+                    </div>
+                    <img class="imgCup" src="js/ic_cup.png">
+                    <div class="clear"></div>
+                </div>
+            </li>
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No2Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No2Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#FF9500"> 秒啊用户</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No2Flower.png">
+                            <span>持有145454秒 市值100363.26元</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+            <li>
+                <div class="top">
+                    <div class="topLeft">
+                        <div class="topHead"
+                             style="background-image:url(js/uuheadImg.png)"></div>
+                        <div class="imgTop"><img src="js/ic_No3Top.png"></div>
+                        <div class="imgBottom"><img src="js/ic_No3Text.png"></div>
+                    </div>
+                    <div class="topRight">
+                        <div class="rightText1" style="color:#007AFF">小萱萱</div>
+                        <div class="rightText2">
+                            <img src="js/ic_No3Flower.png">
+                            <span>持有24609秒 市值16980.21元</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </li>
+            <li>
+                <div class="bottom">
+                    <img class="line" src="js/ic_line.png">
+                    <div class="bottomContent">
+                        <div class="bottomLeft">
+                            <div class="bottomHead"
+                                 style="background-image:url(js/uuheadImg.png)"></div>
+                            <div class="bottomNum">
+                                <span>04</span>
+                            </div>
+                        </div>
+                        <div class="bottomRight">
+                            <div class="rightText1">我爱戴燕妮</div>
+                            <div class="rightText2">持有12300秒 市值8487.00元</div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!--end-->
         <div id="tip" hidden="" style="display: none;">暂无数据</div>
     </div>
     <!--数据列表-end-->
 </div>
+<script>
+    $(function () {
+        /**
+         *
+         * @param oLi
+         * @param oTabItem
+         * @param oThis
+         */
+        function tabFun (oLi, oTabItem, oThis) {
+            oLi.each(function () {
+                $(this).removeClass("active");
+            });
+            oTabItem.each(function () {
+                $(this).hide();
+            });
 
+            oThis.addClass("active");
+
+            oTabItem.eq(oThis.index()).show();
+        }
+        //
+        var oWapTitle = $("[data-type='waptitle']>div");
+        var oWapTab = $("[data-type='waptable-box']>ul");
+        //
+        oWapTitle.on("click", function () {
+
+            tabFun (oWapTitle, oWapTab, $(this));
+
+        });
+
+    });
+</script>
 
 
 </body>
