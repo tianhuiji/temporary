@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="font-size: 66.6667px;">
+<html  style="font-size: 66.6667px;">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/sjs_index.css">
+    <script src="js/jquery.min.js"></script>
     <script>
         (function () {
             var u = navigator.userAgent, app = navigator.appVersion;
@@ -118,30 +119,30 @@
             <!--小标题-end-->
 
             <!-- Tab 选项卡 -->
-            <div class="tab-content">
+            <div class="tab-content" id="tab-content">
 
                 <!-- 自选容器 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner " id="optional" data-scrollflag="0"
+                <div role="tabpanel" class=" sjs_content_inner " style="display: block;" id="optional" data-scrollflag="0"
                      data-page="1" tabindex="5000" style="overflow: hidden; outline: none;">
                     <div>
-                        <div class="main_data active">
+                        <div class="main_data">
                             <dl>
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>许豪杰</b><br><b class="b2_investorsCode">200009</b></dd>
                             </dl>
-                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.10</span><span class="span_last"><b style="background: none;">申购中1</b></span>
                         </div>
                         <div class="main_data">
                             <dl>
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
                             </dl>
-                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中1</b></span>
                         </div>
                     </div>
                 </div>
                 <!-- 企业家 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner " id="investor" data-scrollflag="1" data-page="2"
+                <div role="tabpanel" class=" sjs_content_inner " style="display: none;" id="investor" data-scrollflag="1" data-page="2"
                      tabindex="5001" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -149,7 +150,7 @@
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
                             </dl>
-                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中2</b></span>
                         </div>
                         <div class="main_data">
                             <dl>
@@ -249,7 +250,7 @@
                 </div>
 
                 <!-- 创业者 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner active" id="entrepreneur" data-scrollflag="1"
+                <div role="tabpanel" class=" sjs_content_inner" style="display: none;" id="entrepreneur" data-scrollflag="1"
                      data-page="2" tabindex="5002" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -257,7 +258,7 @@
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
                             </dl>
-                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中3</b></span>
                         </div>
                         <div class="main_data">
                             <dl>
@@ -347,7 +348,7 @@
                     </div>
                 </div>
                 <!-- 艺人 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner" id="onlineStar" data-scrollflag="1"
+                <div role="tabpanel" class=" sjs_content_inner" style="display: none;" id="onlineStar" data-scrollflag="1"
                      data-page="2" tabindex="5003" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -355,7 +356,7 @@
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
                             </dl>
-                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中4</b></span>
                         </div>
                         <div class="main_data">
                             <dl>
@@ -445,7 +446,7 @@
                     </div>
                 </div>
                 <!-- 牛人 -->
-                <div role="tabpanel" class="tab-pane sjs_content_inner" id="star" data-scrollflag="0" data-page="1"
+                <div role="tabpanel" class=" sjs_content_inner" style="display: none;" id="star" data-scrollflag="0" data-page="1"
                      tabindex="5004" style="overflow: hidden; outline: none;">
                     <div>
                         <div class="main_data active">
@@ -453,7 +454,7 @@
                                 <dt><img src="images/edit.png"></dt>
                                 <dd><b>杨柳</b><br><b class="b2_investorsCode">700031</b></dd>
                             </dl>
-                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中</b></span>
+                            <span class="ie_height red">0.05</span><span class="span_last"><b style="background: none;">申购中5</b></span>
                         </div>
                         <div class="main_data">
                             <dl>
@@ -514,7 +515,28 @@
             </div>
             <!--选项卡-end-->
         </div>
+        <script>
+            $(function () {
+                var oLi = $("#index_tab").find("li");
+                var oTabItem = $("#tab-content").find("div[role='tabpanel']");
 
+                oLi.on("click", function () {
+                    //
+                    oLi.each(function () {
+                        $(this).removeClass("active");
+                    });
+                    oTabItem.each(function () {
+                        $(this).hide();
+                    });
+
+                    $(this).addClass("active");
+
+                    oTabItem.eq($(this).index()).show();
+
+                });
+
+            });
+        </script>
 
     </div>
     <!--center-->
