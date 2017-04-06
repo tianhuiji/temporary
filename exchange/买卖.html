@@ -62,19 +62,20 @@
                         <div id="buyNameForm" class="buyCLItem buyCLK">
                             <input id="buyName" type="text"   placeholder="发行人姓名/代码">
                         </div>
-                        <div class="buyCLItem buyPriceItem">
-                            <div  class="btnMinus bgRed">-</div>
-                            <div class="buyInputBg"><input id="buyPrice" type="number" placeholder="购买价格(元)"></div>
-                            <div  class="btnPlus bgRed">+</div>
+                        <div class="buyCLItem buyPriceItem buypricebox">
+                            <div  class="btnMinus bgRed btnbuy-reduce">-</div>
+                            <div class="buyInputBg"><input  class="buyprice" type="number" value="100" placeholder="购买价格(元)"></div>
+                            <div  class="btnPlus bgRed btnbuy-add">+</div>
                         </div>
+
                         <div class="expTipItem"><span class="floatL">跌停</span>
                             <span id="buyMinPrice"   class="floatL textColorGreen expTipItemText">-</span>
                             <span id="buyMaxPrice" class="floatR textColorRed expTipItemText">-</span>
                             <span class="floatR">涨停</span></div>
-                        <div class="buyCLItem buyTimeBg">
-                            <div  class="btnMinus bgRed">-</div>
-                            <div class="buyInputBg"><input id="buyTime" type="number" placeholder="购买时间(秒)"></div>
-                            <div  class="btnPlus bgRed">+</div>
+                        <div class="buyCLItem buyTimeBg buytimebox">
+                            <div  class="btnMinus bgRed btnbuy-time-reduce">-</div>
+                            <div class="buyInputBg"><input id="buyTime" class="buytime" type="number" placeholder="购买时间(秒)"></div>
+                            <div  class="btnPlus bgRed btn btnbuy-time-add">+</div>
                         </div>
                         <div class="expTipItem canBuyTime">
                             <span>可买</span>
@@ -152,6 +153,7 @@
                         </div>
                     </div>
                     <div class="clear"></div>
+
                 </div>
                 <div class="bottom">
                     <div class="lineGray"></div>
@@ -188,10 +190,10 @@
                         <div id="sellNameForm" class="buyCLItem sellCLK">
                             <input id="sellName" type="text"   placeholder="发行人姓名/代码">
                         </div>
-                        <div class="buyCLItem buyPriceItem">
-                            <div class="btnMinus bgBlue">-</div>
-                            <div class="sellInputBg"><input id="sellPrice" type="number" placeholder="转让价格(元)"></div>
-                            <div class="btnPlus bgBlue">+</div>
+                        <div class="buyCLItem buyPriceItem buypricebox">
+                            <div class="btnMinus bgBlue btnbuy-reduce">-</div>
+                            <div class="sellInputBg"><input id="sellPrice" class="buyprice" value="100" type="number" placeholder="转让价格(元)"></div>
+                            <div class="btnPlus bgBlue btnbuy-add">+</div>
                         </div>
                         <div class="expTipItem">
                             <span class="floatL">跌停</span>
@@ -199,12 +201,12 @@
                             <span  id="sellMaxPrice" class="floatR textColorRed expTipItemText">-</span>
                             <span  class="floatR">涨停</span>
                         </div>
-                        <div class="buyCLItem buyTimeBg">
-                            <div class="btnMinus bgBlue">-</div>
+                        <div class="buyCLItem buyTimeBg buytimebox">
+                            <div class="btnMinus bgBlue btnbuy-time-reduce">-</div>
                             <div class="sellInputBg">
-                                <input id="sellTime" type="number" placeholder="转让时间(秒)">
+                                <input id="sellTime" class="buytime" type="number" placeholder="转让时间(秒)">
                             </div>
-                            <div class="btnPlus bgBlue">+</div>
+                            <div class="btnPlus bgBlue btnbuy-time-add">+</div>
                         </div>
                         <div class="expTipItem canBuyTime">
                             <span>可转</span>
@@ -456,9 +458,59 @@
             tabFun (oWapTitle, oWapTab, $(this), oWapline);
 
         });
+        //加减
 
+        //
     });
 </script>
 
+<script>
+    $(function () {
+        //00001
+        //减
+        $(".btnbuy-reduce").on("click", function () {
+
+            var oBuyPrice =$(this).parents(".buypricebox").find(".buyprice").val();
+            var oVal = oBuyPrice - 1;
+
+            if (oBuyPrice <= 90) {
+                return;
+            }
+            $(this).parents(".buypricebox").find(".buyprice").val(oVal);
+
+        });
+        //加
+        $(".btnbuy-add").on("click", function () {
+
+            var oBuyPrice =$(this).parents(".buypricebox").find(".buyprice").val();
+            var oVal = 1*oBuyPrice + 1;
+
+            if (oBuyPrice >= 110) {
+                return;
+            }
+            $(this).parents(".buypricebox").find(".buyprice").val(oVal);
+
+        });
+        //time
+        //-
+        $(".btnbuy-time-reduce").on("click", function () {
+            var oBuyTime =$(this).parents(".buytimebox").find(".buytime").val();
+            var oVal = oBuyTime - 1;
+
+            if (oBuyTime <= 0) {
+                return;
+            }
+            $(this).parents(".buytimebox").find(".buytime").val(oVal);
+        });
+        //+
+        $(".btnbuy-time-add").on("click", function () {
+            var oBuyTime =$(this).parents(".buytimebox").find(".buytime").val();
+            var oVal = 1*oBuyTime + 1;
+
+            $(this).parents(".buytimebox").find(".buytime").val(oVal);
+        });
+        //
+    });
+</script>
 </body>
 </html>
