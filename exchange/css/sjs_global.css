@@ -18,7 +18,8 @@ html, body {
 
 /* 首页导航 */
 .sjs_header {
-	width: 19.2rem;
+	/*width: 19.2rem;*/
+
 	height: 10%;
 	border-bottom: 1px solid #000;
 	background: #262834;

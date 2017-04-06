@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/sjs_billboard_time.css">
+    <script src="js/jquery.min.js"></script>
 </head>
 <body>
 <div class="sjs_header navbar-fixed-top clear">
@@ -56,9 +57,9 @@
 <div class="g_height"></div>
 <!---->
 <div class="g_content clear">
-    <div class="m_content_top">
+    <div class="m_content_top" style="width:auto;">
         <div class="m_content_top_inner">
-            <ol>
+            <ol data-type="pctitle-box">
                 <li class=""><a href="javascript:;">买入日榜</a></li>
                 <li class=""><a href="javascript:;">卖出日榜</a></li>
                 <li class="active"><a href="javascript:;">累积总榜</a></li>
@@ -67,11 +68,11 @@
     </div>
     <div class="m_content_center">
         <!--选项卡-->
-        <div>
+        <div data-type="pctable-box">
             <!--one-->
             <ol>
                 <li>
-                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺</b></div>
+                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺1</b></div>
                     <div class="col-sm-4 text-center"><i>持有51245秒</i><i>市值34846.60元</i></div>
                 </li>
                 <li>
@@ -86,7 +87,7 @@
             <!--two-->
             <ol style="display: none">
                 <li>
-                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺</b></div>
+                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺2</b></div>
                     <div class="col-sm-4 text-center"><i>持有51245秒</i><i>市值34846.60元</i></div>
                 </li>
                 <li>
@@ -101,7 +102,7 @@
             <!--three-->
             <ol style="display: none;">
                 <li>
-                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺</b></div>
+                    <div class="col-sm-8"><span>01</span><img src="images/a.jpg"><b>哦拉朱旺3</b></div>
                     <div class="col-sm-4 text-center"><i>持有51245秒</i><i>市值34846.60元</i></div>
                 </li>
                 <li>
@@ -123,6 +124,35 @@
         <!--end-->
     </div>
 </div>
+<script>
+    $(function () {
+        /**
+         *
+         * @param oLi
+         * @param oTabItem
+         * @param oThis
+         */
+        function tabFun (oLi, oTabItem, oThis) {
+            oLi.each(function () {
+                $(this).removeClass("active");
+            });
+            oTabItem.each(function () {
+                $(this).hide();
+            });
 
+            oThis.addClass("active");
+
+            oTabItem.eq(oThis.index()).show();
+        }
+        //
+        var oMTitle = $("[data-type='pctitle-box']>li");
+        var oMDiv = $("[data-type='pctable-box']>ol");
+        //
+        oMTitle.on("click", function () {
+            tabFun(oMTitle, oMDiv, $(this));
+        });
+        //
+    });
+</script>
 </body>
 </html>
