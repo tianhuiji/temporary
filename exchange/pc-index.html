@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Simple, easy, customisable autocomplete plugin (one more alternative).">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="refresh" content="20000">
+	<title>秒啊</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" type="text/css" href="css/sjs_global.css">
+
+	<script type="text/javascript" src="js/adapt.js"></script>
+	<script type="text/javascript" src='js/allurl.js'></script>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/sjs_index.css">
+	<script>
+		(function () {
+			var u = navigator.userAgent, app = navigator.appVersion;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			if (isAndroid) {
+				//window.location = 'http://m.miaoa.com/';
+			} else if (isiOS) {
+				//window.location = 'http://m.miaoa.com/';
+			}
+		})();
+	</script>
+<body>
+<div class="sjs_header clear">
+	<div class="sjs_header_inner">
+		<div class="sjs_header_left clear">
+			<a href="">
+				<img src="img/sjs_index/logo.png" alt=""></a>
+			<div class="search" id="ipt_search">
+				<input type="text" name="nope" id="nope" placeholder="搜索发行人/代码/全拼" maxlength="20"/>
+			</div>
+		</div>
+		<div class="sjs_header_right clear">
+			<ul class="clear">
+				<li>
+					<a id="pc_user_transaction" href="">交易</a>
+				</li>
+				<li>
+					<a id="pc_user_asset" href="">资产管理</a>
+				</li>
+				<li>
+					<a id="pc_order_list" href="">我的发行人</a>
+				</li>
+				<li>
+					<a id="pc_user_load" href="">登录</a>
+				</li>
+				<li>
+					<a id="pc_user_register" href="">注册</a>
+				</li>
+				<li>
+					<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="" alt="" class="uu_avtar" id="user_avatar"></a>
+				</li>
+				<li>
+					<a id="release_btn" href="javascript:;">[退出]</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- -->
+<div class="sjs_content clear">
+	<div class="sjs_content_left">
+
+		<!--增加分版块 -->
+
+		<div class="index_tabs">
+
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist" id="index_tab">
+			<li role="presentation"><a href="#optional" aria-controls="optional" role="tab" data-toggle="tab" class="tab_btn" data-type="0">自选</a></li>
+			<li role="presentation"><a href="#investor" aria-controls="investor" role="tab" data-toggle="tab" class="tab_btn" data-type="8">企业家</a></li>
+			<li role="presentation"><a href="#entrepreneur" aria-controls="entrepreneur" role="tab" data-toggle="tab" class="tab_btn" data-type="7">创业者</a></li>
+			<li role="presentation"><a href="#onlineStar" aria-controls="onlineStar" role="tab" data-toggle="tab" class="tab_btn" data-type="5">艺人</a></li>
+			<li role="presentation"><a href="#star" aria-controls="star" role="tab" data-toggle="tab" class="tab_btn" data-type="2">牛人</a></li>
+		  </ul>
+			<div class="row content_filter" id="filter_data" data-sort="0">
+				<div class="col-xs-2 filter_all">全部</div>
+				<div class="col-xs-4 text-right switch_btn col-xl-offset-1" id="time_type" data-click="0">最新元/小时</div>
+				<div class="col-xs-1 v_line text-center">|</div>
+				<div class="col-xs-1 text-center arrow_tags" id="time_type_arrow" data-click="0"></div>
+				<div class="col-xs-2 text-center switch_btn2" id="sort_type" data-click="0">涨跌幅</div>
+				<div class="col-xs-1 text-center arrow_tags" id="sort_type_arrow"></div>
+			</div>
+
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+
+			<!-- 自选容器 -->
+			<div role="tabpanel" class="tab-pane sjs_content_inner" id="optional" data-scrollFlag="0" data-page="1">
+				<div class="optional_default">
+					<div class="no_optional_container">
+						<img src="img/default/no_optional.png" alt="">
+					</div>
+					<div class="text_center">尚未添加发行人</div>
+				</div>
+			</div>
+
+			<!-- 投资人 -->
+			<div role="tabpanel" class="tab-pane sjs_content_inner" id="investor" data-scrollFlag="0" data-page="1">
+			</div>
+
+			<!-- 企业家 -->
+			<div role="tabpanel" class="tab-pane sjs_content_inner" id="entrepreneur" data-scrollFlag="0" data-page="1">
+
+			</div>
+			<!-- 网红 -->
+			<div role="tabpanel" class="tab-pane sjs_content_inner" id="onlineStar" data-scrollFlag="0" data-page="1">
+
+			</div>
+			<!-- 明星 -->
+			<div role="tabpanel" class="tab-pane sjs_content_inner" id="star" data-scrollFlag="0" data-page="1">
+
+			</div>
+		  </div>
+
+		</div>
+	
+
+	</div>
+
+	<div class="sjs_content_center clear" id="personal_content_center">
+
+	</div>
+
+	<div class="sjs_content_right  clear">
+		<div class="sjs_right_r_top sjs_right_r_center">
+			<h3>卖盘五档</h3>
+			<ul id="sjs_right_sell">
+				<li><b>1</b>
+					<span>…</span> <i>…</i>
+				</li>
+				<li><b>2</b>
+					<span>…</span> <i>…</i>
+				</li>
+				<li>
+					<b>3</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>4</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>5</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+			</ul>
+		</div>
+		<div class="sjs_right_r_top">
+			<h3>买盘五档</h3>
+			<ul id="sjs_right_buy">
+				<li>
+					<b>1</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>2</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>3</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>4</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+				<li>
+					<b>5</b>
+					<span>…</span>
+					<i>…</i>
+				</li>
+			</ul>
+		</div>
+		<div class="sjs_right_r_foot">
+			<div class="foot_top">
+				<span>时间</span>
+				<span>价格</span>
+				<span>购买时长</span>
+			</div>
+			<div id="buy_sell_time_contaniner">
+				<table class="table" id="buy_sell_time"></table>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<!-- 新添加的低栏 -->
+<div class="index_foot row">
+	<div class="col-xs-6 text-center foot_left">
+		<ul class="foot_tag_ul">
+			<li class="foot_tag_li">
+				<ul class="foot_tags">
+					<li>手机应用</li>
+					<li class="v_line">|</li>
+					<li>联系我们</li>
+					<li class="v_line">|</li>
+					<li>关注我们</li>
+					<li class="wechat">
+						<div class="wechat_content">
+							<div class="w_c_left">
+								<img src="img/sjs_index/sjs_wx.jpg" alt="">
+							</div>
+							<div class="w_c_right">
+								<p>扫描左侧二维码或搜 索秒啊微信公众号： 秒啊时交所</p>
+							</div>
+						</div>
+					</li>
+					<li class="xl_logo" id="xl_logo"></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="col-xs-6 text-center foot_right">
+		<ul class="foot_tag_ul">
+			<li class="foot_tag_li">
+				<ul class="foot_tags">
+					<li>秒啊（北京）科技有限公司</li>
+					<li class="v_line">|</li>
+					<li>京ICP备09111452号-1</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript" src='js/jquery/jquery-1.11.2.min.js'></script>
+<script type="text/javascript" src='js/jquery/bootstrap.min.js'></script>
+<script type="text/javascript" src='js/echarts-all.js'></script>
+<script type="text/javascript" src='js/nicescroll/jquery.nicescroll.js'></script>
+
+<script type="text/javascript" src='js/sjs_index.js'></script>
+</html>
