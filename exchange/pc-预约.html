@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="m_confirm">
-            <form id="confirmForm" role="form" novalidate="novalidate">
+            <form >
                 <div class="form-group">
                     <label class="col-sm-1 control-label text-right circular">市值</label>
                     <div class="col-sm-10">
@@ -90,10 +90,10 @@
                 <div class="form-group">
                     <label class="col-sm-1 control-label text-right circular">预约时间</label>
                     <div class="col-sm-10">
-                        <div class="m_button clear">
-                            <button type="button">-</button>
-                            <input type="text" id="d_time" name="d_time" disabled="disabled" value="600">
-                            <button type="button">+</button>
+                        <div class="m_button clear buypricebox">
+                            <button type="button " class="btnbuy-reduce">-</button>
+                            <input type="text" id="d_time" name="d_time" class="buyprice" disabled="disabled" value="600">
+                            <button type="button " class="btnbuy-add">+</button>
                         </div>
                     </div>
                 </div>
@@ -145,8 +145,36 @@
         </div>
     </div>
 </div>
+<script src="js/jquery.min.js"></script>
+<script>
+$(function () {
+    //减
+    $(".btnbuy-reduce").on("click", function (event) {
+        var oBuyPrice =$(this).parents(".buypricebox").find(".buyprice").val();
+        var oVal = oBuyPrice - 1;
 
+        if (oBuyPrice <= 0) {
+            return;
+        }
+        $(this).parents(".buypricebox").find(".buyprice").val(oVal);
+        //阻止表单提交
+        event.preventDefault();
+    });
+    //加
+    $(".btnbuy-add").on("click", function (event) {
 
+        var oBuyPrice =$(this).parents(".buypricebox").find(".buyprice").val();
+        var oVal = 1*oBuyPrice + 1;
+
+        if (oBuyPrice >= 110) {
+            //return;
+        }
+        $(this).parents(".buypricebox").find(".buyprice").val(oVal);
+        //阻止表单提交
+        event.preventDefault();
+    });
+});
+</script>
 
 </body>
 </html>
