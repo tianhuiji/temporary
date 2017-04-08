@@ -1,0 +1,2748 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#0e90d2">
+    <meta name="viewport" content="width=640,maximum-scale=1.5,target-densitydpi=320,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>刘正(800012)</title>
+    <link rel="stylesheet" href="css/amazeuis.css">
+    <link rel="stylesheet" href="css/main_1.css">
+
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/amazeui.sjs.js"></script>
+
+
+    <script src="/javascripts/libs/util.js"></script>
+
+    <script src="/javascripts/libs/absPainter.js"></script>
+
+    <script src="/javascripts/libs/axis-x.js"></script>
+
+
+    <script src="/javascripts/libs/linepainter.js"></script>
+    <script src="/javascripts/libs/volumePainter.js"></script>
+
+    <script src="/javascripts/libs/axis-y.js"></script>
+
+
+    <style>
+        ul {
+        padding: 0;
+        text-align: left;
+        margin: .05rem;
+    }
+
+    li {
+        list-style-type: none
+    }
+
+    .quoDiv1 {
+        margin: .5rem;
+        border-bottom: 1px solid #35353c;
+        font-size: 1.5rem;
+        color: #fff;
+    }
+
+    .quoDiv2 {
+        margin: .5rem 0;
+        font-size: 1.6rem;
+        color: #fff;
+        position: absolute;
+        height: 490px;
+        overflow: auto;
+        width: 190px
+    }
+
+    .quoDiv3 {
+        padding: 1.5rem;
+        text-align: left;
+        font-size: 2.3rem;
+        line-height: 3rem;
+    }
+
+    .liStyle1 {
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    .threeLeft2 {
+        float: left;
+        width: 20%;
+    }
+
+    .threeLeft24 {
+        float: left;
+        width: 24%;
+    }
+
+    .threeLeft3 {
+        float: left;
+        width: 30%;
+    }
+
+    .threeLeft4 {
+        float: left;
+        width: 50%;
+    }
+
+    .threeLeft38 {
+        float: left;
+        width: 38%;
+    }
+
+    .twoLeft15 {
+        float: left;
+        width: 18%;
+        color: #999
+    }
+
+    .twoLeft85 {
+        float: left;
+        width: 82%;
+        color: #fff
+    }
+
+    .clear {
+        clear: both
+    }
+
+    .fiver_a {
+        margin: 0 2rem;
+        padding: .8rem 0;
+    }
+
+    .fiver_b {
+        border-bottom: 3px solid #007aff;
+        color: #007aff;
+    }
+
+    .rankHead {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .introTitle {
+        height: 7rem;
+        line-height: 7rem;
+        padding: 0 1.5rem;
+        color: #ccc;
+        font-size: 2.3rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    .introLine {
+        height: 1px;
+        background: #fff;
+        margin: 0 1.5rem;
+        -moz-opacity: 0.3;
+        opacity: .3;
+        filter: alpha(opacity=30);
+    }
+
+    .lineTab {
+        width: 50%;
+        float: left;
+        padding: 1.5rem;
+        font-size: 2.5rem;
+        text-align: center;
+        color: #999;
+    }
+
+    .newsItem {
+        padding: 1.4rem;
+        text-align: left;
+        color: #fff;
+        font-size: 2.5rem;
+    }
+
+    .newsTitle {
+        height: 3rem;
+        overflow: hidden;
+    }
+
+    .newsTime {
+        color: #999;
+        font-size: 2.1rem;
+        margin-top: .5rem;
+    }
+
+    .cmtItem {
+        padding: 2rem 1.2rem;
+        border-bottom: 1px solid #35353C;
+    }
+
+    .cmtHead {
+        width: 15%;
+        float: left;
+    }
+
+    .cmtHeadImg {
+        width: 6.2rem;
+        height: 6.2rem;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cmtRight {
+        width: 85%;
+        float: left;
+        text-align: left;
+    }
+
+    .cmtRightTL {
+        width: 50%;
+        padding: .5rem 0;
+        float: left;
+    }
+
+    .cmtNick {
+        height: 3rem;
+        overflow: hidden;
+        color: #007AFF;
+        font-size: 2.5rem;
+    }
+
+    .cmtTime {
+        color: #999;
+        font-size: 2.1rem;
+        margin-top: .4rem;
+    }
+
+    .cmtRightTR {
+        width: 50%;
+        height: 5rem;
+        overflow: hidden;
+        float: right;
+        line-height: 5rem;
+        color: #999;
+        font-size: 2rem;
+        text-align: right;
+    }
+
+    .cmtDetail {
+        color: #F5F5F5;
+        font-size: 2.5rem;
+    }
+
+    .cmtImg1 {
+        max-width: 30rem;
+        max-height: 30rem;
+    }
+
+    .cmtImg3 {
+        width: 13.5rem;
+        height: 13.5rem;
+        float: left;
+        background: #1E1E26;
+        background-size: cover;
+        background-position: center;
+        margin-right: 1rem;
+    }
+
+    .cmtReply {
+        background: #262834;
+        padding: 1rem;
+        font-size: 2.3rem;
+        color: #fff;
+        line-height: 3rem;
+        margin-top: 1.5rem;
+    }
+
+    .cmtContent {
+        max-height: 6.5rem;
+        overflow: hidden;
+    }
+
+    .cmtImgBg {
+        margin-top: 1.5rem;
+    }
+
+    .cmtReplyItem {
+        height: 3rem;
+        overflow: hidden;
+    }
+
+    .blue {
+        color: #007AFF
+    }
+    </style>
+    <!--数据-->
+    <script type="text/javascript">
+        var app = {
+        "LIST": [],
+        "MSG": "SUCCESS",
+        "OBJECT": {
+            "baseInformation": {
+                "addPrice": "-0.01",
+                "averagePrice": "0.52",
+                "changPoint": "1.40%",
+                "changeMoney": "7745.03",
+                "closePrice": "0.70",
+                "higestPrice": "0.69",
+                "lowestPrice": "0.63",
+                "openPrice": "0.65",
+                "price": "0.69",
+                "uplowFlag": 10
+            },
+            "buyAndSellerList": [{"num": 1, "price": "0.65", "time": "09:30", "type": "N"}, {
+                "num": 1,
+                "price": "0.65",
+                "time": "09:30",
+                "type": "N"
+            }, {"num": 1, "price": "0.65", "time": "09:30", "type": "N"}, {
+                "num": 74,
+                "price": "0.65",
+                "time": "09:31",
+                "type": "B"
+            }, {"num": 180, "price": "0.64", "time": "09:39", "type": "S"}, {
+                "num": 1,
+                "price": "0.69",
+                "time": "09:40",
+                "type": "B"
+            }, {"num": 3, "price": "0.63", "time": "10:03", "type": "N"}, {
+                "num": 1003,
+                "price": "0.63",
+                "time": "10:03",
+                "type": "S"
+            }, {"num": 1, "price": "0.68", "time": "10:04", "type": "B"}, {
+                "num": 379,
+                "price": "0.68",
+                "time": "11:10",
+                "type": "B"
+            }, {"num": 180, "price": "0.63", "time": "11:15", "type": "S"}, {
+                "num": 1,
+                "price": "0.68",
+                "time": "11:18",
+                "type": "B"
+            }, {"num": 700, "price": "0.63", "time": "13:05", "type": "B"}, {
+                "num": 87,
+                "price": "0.68",
+                "time": "13:44",
+                "type": "B"
+            }, {"num": 5084, "price": "0.63", "time": "13:49", "type": "S"}, {
+                "num": 154,
+                "price": "0.63",
+                "time": "13:56",
+                "type": "S"
+            }, {"num": 562, "price": "0.63", "time": "13:59", "type": "S"}, {
+                "num": 2537,
+                "price": "0.63",
+                "time": "14:39",
+                "type": "B"
+            }, {"num": 60, "price": "0.68", "time": "14:47", "type": "B"}, {
+                "num": 32,
+                "price": "0.68",
+                "time": "14:48",
+                "type": "B"
+            }, {"num": 1, "price": "0.69", "time": "14:48", "type": "B"}, {
+                "num": 1098,
+                "price": "0.69",
+                "time": "14:53",
+                "type": "B"
+            }, {"num": 2, "price": "0.69", "time": "14:57", "type": "S"}],
+            "buyFiverList": [{"num": 180, "price": "0.64"}, {"num": 963, "price": "0.63"}],
+            "investors": {
+                "investorsAllowUplowLimit": 0,
+                "investorsAvatar": "avatar/4tl53llhcCm.jpg",
+                "investorsAveragePrice": 52,
+                "investorsBirthday": "1981-05-01",
+                "investorsCityOfBirth": "湖北",
+                "investorsClosePrice": 70,
+                "investorsCode": 800012,
+                "investorsCreateDate": "2017-03-07 11:40:59.0",
+                "investorsDescription": "青腾创业营（长江商学院和腾讯合办）2期学员\r\n中国饭店协会青年企业家委员会副主席\r\n清华大学总裁班特聘教授\r\n中欧国际工商学院餐+创新营导师\r\n中国科学院大学研究生院经管学院MBA特聘创业导师\r\n北京邮电大学经管学院MBA特聘创业导师\r\n2014年3月，接受《商业评论》专访，创新的“人人湘”广泛被中欧、长江、清华、北大、中大等顶级商学院EMBA收录为研究案例。\r\n2015年12月，接受CNN专访，人人湘“智能餐厅”解决劳动力短缺痛点直击美国创投圈。\r\n2015年12月，接受华尔街日报专访，人人湘“智能餐厅”的少人高效互联网餐厅模式引发全球热议。\r\n2016年3月，接受台湾中天电视台专访，人人湘“智能餐厅”在高人工成本的台湾引起轰动并引来一拨拨的台湾企业家考察团。\r\n2016年4月，接受葡萄牙日报专访，人人湘“智能餐厅”席卷欧洲大陆。\r\n2016年5月，人人湘“未来餐厅”在北京霄云路进行全球首发。\r\n2016年5月，接受纽约时报专访，未来“无人”餐厅模式被国际社会广泛关注和认可。\r\n2016年6月，与黄太吉赫畅、英诺天使基金李竹、著名自媒体人余奕宏共同创建“未来食餐饮产业加速器”。\r\n2016年6月，荣获中国电子商会商业信息化专业委员会颁发的“2016中国智慧参与十佳品牌服务商”。\r\n2016年11月，荣获世界中餐业联合会“最佳创业新锐奖”。\r\n2017年2月，荣获中国版权保护中心评选的“2016十大中国著作权人”称号。",
+                "investorsDisableUplowLimitFlag": 0,
+                "investorsEthnicity": "汉族",
+                "investorsFixFlag": 0,
+                "investorsFixPrice": 30,
+                "investorsId": "5a46b1cb91604788ab31455a12bfa868",
+                "investorsMainAchievements": "2002年，就职于中国南方通信集团北京公司，担任人力资源部经理，曾参与筹集中国移动通信集团3G展示厅、中国移动通信外事服务中心。\r\n2008年，就职于中国首家NASDAQ上市通信企业：东方信联（股票代码：TSTC），全面分管该公司的人力资源及相关工作。\r\n2010年，就职于爱国者电子，担任人力资源总监，分管爱国者电子集团及爱佳数码人力资源整体工作。\r\n2012年，创办昊轩咨询并发起成立昊轩人力资源俱乐部，该俱乐部鼎盛时期成员规模近6000人，其中知名企业及世界五百强企业人力资源负责人近500人。昊轩咨询致力于为俱乐部成员企业，提供人力资源及管理相关咨询服务。\r\n2013年12月，创办人人湘（母公司：香橙互动），位于北京朝阳区恒通商务园内的第一家人人湘实体店，通过互联网技术在该餐厅中去掉“收银员”、“服务员”、“采购员”，以此重构传统餐厅成本结构的创新模式，获得国内外媒体界、创投界高度关注，并迅速完成天使轮、Pre-A轮、A轮融资。\r\n2016年2月，参与发起湖南籍创始人联合会，简称“湘创会”。\r\n2016年4月，刘正邀请原百胜中国、小肥羊高管，原雕爷牛腩COO穆剑加盟人人湘，此举再一次引起中国餐饮界轰动。\r\n2016年9月，刘正正式对外宣布，将人人湘和香橙互动进行剥离，两家公司正式独立运营，人人湘侧重智能餐厅直营开店及连锁加盟，香橙互动专攻智能餐厅整体解决方案在餐饮行业的推广及应用。",
+                "investorsName": "刘正",
+                "investorsNationality": "中国",
+                "investorsPcImg": "avatar/AlCjUofyThT.jpg,avatar/AxlKo9Jj6HI.jpg,avatar/1SGql6rq82f.jpg",
+                "investorsPresellDate": "",
+                "investorsPrice": 973387797,
+                "investorsPublishDate": "2017-03-08",
+                "investorsReleaseNum": 864000,
+                "investorsSaidStatus": 0,
+                "investorsSchool": "保密",
+                "investorsSex": 1,
+                "investorsStatus": 2,
+                "investorsTimeScope": " 刘正时间仅限以下几种情况：（常驻地：北京）\r\n\r\n  公益活动；主持活动；商业咨询诊断；演讲授课；演讲分享；参加论坛；参加会议；参加酒会；参加沙龙；健身；录制节目；广告拍摄；出席庆典开业；剪彩；合影；午餐晚餐；下午茶；唱歌；旅游；视频交流；语音通话；微博转发；微信朋友圈转发\r\n \r\n 时间使用期间，双方必须保证行为合理合法。",
+                "investorsTodayClosePrice": 70,
+                "investorsTop3": "avatar/7IEtyxB9kFZ.jpg,avatar/AUDKXglD6Ha.jpg,avatar/6EUgzrKqvS4.jpg",
+                "investorsTotalNum": 864000,
+                "investorsUserId": "",
+                "investorsWork": "人人湘创始人兼董事长",
+                "openPrice": "0.65"
+            },
+            "minitePriceList": [{"buyAndSell": "2.2", "price": "0.65", "time": "09:30"}, {
+                "buyAndSell": "74.2",
+                "price": "0.65",
+                "time": "09:32"
+            }, {"buyAndSell": "0.1", "price": "0.65", "time": "09:33"}, {
+                "buyAndSell": "0.1",
+                "price": "0.65",
+                "time": "09:34"
+            }, {"buyAndSell": "0.1", "price": "0.65", "time": "09:35"}, {
+                "buyAndSell": "0.1",
+                "price": "0.65",
+                "time": "09:36"
+            }, {"buyAndSell": "0.1", "price": "0.65", "time": "09:37"}, {
+                "buyAndSell": "0.1",
+                "price": "0.65",
+                "time": "09:38"
+            }, {"buyAndSell": "0.1", "price": "0.65", "time": "09:39"}, {
+                "buyAndSell": "180.3",
+                "price": "0.64",
+                "time": "09:40"
+            }, {"buyAndSell": "1.2", "price": "0.69", "time": "09:41"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:42"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:43"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:44"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:45"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:46"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:47"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:48"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:49"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:50"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:51"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:52"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:53"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:54"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:55"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:56"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:57"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "09:58"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "09:59"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "10:00"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "10:01"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "10:02"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "10:03"}, {
+                "buyAndSell": "1003.3",
+                "price": "0.63",
+                "time": "10:04"
+            }, {"buyAndSell": "1.2", "price": "0.68", "time": "10:05"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:06"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:07"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:08"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:09"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:10"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:11"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:12"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:13"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:14"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:15"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:16"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:17"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:18"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:19"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:20"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:21"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:22"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:23"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:24"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:25"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:26"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:27"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:28"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:29"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:30"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:31"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:32"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:33"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:34"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:35"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:36"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:37"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:38"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:39"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:40"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:41"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:42"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:43"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:44"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:45"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:46"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:47"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:48"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:49"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:50"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:51"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:52"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:53"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:54"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:55"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:56"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:57"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "10:58"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "10:59"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:00"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:01"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:02"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:03"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:04"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:05"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:06"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:06"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:08"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:09"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:10"
+            }, {"buyAndSell": "379.2", "price": "0.68", "time": "11:11"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:12"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:13"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:14"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:15"}, {
+                "buyAndSell": "180.3",
+                "price": "0.63",
+                "time": "11:16"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "11:17"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "11:18"
+            }, {"buyAndSell": "1.2", "price": "0.68", "time": "11:19"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:20"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:21"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:22"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:23"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:24"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:25"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:26"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:27"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "11:28"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "11:29"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:00"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "13:00"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:01"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "13:02"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:03"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "13:04"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:05"
+            }, {"buyAndSell": "700.2", "price": "0.63", "time": "13:06"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:07"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:08"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:09"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:09"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:10"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:12"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:13"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:14"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:15"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:16"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:17"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:18"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:19"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:20"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:21"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:22"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:23"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:24"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:25"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:26"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:27"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:28"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:29"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:30"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:30"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:32"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:33"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:34"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:35"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:36"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:37"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:38"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:39"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:40"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:41"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:42"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:43"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:44"}, {
+                "buyAndSell": "87.2",
+                "price": "0.68",
+                "time": "13:45"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "13:46"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:47"
+            }, {"buyAndSell": "0.1", "price": "0.68", "time": "13:47"}, {
+                "buyAndSell": "0.1",
+                "price": "0.68",
+                "time": "13:49"
+            }, {"buyAndSell": "5084.3", "price": "0.63", "time": "13:50"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:51"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:52"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:53"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:54"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:55"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:56"}, {
+                "buyAndSell": "154.3",
+                "price": "0.63",
+                "time": "13:57"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "13:58"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "13:59"
+            }, {"buyAndSell": "562.3", "price": "0.63", "time": "14:00"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:01"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:02"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:03"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:04"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:05"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:06"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:07"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:08"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:09"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:10"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:11"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:12"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:13"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:14"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:15"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:16"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:17"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:18"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:19"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:20"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:21"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:22"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:23"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:24"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:25"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:26"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:27"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:28"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:29"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:30"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:31"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:32"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:33"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:34"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:35"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:36"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:37"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:38"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:39"
+            }, {"buyAndSell": "2537.2", "price": "0.63", "time": "14:40"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:41"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:42"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:43"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:44"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:45"
+            }, {"buyAndSell": "0.1", "price": "0.63", "time": "14:46"}, {
+                "buyAndSell": "0.1",
+                "price": "0.63",
+                "time": "14:47"
+            }, {"buyAndSell": "60.2", "price": "0.68", "time": "14:48"}, {
+                "buyAndSell": "33.2",
+                "price": "0.68",
+                "time": "14:49"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "14:50"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "14:51"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "14:52"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "14:53"
+            }, {"buyAndSell": "1098.2", "price": "0.69", "time": "14:54"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "14:55"
+            }, {"buyAndSell": "0.1", "price": "0.69", "time": "14:56"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "14:57"
+            }, {"buyAndSell": "2.3", "price": "0.69", "time": "14:58"}, {
+                "buyAndSell": "0.1",
+                "price": "0.69",
+                "time": "14:59"
+            }],
+            "sellFilverList": [{"num": 582, "price": "0.69"}, {"num": 2750, "price": "0.70"}, {
+                "num": 100,
+                "price": "0.73"
+            }, {"num": 550, "price": "0.75"}, {"num": 299, "price": "0.77"}],
+            "tInvestHisList": [{
+                "investorsAllMoney": "260916.00.2",
+                "investorsAllNum": "868400.2",
+                "investorsClosePrice": "0.30",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-08",
+                "investorsHighestPrice": "0.39",
+                "investorsLowestPrice": "0.30",
+                "investorsOpenPrice": "0.30",
+                "investorsTodayClosePrice": "0.39",
+                "uplow": "0.09",
+                "uplowPrice": "30.00%"
+            }, {
+                "investorsAllMoney": "1118.00.2",
+                "investorsAllNum": "2600.1",
+                "investorsClosePrice": "0.39",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-09",
+                "investorsHighestPrice": "0.43",
+                "investorsLowestPrice": "0.43",
+                "investorsOpenPrice": "0.43",
+                "investorsTodayClosePrice": "0.43",
+                "uplow": "0.04",
+                "uplowPrice": "10.26%"
+            }, {
+                "investorsAllMoney": "1927.00.2",
+                "investorsAllNum": "4100.1",
+                "investorsClosePrice": "0.43",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-10",
+                "investorsHighestPrice": "0.47",
+                "investorsLowestPrice": "0.47",
+                "investorsOpenPrice": "0.47",
+                "investorsTodayClosePrice": "0.47",
+                "uplow": "0.04",
+                "uplowPrice": "9.30%"
+            }, {
+                "investorsAllMoney": "45086.24.2",
+                "investorsAllNum": "86962.1",
+                "investorsClosePrice": "0.47",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-11",
+                "investorsHighestPrice": "0.52",
+                "investorsLowestPrice": "0.47",
+                "investorsOpenPrice": "0.52",
+                "investorsTodayClosePrice": "0.52",
+                "uplow": "0.05",
+                "uplowPrice": "10.64%"
+            }, {
+                "investorsAllMoney": "163000.03.2",
+                "investorsAllNum": "309886.2",
+                "investorsClosePrice": "0.52",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-13",
+                "investorsHighestPrice": "0.57",
+                "investorsLowestPrice": "0.47",
+                "investorsOpenPrice": "0.52",
+                "investorsTodayClosePrice": "0.57",
+                "uplow": "0.05",
+                "uplowPrice": "9.62%"
+            }, {
+                "investorsAllMoney": "30415.45.2",
+                "investorsAllNum": "49975.2",
+                "investorsClosePrice": "0.57",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-14",
+                "investorsHighestPrice": "0.63",
+                "investorsLowestPrice": "0.55",
+                "investorsOpenPrice": "0.57",
+                "investorsTodayClosePrice": "0.63",
+                "uplow": "0.06",
+                "uplowPrice": "10.53%"
+            }, {
+                "investorsAllMoney": "5121.18.2",
+                "investorsAllNum": "7422.1",
+                "investorsClosePrice": "0.63",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-15",
+                "investorsHighestPrice": "0.69",
+                "investorsLowestPrice": "0.69",
+                "investorsOpenPrice": "0.69",
+                "investorsTodayClosePrice": "0.69",
+                "uplow": "0.06",
+                "uplowPrice": "9.52%"
+            }, {
+                "investorsAllMoney": "3222.40.2",
+                "investorsAllNum": "4240.1",
+                "investorsClosePrice": "0.69",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-16",
+                "investorsHighestPrice": "0.76",
+                "investorsLowestPrice": "0.76",
+                "investorsOpenPrice": "0.76",
+                "investorsTodayClosePrice": "0.76",
+                "uplow": "0.07",
+                "uplowPrice": "10.14%"
+            }, {
+                "investorsAllMoney": "17438.40.2",
+                "investorsAllNum": "20760.1",
+                "investorsClosePrice": "0.76",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-17",
+                "investorsHighestPrice": "0.84",
+                "investorsLowestPrice": "0.84",
+                "investorsOpenPrice": "0.84",
+                "investorsTodayClosePrice": "0.84",
+                "uplow": "0.08",
+                "uplowPrice": "10.53%"
+            }, {
+                "investorsAllMoney": "9152.16.2",
+                "investorsAllNum": "9948.1",
+                "investorsClosePrice": "0.84",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-18",
+                "investorsHighestPrice": "0.92",
+                "investorsLowestPrice": "0.92",
+                "investorsOpenPrice": "0.92",
+                "investorsTodayClosePrice": "0.92",
+                "uplow": "0.08",
+                "uplowPrice": "9.52%"
+            }, {
+                "investorsAllMoney": "9456.63.2",
+                "investorsAllNum": "9363.1",
+                "investorsClosePrice": "0.92",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-20",
+                "investorsHighestPrice": "1.01",
+                "investorsLowestPrice": "1.01",
+                "investorsOpenPrice": "1.01",
+                "investorsTodayClosePrice": "1.01",
+                "uplow": "0.09",
+                "uplowPrice": "9.78%"
+            }, {
+                "investorsAllMoney": "59894.90.2",
+                "investorsAllNum": "53972.1",
+                "investorsClosePrice": "1.01",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-21",
+                "investorsHighestPrice": "1.11",
+                "investorsLowestPrice": "1.10",
+                "investorsOpenPrice": "1.11",
+                "investorsTodayClosePrice": "1.11",
+                "uplow": "0.10",
+                "uplowPrice": "9.90%"
+            }, {
+                "investorsAllMoney": "135828.42.2",
+                "investorsAllNum": "117501.1",
+                "investorsClosePrice": "1.11",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-22",
+                "investorsHighestPrice": "1.22",
+                "investorsLowestPrice": "1.00",
+                "investorsOpenPrice": "1.22",
+                "investorsTodayClosePrice": "1.22",
+                "uplow": "0.11",
+                "uplowPrice": "9.91%"
+            }, {
+                "investorsAllMoney": "39516.97.3",
+                "investorsAllNum": "34446.3",
+                "investorsClosePrice": "1.22",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-23",
+                "investorsHighestPrice": "1.28",
+                "investorsLowestPrice": "1.10",
+                "investorsOpenPrice": "1.22",
+                "investorsTodayClosePrice": "1.10",
+                "uplow": "-0.12",
+                "uplowPrice": "-9.84%"
+            }, {
+                "investorsAllMoney": "2836.05.3",
+                "investorsAllNum": "2861.3",
+                "investorsClosePrice": "1.10",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-24",
+                "investorsHighestPrice": "1.05",
+                "investorsLowestPrice": "0.99",
+                "investorsOpenPrice": "1.05",
+                "investorsTodayClosePrice": "0.99",
+                "uplow": "-0.11",
+                "uplowPrice": "-10.00%"
+            }, {
+                "investorsAllMoney": "38916.83.1",
+                "investorsAllNum": "41974.2",
+                "investorsClosePrice": "0.99",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-25",
+                "investorsHighestPrice": "1.09",
+                "investorsLowestPrice": "0.89",
+                "investorsOpenPrice": "0.89",
+                "investorsTodayClosePrice": "0.99",
+                "uplow": "0.00",
+                "uplowPrice": "0.00%"
+            }, {
+                "investorsAllMoney": "12170.09.3",
+                "investorsAllNum": "13472.3",
+                "investorsClosePrice": "0.99",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-27",
+                "investorsHighestPrice": "1.00",
+                "investorsLowestPrice": "0.89",
+                "investorsOpenPrice": "0.90",
+                "investorsTodayClosePrice": "0.89",
+                "uplow": "-0.10",
+                "uplowPrice": "-10.10%"
+            }, {
+                "investorsAllMoney": "8845.09.3",
+                "investorsAllNum": "11014.3",
+                "investorsClosePrice": "0.89",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-28",
+                "investorsHighestPrice": "0.89",
+                "investorsLowestPrice": "0.80",
+                "investorsOpenPrice": "0.89",
+                "investorsTodayClosePrice": "0.80",
+                "uplow": "-0.09",
+                "uplowPrice": "-10.11%"
+            }, {
+                "investorsAllMoney": "13688.87.3",
+                "investorsAllNum": "18759.3",
+                "investorsClosePrice": "0.80",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-29",
+                "investorsHighestPrice": "0.88",
+                "investorsLowestPrice": "0.72",
+                "investorsOpenPrice": "0.80",
+                "investorsTodayClosePrice": "0.72",
+                "uplow": "-0.08",
+                "uplowPrice": "-10.00%"
+            }, {
+                "investorsAllMoney": "4040.60.2",
+                "investorsAllNum": "6060.2",
+                "investorsClosePrice": "0.72",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-30",
+                "investorsHighestPrice": "0.79",
+                "investorsLowestPrice": "0.65",
+                "investorsOpenPrice": "0.65",
+                "investorsTodayClosePrice": "0.74",
+                "uplow": "0.02",
+                "uplowPrice": "2.78%"
+            }, {
+                "investorsAllMoney": "2129.38.3",
+                "investorsAllNum": "2973.3",
+                "investorsClosePrice": "0.74",
+                "investorsCode": 0,
+                "investorsDate": "2017-03-31",
+                "investorsHighestPrice": "0.80",
+                "investorsLowestPrice": "0.67",
+                "investorsOpenPrice": "0.76",
+                "investorsTodayClosePrice": "0.67",
+                "uplow": "-0.07",
+                "uplowPrice": "-9.46%"
+            }, {
+                "investorsAllMoney": "1647.32.2",
+                "investorsAllNum": "2403.2",
+                "investorsClosePrice": "0.67",
+                "investorsCode": 0,
+                "investorsDate": "2017-04-01",
+                "investorsHighestPrice": "0.74",
+                "investorsLowestPrice": "0.67",
+                "investorsOpenPrice": "0.67",
+                "investorsTodayClosePrice": "0.72",
+                "uplow": "0.05",
+                "uplowPrice": "7.46%"
+            }, {
+                "investorsAllMoney": "3324.42.1",
+                "investorsAllNum": "5022.3",
+                "investorsClosePrice": "0.72",
+                "investorsCode": 0,
+                "investorsDate": "2017-04-05",
+                "investorsHighestPrice": "0.73",
+                "investorsLowestPrice": "0.65",
+                "investorsOpenPrice": "0.79",
+                "investorsTodayClosePrice": "0.72",
+                "uplow": "0.00",
+                "uplowPrice": "0.00%"
+            }, {
+                "investorsAllMoney": "2882.75.3",
+                "investorsAllNum": "4331.1",
+                "investorsClosePrice": "0.72",
+                "investorsCode": 0,
+                "investorsDate": "2017-04-06",
+                "investorsHighestPrice": "0.72",
+                "investorsLowestPrice": "0.65",
+                "investorsOpenPrice": "0.70",
+                "investorsTodayClosePrice": "0.70",
+                "uplow": "-0.02",
+                "uplowPrice": "-2.78%"
+            }, {
+                "investorsAllMoney": "7745.03.2",
+                "investorsAllNum": "12139.2",
+                "investorsClosePrice": "0.70",
+                "investorsCode": 0,
+                "investorsDate": "2017-04-07",
+                "investorsHighestPrice": "0.69",
+                "investorsLowestPrice": "0.63",
+                "investorsOpenPrice": "0.65",
+                "investorsTodayClosePrice": "0.69",
+                "uplow": "-0.01",
+                "uplowPrice": "-1.42%"
+            }]
+        },
+        "STATUS": "0",
+        "cookie": ["JSESSIONID=F3BF57547E9495CCC4AAF81CDA586321.jvm2; Path=/uusjs; Secure; HttpOnly"]
+    };
+        console.log(app);
+    </script>
+    <!--数据-end-->
+</head>
+<body onload="drawKL()">
+<div id="main" style="background-color:#1E1E26;font-size:2.6rem;color:#fff">
+    <div id="" style="background-color:#1E1E26; padding-bottom: 12rem;">
+        <div style="background:#262834;font-size:2.5rem;color:#007aff;">
+            <div style="float:left;width:30%;text-align:left;padding:2rem 0 2rem 2rem">
+                <div style="font-size:3rem;color:#04C192">0.69<img src="/images/quotation_down.png"
+                                                                   style="margin-left:1rem;margin-top:-.5rem;width:1.5rem">
+                </div>
+                <div style="font-size:2rem;color:#04C192"><span>-0.01</span><span style="margin-left:1rem">-1.43%</span>
+                </div>
+            </div>
+            <div style="float:left;width:30%;text-align:left;padding:2rem">
+                <div style="font-size:2.5rem;color:#fff"><span style="color:#666">最  高：</span><span
+                        style="color:#04C192">0.69</span></div>
+                <div style="font-size:2.5rem;color:#fff"><span style="color:#666">最  低：</span><span
+                        style="color:#04C192">0.63</span></div>
+            </div>
+            <div style="float:left;width:40%;text-align:left;padding:2rem">
+                <div style="font-size:2.5rem;color:#fff"><span style="color:#666">今  开：</span><span
+                        style="color:#04C192">0.65</span></div>
+                <div style="font-size:2.5rem;color:#fff"><span style="color:#666">换  手：</span><span>1.40%</span></div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div style="background:#262834;font-size:2rem;color:#007aff;margin-top:.2rem;height:4rem;line-height:4rem">
+            <div style="padding:0 2rem;text-align:left;"><span style="color:#666">均价</span><span
+                    style="color:#FF9500;margin-left:1rem">0.52元/秒</span><span
+                    style="color:#666;margin-left:3rem">最新</span><span style="color:#FF2D41;margin-left:1rem">2484.00 元/小时</span><span
+                    style="color:#666;margin-left:3rem">额</span><span style="color:#fff;margin-left:1rem">0.8 万元</span>
+            </div>
+        </div>
+        <div>
+            <div onclick="clickLineTab(1)" class="lineTab">
+                <span id="lineTab1"   style="padding:1rem 1.5rem;color:#007AFF;border-bottom:4px solid #007AFF">分时</span>
+            </div>
+            <div onclick="clickLineTab(2)" class="lineTab">
+                <span id="lineTab2" style="padding:1rem 1.5rem;">日K</span>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div id="fenShi">
+            <div style="float:left;width:70%;">
+                <canvas id="canvas" width="440" height="580" style="z-index:3; background:#1E1E26;">
+                    <p>
+                    你的浏览器不支持html5哟</p>
+                </canvas>
+            </div>
+            <div style="float:left;width:30%;">
+                <div style="margin:.5rem;border-bottom:1px solid #35353c;font-size:1.8rem;">
+                    <div style="float:left;width:50%;color:#fff;">
+                        <div data-id="1" class="fiver_a fiver_b">五档</div>
+                    </div>
+                    <div style="float:left;width:50%;color:#fff;">
+                        <div data-id="2" class="fiver_a">明细</div>
+                    </div>
+                    <div style="clear:both"></div>
+                </div>
+                <div id="qiehuan"></div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div id="riK" hidden>
+            <canvas id="canvasKL" width="640" height="390"
+                    style="z-index:2;background:#1E1E26;color:#fff;font-size:2rem"><p>你的浏览器不支持html5哟</p></canvas>
+        </div>
+        <div show style="width:100%;height:8rem;line-height:8rem;border-bottom:1px solid #35353C;color:#999;font-size:2.6rem;">
+            <div style="width:25%;float:left;" onclick="clickCenterTab(1)">
+                <span id="centerTab1"   style="color:#007AFF;border-bottom:4px solid #007AFF;padding-bottom:2.4rem;">简介</span>
+            </div>
+
+        </div>
+        <div id="centerTabView1">
+            <a href="">
+                <div style="text-align:left;padding:0 2rem;line-height:8rem">
+                    <img src="/images/ic_rank_detail.png"><span
+                        style="font-size:2.5rem;color:#fff;margin-left:2rem">时间龙虎榜</span>
+                    <div style="float:right;margin-left:2rem;">
+                        <img src="images/ic_search_more.png"></div>
+                    <div style="float:right">
+                        <div style="float:right;margin-left:-1.6rem;">
+                            <img src="https://sjs.miaoa.com:1010/avatar/7IEtyxB9kFZ.jpg" class="rankHead">
+                        </div>
+                        <div style="float:right;margin-left:-1.6rem;">
+                            <img  src="https://sjs.miaoa.com:1010/avatar/AUDKXglD6Ha.jpg" class="rankHead">
+                        </div>
+                        <div style="float:right;margin-left:-1.6rem;">
+                            <img src="https://sjs.miaoa.com:1010/avatar/6EUgzrKqvS4.jpg" class="rankHead">
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <div>
+                <div data-am-widget="slider" data-am-slider="{&quot;directionNav&quot;:false}"
+                     class="am-slider am-slider-a1">
+                    <ul class="am-slides">
+                        <li><img src="https://sjs.miaoa.com:1010/avatar/AlCjUofyThT.jpg"></li>
+                        <li><img src="https://sjs.miaoa.com:1010/avatar/AxlKo9Jj6HI.jpg"></li>
+                        <li><img src="https://sjs.miaoa.com:1010/avatar/1SGql6rq82f.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="introTitle">| 秒啊身价</div>
+            <div class="introLine"></div>
+            <div style="padding:0.5rem 1rem">
+                <div class="quoDiv3">
+                    <div style="color:#007AFF" class="twoLeft15">身价</div>
+                    <div style="color:#FF9500" class="twoLeft85">97338.78 万元</div>
+                    <div class="clear"></div>
+                </div>
+                <div style="color:#ccc;font-size:1.65rem;text-align:left;padding:0 1.5rem;line-height:2.5rem">
+                    <div>身价计算方式：</div>
+                    <div>(男80 ,女85-现在的年龄)x365x24x3600x昨收+今年剩下的天数x24x3600x昨收</div>
+                    <div>注明：</div>
+                    <div>以社会的平均寿命，参考发行人每一秒的价格及当前年龄计算得出，仅供参考</div>
+                </div>
+            </div>
+            <div class="introTitle">| 个人简介</div>
+            <div class="introLine"></div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">姓名</div>
+                <div class="twoLeft85">刘正</div>
+                <div class="clear"></div>
+            </div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">国籍</div>
+                <div class="twoLeft85">中国</div>
+                <div class="clear"></div>
+            </div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">民族</div>
+                <div class="twoLeft85">汉族</div>
+                <div class="clear"></div>
+            </div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">出生年月</div>
+                <div class="twoLeft85">1981-05-01</div>
+                <div class="clear"></div>
+            </div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">职业</div>
+                <div class="twoLeft85">人人湘创始人兼董事长</div>
+                <div class="clear"></div>
+            </div>
+            <div class="quoDiv3">
+                <div class="twoLeft15">毕业院校</div>
+                <div class="twoLeft85">保密</div>
+                <div class="clear"></div>
+            </div>
+            <div class="introTitle">| 主要经历</div>
+            <div class="introLine"></div>
+            <div class="quoDiv3">
+                <div style="float:left;width:100%;color:#fff;font-size:2.1rem;max-height:500rem;overflow:hidden;">
+                    2002年，就职于中国南方通信集团北京公司，担任人力资源部经理，曾参与筹集中国移动通信集团3G展示厅、中国移动通信外事服务中心。
+                    <br>2008年，就职于中国首家NASDAQ上市通信企业：东方信联（股票代码：TSTC），全面分管该公司的人力资源及相关工作。
+                    <br>2010年，就职于爱国者电子，担任人力资源总监，分管爱国者电子集团及爱佳数码人力资源整体工作。
+                    <br>2012年，创办昊轩咨询并发起成立昊轩人力资源俱乐部，该俱乐部鼎盛时期成员规模近6000人，其中知名企业及世界五百强企业人力资源负责人近500人。昊轩咨询致力于为俱乐部成员企业，提供人力资源及管理相关咨询服务。
+                    <br>2013年12月，创办人人湘（母公司：香橙互动），位于北京朝阳区恒通商务园内的第一家人人湘实体店，通过互联网技术在该餐厅中去掉“收银员”、“服务员”、“采购员”，以此重构传统餐厅成本结构的创新模式，获得国内外媒体界、创投界高度关注，并迅速完成天使轮、Pre-A轮、A轮融资。
+                    <br>2016年2月，参与发起湖南籍创始人联合会，简称“湘创会”。
+                    <br>2016年4月，刘正邀请原百胜中国、小肥羊高管，原雕爷牛腩COO穆剑加盟人人湘，此举再一次引起中国餐饮界轰动。
+                    <br>2016年9月，刘正正式对外宣布，将人人湘和香橙互动进行剥离，两家公司正式独立运营，人人湘侧重智能餐厅直营开店及连锁加盟，香橙互动专攻智能餐厅整体解决方案在餐饮行业的推广及应用。
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="introTitle">| 主要成就</div>
+            <div class="introLine"></div>
+            <div class="quoDiv3">
+                <div style="float:left;width:100%;color:#fff;font-size:2.1rem;max-height:500rem;overflow:hidden;">
+                    青腾创业营（长江商学院和腾讯合办）2期学员
+                    <br>中国饭店协会青年企业家委员会副主席
+                    <br>清华大学总裁班特聘教授
+                    <br>中欧国际工商学院餐+创新营导师
+                    <br>中国科学院大学研究生院经管学院MBA特聘创业导师
+                    <br>北京邮电大学经管学院MBA特聘创业导师
+                    <br>2014年3月，接受《商业评论》专访，创新的“人人湘”广泛被中欧、长江、清华、北大、中大等顶级商学院EMBA收录为研究案例。
+                    <br>2015年12月，接受CNN专访，人人湘“智能餐厅”解决劳动力短缺痛点直击美国创投圈。
+                    <br>2015年12月，接受华尔街日报专访，人人湘“智能餐厅”的少人高效互联网餐厅模式引发全球热议。
+                    <br>2016年3月，接受台湾中天电视台专访，人人湘“智能餐厅”在高人工成本的台湾引起轰动并引来一拨拨的台湾企业家考察团。
+                    <br>2016年4月，接受葡萄牙日报专访，人人湘“智能餐厅”席卷欧洲大陆。
+                    <br>2016年5月，人人湘“未来餐厅”在北京霄云路进行全球首发。
+                    <br>2016年5月，接受纽约时报专访，未来“无人”餐厅模式被国际社会广泛关注和认可。
+                    <br>2016年6月，与黄太吉赫畅、英诺天使基金李竹、著名自媒体人余奕宏共同创建“未来食餐饮产业加速器”。
+                    <br>2016年6月，荣获中国电子商会商业信息化专业委员会颁发的“2016中国智慧参与十佳品牌服务商”。
+                    <br>2016年11月，荣获世界中餐业联合会“最佳创业新锐奖”。
+                    <br>2017年2月，荣获中国版权保护中心评选的“2016十大中国著作权人”称号。
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="introTitle">| 时间使用范围</div>
+            <div class="introLine"></div>
+            <div class="quoDiv3">
+                <div style="float:left;width:100%;color:#fff;font-size:2.1rem;max-height:500rem;overflow:hidden;">
+                    刘正时间仅限以下几种情况：（常驻地：北京）
+                    <br>
+                    <br>
+                    公益活动；主持活动；商业咨询诊断；演讲授课；演讲分享；参加论坛；参加会议；参加酒会；参加沙龙；健身；录制节目；广告拍摄；出席庆典开业；剪彩；合影；午餐晚餐；下午茶；唱歌；旅游；视频交流；语音通话；微博转发；微信朋友圈转发
+                    <br>
+                    <br> 时间使用期间，双方必须保证行为合理合法。
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="centerTabView2" hidden>
+            <div id="tipNoNews" style="padding:2rem;font-size:2.4rem;color:#999;" hidden>暂无新闻</div>
+        </div>
+        <div id="centerTabView3" hidden>
+            <div id="tipNoNotice" style="padding:2rem;font-size:2.4rem;color:#999;" hidden>暂无公告</div>
+        </div>
+        <div id="centerTabView4" hidden>
+            <div id="wrapper">
+                <ul id="comments-list"></ul>
+                <div id="tipNoComment" style="padding:2rem;font-size:2.4rem;color:#999;" hidden>暂无论坛</div>
+            </div>
+        </div>
+    </div>
+    <div style="position:fixed; bottom:0; height:8rem; width:100%; padding:1.2rem 0 ; background:#262834;font-size:2rem; color:#999;text-align:center">
+
+        <div style="float:left;width:20%;" onclick="clickBuy()">
+            <img src="images/ic_detail_buy.png"  style="width:3.4rem;margin-bottom:.3rem;">
+            <div>购买</div>
+        </div>
+        <div style="float:left;width:20%;" onclick="clickSell()">
+            <img src="images/ic_detail_sell.png" style="width:3.4rem;margin-bottom:.3rem;">
+            <div>转让</div>
+        </div>
+        <div style="float:left;width:20%;" onclick="clickInvite()">
+            <img src="images/ic_detail_invite.png" style="width:3.4rem;margin-bottom:.3rem;">
+            <div>预约</div>
+        </div>
+        <div style="float:left;width:20%;" onclick="clickZixuan()">
+            <img id="imgZixuan" src="images/ic_detail_add.png"  style="width:3.4rem;margin-bottom:.3rem;">
+            <div>自选</div>
+        </div>
+        <div style="float:left;width:20%;" onclick="clickJudge()" show>
+            <img src="images/ic_detail_comment.png"  style="width:3.4rem;margin-bottom:.3rem;">
+            <div>论坛</div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+<script type="text/javascript">
+    // 切换分时/日K图
+function clickLineTab(tab) {
+    if (tab == 1) {
+        $('#lineTab1').css('color', '#007AFF');
+        $('#lineTab1').css('border-bottom', '4px solid #007AFF');
+        $('#lineTab2').css('color', '#999');
+        $('#lineTab2').css('border', 'none');
+        $('#fenShi').show();
+        $('#riK').hide();
+    } else {
+        $('#lineTab1').css('color', '#999');
+        $('#lineTab1').css('border', 'none');
+        $('#lineTab2').css('color', '#007AFF');
+        $('#lineTab2').css('border-bottom', '4px solid #007AFF');
+        $('#fenShi').hide();
+        $('#riK').show();
+    }
+}
+
+function line(ctx, x0, y0, x1, y1, color, width) {
+    ctx.beginPath();
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1, y1);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width || 1;
+    ctx.stroke();
+}
+function lines(ctx, x0, y0, x1, y1, color, width) {
+    ctx.beginPath();
+    //ctx.setLineDash([6, 6]);
+    ctx.moveTo(x0, y0);
+    ctx.lineTo(x1, y1);
+    ctx.strokeStyle = color;
+    ctx.lineWidth = width || 1;
+    ctx.stroke();
+    ctx.closePath();
+}
+function getMinTime(minIndex) {
+    //上午09：30-11：30
+    //下午13：00-15：00
+    var d = new Date();
+    if (minIndex <= 120) {
+        d.setHours(9, 30, 30);
+        d = new Date(d.getTime() + (minIndex) * 60 * 1000);
+    } else {
+        d.setHours(13, 0, 0);
+        d = new Date(d.getTime() + (minIndex - 120) * 60 * 1000);
+    }
+    var hour = d.getHours() > 9 ? new String(d.getHours()) : '0' + d.getHours();
+    var minutes = d.getMinutes() > 9 ? new String(d.getMinutes()) : '0' + d.getMinutes();
+    var seconds = '30';
+    return hour + '' + minutes + seconds;
+}
+
+
+
+function minsChart(canvasId, options) {
+    extendObject(options, this);
+    this.canvas = $id(canvasId);
+    this.ctx = this.canvas.getContext('2d');
+    this.canvas.painter = this;
+}
+
+minsChart.prototype = {
+    /*
+     data format like :{
+     quote: {
+     time: 20111214150106,
+     open: 2241.390,
+     preClose: 2248.590,
+     highest: 2256.740,
+     lowest: 2224.730,
+     price: 2228.530,
+     volume: 4407982200,
+     amount: 38621178573
+     },
+     mins: [
+     {price:2239.45,volume:49499299,amount:459279327}
+     ]
+     }
+     */
+    paint: function (data) {
+        this.fillTopText(data);
+        this.paintChart(data);
+        this.paintxAxis();
+        this.fillBottomText(data);
+        this.paintVolume(data);
+    },
+
+    paintVolume: function (data) {
+        var ctx = this.ctx;
+        var options = this.volume;
+        ctx.beginPath();
+        ctx.rect(options.region.x, options.region.y, options.region.width, options.region.height);
+        ctx.strokeStyle = options.borderColor;
+        ctx.stroke();
+        line(ctx, options.region.x, options.region.y + options.region.height / 2, options.region.x + options.region.width, options.region.y + options.region.height / 2, options.splitLineColor);
+        options.getDataLength = function () {
+            return this.data.items.length;
+        };
+        options.maxDotsCount = this.maxDotsCount;
+        var volumePainterImp = new volumePainter(options);
+        var painter = new Painter(this.canvas.id, volumePainterImp, {items: data.mins});
+        painter.paint();
+        var max = painter.maxVolume.toString().split('.')[0];
+        console.log(max);
+        var unit;
+        unit = '成交量';
+        var scalers = [max, '', unit];
+        var yscaler = new yAxis(this.volume.yScaler);
+        var painter = new Painter(this.canvas.id, yscaler, scalers);
+        painter.paint();
+    },
+
+    fillBottomText: function (data) {
+        if (!this.bottomText) return;
+        //高9999 低9999 成交888999
+        var ctx = this.ctx;
+        var txt = '高';
+        var options = this.bottomText;
+        ctx.font = options.font;
+        ctx.fillStyle = options.color;
+        var w = ctx.measureText(txt).width;
+        ctx.fillText(txt, options.region.x, options.region.y);
+        var x = options.region.x + w;
+        var quote = data.quote;
+        var me = this;
+
+        function getTxtColor(val) {
+            return val > quote.preClose ? me.riseColor : (val == quote.preClose ? me.normalColor : me.fallColor);
+        }
+
+        var highColor = getTxtColor(quote.highest);
+        var high = toMoney(quote.highest);
+        ctx.fillStyle = highColor;
+        w = ctx.measureText(high).width;
+        ctx.fillText(high, x, options.region.y);
+        x += w;
+        txt = ' 低';
+        ctx.fillStyle = options.color;
+        w = ctx.measureText(txt).width;
+        ctx.fillText(txt, x, options.region.y);
+        x += w;
+        var lowColor = getTxtColor(quote.lowest);
+        var low = toMoney(quote.lowest);
+        w = ctx.measureText(low).width;
+        ctx.fillStyle = lowColor;
+        ctx.fillText(low, x, options.region.y);
+        x += w;
+        ctx.fillStyle = options.color;
+        var amount = ' 成交' + bigNumberToText(quote.amount);
+        ctx.fillText(amount, x, options.region.y);
+    },
+
+    paintxAxis: function () {
+        var xAxisImpl = new xAxis(this.xScaler);
+        var xAxisPainter = new Painter(this.canvas.id, xAxisImpl, this.xScaler.data);
+        xAxisPainter.paint();
+    },
+
+    paintChart: function (data) {
+        var minsChartOptions = this.minsChart;
+        var region = this.minsChart.region;
+        var ctx = this.ctx;
+        ctx.beginPath();
+        ctx.strokeStyle = minsChartOptions.borderColor;
+        ctx.rect(region.x, region.y, region.width, region.height);
+        ctx.stroke();
+
+        //水平线
+        var middleIndex = (this.minsChart.horizontalLineCount + this.minsChart.horizontalLineCount % 2) / 2;
+        var splitCount = this.minsChart.horizontalLineCount + 1;
+        for (var i = 1; i <= this.minsChart.horizontalLineCount; i++) {
+            var color = (i == middleIndex ? minsChartOptions.middleLineColor : minsChartOptions.otherSplitLineColor);
+            var y = region.y + region.height * i / splitCount;
+            if (i == middleIndex) {
+                console.log(i);
+                lines(ctx, region.x, y, region.x + region.width, y, color);
+            } else {
+                line(ctx, region.x, y, region.x + region.width, y, color);
+            }
+        }
+        //垂直线
+        splitCount = this.minsChart.verticalLineCount + 1;
+        for (var i = 1; i <= this.minsChart.verticalLineCount; i++) {
+            var x = region.x + region.width * i / splitCount;
+            if (i == 0 || i == 2 || i == 4 || i == 6 || i == 7) {
+                line(ctx, x, region.y, x, region.y + region.height, minsChartOptions.otherSplitLineColor);
+            }
+        }
+
+        //价格线
+        var lineOptions = {
+            region: region,
+            maxDotsCount: this.maxDotsCount,
+            getDataLength: function () {
+                return this.data.items.length;
+            },
+            getItemValue: function (item) {
+                return item.price;
+            },
+            middleValue: data.quote.preClose, //通常是昨收
+            lineColor: minsChartOptions.priceLineColor
+        };
+        var linePainterImp = new linePainter(lineOptions);
+        var priceLinePainter = new Painter(this.canvas.id, linePainterImp, {items: data.mins});
+        priceLinePainter.paint();
+
+        //y轴
+        var yOptions = this.minsChart.yScalerLeft;
+        var preClose = data.quote.preClose;
+        var me = this;
+        yOptions.color = function (val) {
+            return val > preClose ? me.riseColor : (val == preClose ? me.normalColor : me.fallColor);
+        };
+        var scalersLeft = [];
+        var scalersRight = [];
+        var min = preClose - priceLinePainter.maxDiff;
+        var space = priceLinePainter.maxDiff * 2 / (this.minsChart.horizontalLineCount + 1);
+        for (var i = this.minsChart.horizontalLineCount + 1; i >= 0; i--) {
+            //var ass = [-0.1,-0.05,0,0.05,0.1];
+            var val = min + i * space;
+            //var val = parseFloat(preClose) + parseFloat(preClose)*ass[i];
+            console.log(preClose);
+            var percent;
+            if (preClose == 0) {
+                percent = 0.00;
+            } else {
+                percent = (val - preClose) * 100 / preClose;
+            }
+            //var percent = ass[i]*100;
+            if (i == 3 || i == 1) {
+                scalersLeft.push('');
+                scalersRight.push('');
+            } else {
+                scalersLeft.push(val.toFixed(2));
+                scalersRight.push(percent.toFixed(2) + '%');
+            }
+        }
+        var yx = new yAxis(yOptions);
+        var yAxisPainter = new Painter(this.canvas.id, yx, scalersLeft);
+        yAxisPainter.paint();
+
+        var yPercentOptions = this.minsChart.yScalerRight;
+        yPercentOptions.color = function (val) {
+            return (val == '0.00%' ? '#fff' : (val.charAt(0) == '-' ? 'green' : 'red'));
+        };
+        var yxPercent = new yAxis(yPercentOptions);
+        var yxPercentPainter = new Painter(this.canvas.id, yxPercent, scalersRight);
+        yxPercentPainter.paint();
+
+
+        //均线
+        if (this.needPaintAvgPriceLine) {
+            //生成移动均线数据
+            var items = [];
+            var totalVolume = 0;
+            var totalAmount = 0;
+            data.mins.each(function (item) {
+                totalVolume += item.volume;
+                totalAmount += item.amount;
+                items.push(totalAmount / totalVolume);
+            });
+            lineOptions.lineColor = minsChartOptions.avgPriceLineColor;
+            lineOptions.getItemValue = function (item) {
+                return item;
+            };
+            linePainterImp = new linePainter(lineOptions);
+            var painterAvg = new Painter(this.canvas.id, linePainterImp, {items: items});
+            painterAvg.paint();
+        }
+
+        var me = this;
+        var chartRegion = me.minsChart.region;
+
+        function getY(x) {
+            var index = Math.ceil((x - me.minsChart.region.x) * me.maxDotsCount / me.minsChart.region.width);
+            var val;
+            var isNewQuote;
+            if (index >= 0 && index < data.mins.length) {
+                val = data.mins[index].price;
+                isNewQuote = false;
+            } else {
+                val = data.quote.price;
+                isNewQuote = true;
+            }
+
+            if (me.canvas.tip) me.canvas.tip.dataContext = {data: data, isNewQuote: isNewQuote, index: index};
+            var diff = val - preClose;
+            var middleY = (me.minsChart.region.y + me.minsChart.region.height / 2);
+            return middleY - diff * me.minsChart.region.height / 2 / priceLinePainter.maxDiff;
+        }
+
+
+    },
+
+    fillTopText: function (data, minIndex) {
+
+    }
+};
+
+var chart = new minsChart('canvas', {
+    fallColor: 'green', riseColor: 'red', normalColor: '#fff', maxDotsCount: 421, needPaintAvgPriceLine: false,
+    backgroundColor: 'white',
+    topText: {
+        font: '16px 华文黑体',
+        color: '#fff',
+        region: {x: 58.5, y: 5.5, width: 305, height: 20},
+        textBaseline: 'top'
+    },
+    minsChart: {
+        region: {x: 0.5, y: 11.5, width: 420, height: 400},
+        priceLineColor: '#6F7AF9',
+        avgPriceLineColor: 'red',
+        middleLineColor: '#E48E13',
+        otherSplitLineColor: '#35353C',
+        borderColor: '#35353C',
+        horizontalLineCount: 3,
+        verticalLineCount: 6,
+        yScalerLeft: {
+            font: '14px Arial',
+            region: {x: 0, y: 10, width: 32.5, height: 400},
+            align: 'right',
+            fontHeight: 9,
+            textBaseline: 'top'
+        },
+        yScalerRight: {
+            font: '14px Arial',
+            region: {x: 370.5, y: 10, width: 50, height: 400},
+            align: 'right',
+            fontHeight: 9,
+            textBaseline: 'top'
+        }
+    },
+    xScaler: {
+        font: '14px Arial', color: '#fff',
+        region: {x: 0, y: 435, width: 420, height: 30},
+        data: ['09:30', '', '11:30/13:00', '', '15:00/18:00', '', "20:00", "21:00"]
+    },
+
+    //bottomText: { font: '11px 宋体', color: 'black', region: { x: 5.5, y: 260, width: 400, height: 20} },
+    volume: {
+        region: {x: 0, y: 455.5, width: 420, height: 110},
+        bar: {color: 'red', width: 2, color2: "#28c99f"},    //交易量颜色
+        borderColor: '#35353C', splitLineColor: '#35353C',   //交易量边框色
+        yScaler: {
+            font: '14px Arial',
+            region: {x: 5, y: 465.5, width: 40.5, height: 90},
+            color: '#fff',
+            align: 'left',
+            fontHeight: 12,
+            textBaseline: 'top'
+        }
+    }
+});
+//var data = getQuote();
+var dataa = app.OBJECT.baseInformation;
+var datab = app.OBJECT.minitePriceList;
+var quote = {
+    open: dataa.openPrice,
+    preClose: dataa.closePrice,
+    highest: dataa.higestPrice,
+    lowest: dataa.lowestPrice,
+    price: dataa.price
+};
+var mins = [];
+var minsObj = {};
+for (var i = 0; i < datab.length; i++) {
+    minsObj = {
+        volume: datab[i].buyAndSell,
+        price: datab[i].price,
+        time: datab[i].time
+    }
+    mins[i] = minsObj;
+}
+var data = {quote: quote, mins: mins};
+console.log(data);
+chart.paint(data);
+
+//五档
+var sellFiverList = app.OBJECT.sellFilverList;
+var buyFiverList = app.OBJECT.buyFiverList;
+var sellHtml = function (data) {
+    var html = "<div class='quoDiv1'><ul>";
+    for (var i = 4; i >= 0; i--) {
+        var a = i + 1;
+        if (data.length > i) {
+            if (data[i].price > dataa.closePrice) {
+                html += "<li class='liStyle1'><div class='threeLeft2'>卖" + a + "</div><div class='threeLeft3' style='color:#FF2D41'>" + data[i].price + "</div><div class='threeLeft4' style='color:#28C99F'>" + data[i].num + "</div><div class='clear'></div></li>";
+            } else if (data[i].price < dataa.closePrice) {
+                html += "<li class='liStyle1'><div class='threeLeft2'>卖" + a + "</div><div class='threeLeft3' style='color:#28c99f'>" + data[i].price + "</div><div class='threeLeft4' style='color:#28C99F'>" + data[i].num + "</div><div class='clear'></div></li>";
+            } else {
+                html += "<li class='liStyle1'><div class='threeLeft2'>卖" + a + "</div><div class='threeLeft3'>" + data[i].price + "</div><div class='threeLeft4' style='color:#28C99F'>" + data[i].num + "</div><div class='clear'></div></li>";
+            }
+        } else {
+            html += "<li class='liStyle1'><div class='threeLeft2'>卖" + a + "</div><div class='threeLeft3'>- -</div><div class='threeLeft4'>- -</div><div class='clear'></div></li>";
+        }
+    }
+    html += "</ul></div>";
+    return html;
+};
+var buyHtml = function (data) {
+    var html = "<div class='quoDiv1'><ul>";
+    for (var i = 0; i < 5; i++) {
+        var a = i + 1;
+        if (data.length > i) {
+            if (data[i].price > dataa.closePrice) {
+                html += "<li class='liStyle1'><div class='threeLeft2'>买" + a + "</div><div class='threeLeft3' style='color:#FF2D41'>" + data[i].price + "</div><div class='threeLeft4' style='color:#FF2D41'>" + data[i].num + "</div><div class='clear'></div></li>";
+            } else if (data[i].price < dataa.closePrice) {
+                html += "<li class='liStyle1'><div class='threeLeft2'>买" + a + "</div><div class='threeLeft3' style='color:#28c99f'>" + data[i].price + "</div><div class='threeLeft4' style='color:#FF2D41'>" + data[i].num + "</div><div class='clear'></div></li>";
+            } else {
+                html += "<li class='liStyle1'><div class='threeLeft2'>买" + a + "</div><div class='threeLeft3'>" + data[i].price + "</div><div class='threeLeft4' style='color:#FF2D41'>" + data[i].num + "</div><div class='clear'></div></li>";
+            }
+        } else {
+            html += "<li class='liStyle1'><div class='threeLeft2'>买" + a + "</div><div class='threeLeft3'>- -</div><div class='threeLeft4'>- -</div><div class='clear'></div></li>";
+        }
+    }
+    html += "</ul></div>";
+    return html;
+};
+
+//明细
+var buyAndSellerList = app.OBJECT.buyAndSellerList;
+var buyAndSellHtml = function (data) {
+    var html = "<div class='quoDiv2'><ul>";
+    for (var i = 0; i < data.length; i++) {
+        html += "<li class='liStyle1'>" +
+                "<div class='threeLeft24' style='color:#ccc'>" + data[i].time + "</div>";
+        if (data[i].price > dataa.closePrice) {
+            html += "<div class='threeLeft38' style='color:#FF2D41'>" + data[i].price + "</div>";
+        } else if (data[i].price < dataa.closePrice) {
+            html += "<div class='threeLeft38' style='color:#28c99f'>" + data[i].price + "</div>";
+        } else {
+            html += "<div class='threeLeft38'>" + data[i].price + "</div>";
+        }
+        if (data[i].type == 'S') {
+            html += "<div class='threeLeft38' style='color:#28c99f'>" + data[i].num + "</div>";
+        } else if (data[i].type == 'B') {
+            html += "<div class='threeLeft38' style='color:#FF2D41'>" + data[i].num + "</div>";
+        } else if (data[i].type == 'N') {
+            html += "<div class='threeLeft38' style='color:#CCCCCC'>" + data[i].num + "</div>";
+        } else {
+            html += "<div class='threeLeft38' style='color:#FFFFFF'>" + data[i].num + "</div>";
+        }
+        html += "<div class='clear'></div></li>";
+    }
+    html += "</ul></div>";
+    return html;
+};
+$("#qiehuan").html(sellHtml(sellFiverList) + buyHtml(buyFiverList));
+var clickNow = 1;
+
+//切换五档明细
+$(".fiver_a").click(function () {
+    console.log();
+    if ($(this).data('id') == clickNow) {
+        return false
+    }
+    clickNow = $(this).data('id');
+    $('.fiver_a').removeClass('fiver_b');
+    $(this).addClass('fiver_b');
+    if ($(this).data('id') == 1) {
+        $("#qiehuan").html(sellHtml(sellFiverList) + buyHtml(buyFiverList));
+    } else {
+        $("#qiehuan").html(buyAndSellHtml(buyAndSellerList));
+        $('.quoDiv2').scrollTop($('.quoDiv2')[0].scrollHeight);
+    }
+});
+</script>
+<script type="text/javascript">
+    function convertDate(val, withWeek) {
+        var year = Math.ceil(val / 10000) - 1;
+        var day = val % 100;
+        var month = (Math.ceil(val / 100) - 1) % 100;
+        var d = new Date();
+        d.setYear(year);
+        d.setMonth(month - 1);
+        d.setDate(day);
+        if (month < 10) month = '0' + month;
+        if (day < 10) day = '0' + day;
+        if (withWeek) {
+            var weekNames = ['日', '一', '二', '三', '四', '五', '六'];
+            return year + '-' + month + '-' + day + '(星期' + weekNames[d.getDay()] + ')';
+        }
+        else {
+            return year + '-' + month + '-' + day;
+        }
+    }
+function calcMAPrices(ks, startIndex, count, daysCn) {
+    var result = new Array();
+    for (var i = startIndex; i < startIndex + count; i++) {
+        var startCalcIndex = i - daysCn + 1;
+        if (startCalcIndex < 0) {
+            result.push(false);
+            continue;
+        }
+        var sum = 0;
+        for (var k = startCalcIndex; k <= i; k++) {
+            sum += ks[k].close;
+        }
+        var val = sum / daysCn;
+        result.push(val);
+    }
+    return result;
+}
+
+var timer = {
+    start: function (step) {
+        this.startTime = new Date();
+        this.stepName = step;
+    },
+    stop: function () {
+        var timeSpan = new Date().getTime() - this.startTime.getTime();
+        setDebugMsg(this.stepName + '耗时' + timeSpan + 'ms');
+    }
+};
+
+function kLine(options) {
+    this.options = options;
+    this.dataRanges = null;
+}
+
+kLine.prototype = {
+    initialize: function (painter) {
+        painter.klOptions = this.options;
+        painter.implement = this;
+    },
+    start: function () {
+        //timer.start('start');
+        var canvas = this.canvas;
+        var ctx = this.ctx;
+        this.painting = true;
+        var options = this.klOptions;
+        var clearPart = {width: canvas.width, height: options.priceLine.region.y - 3};
+        ctx.clearRect(0, 0, clearPart.width, clearPart.height);
+
+        ctx.save();
+        window.riseColor = options.riseColor;
+        window.fallColor = options.fallColor;
+        window.normalColor = options.normalColor;
+        if (options.backgroundColor && !this.drawnBackground) {
+            ctx.beginPath();
+            ctx.fillStyle = options.backgroundColor;
+            ctx.rect(0, 0, clearPart.width, clearPart.height);
+            ctx.fill();
+            //ctx.closePath();
+            this.drawnBackground = true;
+        }
+        ctx.translate(options.region.x, options.region.y);
+        ctx.strokeStyle = options.borderColor;
+        ctx.beginPath();
+        ctx.rect(0, 0, options.region.width, options.region.height);
+        ctx.stroke();
+        //画水平底纹线
+        var spaceHeight = options.region.height / (options.horizontalLineCount + 1);
+        for (var i = 1; i <= options.horizontalLineCount; i++) {
+            var y = spaceHeight * i;
+            if (y * 10 % 10 == 0) y += .5;
+            this.drawHLine(options.splitLineColor, 0, y, options.region.width, 1, options.lineStyle);
+        }
+        //画垂直底纹线
+        var spaceWidth = options.region.width / (options.verticalLineCount + 1);
+        for (var i = 1; i <= options.verticalLineCount; i++) {
+            var w = spaceWidth * i;
+            if (w * 10 % 10 == 0) w += .5;
+            this.drawVLine(options.splitLineColor, w, 0, options.region.height, 1, options.lineStyle);
+        }
+        //timer.stop();
+    },
+    end: function () {
+        this.ctx.restore();
+        var me = this;
+        var options = me.klOptions;
+        var region = options.region;
+        var volumeRegion = options.volume.region;
+
+        function getIndex(x) {
+            x -= region.x;
+            var index = Math.ceil(x / (me.klOptions.spaceWidth + me.klOptions.barWidth)) - 1;
+            var count = me.toIndex - me.startIndex + 1;
+            if (index >= count) index = count - 1;
+            return index;
+        }
+
+        function getX(x) {
+            var index = getIndex(x);
+            return region.x + me.klOptions.spaceWidth * (index + 1) + me.klOptions.barWidth * index + me.klOptions.barWidth * .5;
+        }
+
+        function getPriceColor(ki, price) {
+            if (price > ki.preClose) {
+                return riseColor;
+            } else if (price < ki.preClose) {
+                return fallColor;
+            } else {
+                return normalColor;
+            }
+        }
+
+        // 每日详情提示框
+        function getTipHtml(x) {
+            var index = me.startIndex + getIndex(x);
+            if (index >= me.data.ks.length) index = me.data.ks.length - 1;
+            if (index < 0) index = 0;
+            var ki = me.data.ks[index];
+            var tipHtml = "<div><b style='font-size:12pt'>" + convertDate(ki.quoteTime) + '</b></div>' +
+                    '开盘：<font color="' + getPriceColor(ki, ki.open) + '">' + toMoney(ki.open) + '</font><br/>' +
+                    '最高：<font color="' + getPriceColor(ki, ki.high) + '">' + toMoney(ki.high) + '</font><br/>' +
+                    '最低：<font color="' + getPriceColor(ki, ki.low) + '">' + toMoney(ki.low) + '</font><br/>' +
+                    '收盘：<font color="' + getPriceColor(ki, ki.close) + '">' + toMoney(ki.close) + '</font><br/>' +
+                    '涨跌额：<font color="' + getPriceColor(ki, ki.close) + '">' + toMoney(ki.uplow) + '</font><br/>' +
+                    '涨跌幅：<font color="' + getPriceColor(ki, ki.close) + '">' + ki.uplowPrice + '</font><br/>' +
+                    '成交量：' + bigNumberToText(ki.volume) + '秒<br/>' +
+                    '成交额：' + bigNumberToText(ki.amount) + '元';
+            return tipHtml;
+        }
+
+        function getEventOffsetPosition(ev) {
+            var offset = isTouchDevice()
+                    ? setTouchEventOffsetPosition(ev, getPageCoord(me.canvas))
+                    : getOffset(ev);
+            return offset;
+        }
+
+        var controllerEvents = {
+            onStart: function (ev) {
+                ev = ev || event;
+                var offset = getEventOffsetPosition(ev);
+                me.controllerStartOffset = offset;
+                me.controllerStartRange = me.dataRanges;
+            },
+            onEnd: function (ev) {
+                me.controllerStartOffset = null;
+                me.controllerStartRange = null;
+            },
+            onMove: function (ev) {
+                if (!me.controllerStartOffset) return;
+                ev = ev || event;
+                var offset = getEventOffsetPosition(ev);
+                var moveX = offset.offsetX - me.controllerStartOffset.offsetX;
+                var currentRange = me.controllerStartRange;
+                /*0-100*/
+                var regionWidth = region.width;
+                var moveValue = 0 - (moveX / regionWidth) * (currentRange.to - currentRange.start);
+                var start = currentRange.start + moveValue;
+                var to = currentRange.to + moveValue;
+                if (start < 0) {
+                    start = 0;
+                    to = start + (currentRange.to - currentRange.start);
+                }
+                else {
+                    if (to > 100) {
+                        to = 100;
+                        start = to - (currentRange.to - currentRange.start);
+                    }
+                }
+                var changeToValue = {left: start, right: to};
+                if (!me.painting) drawKL({start: changeToValue.left, to: changeToValue.right});
+            }
+        };
+
+        /*
+         当touchstart时的位置在K线柱附近时表示要显示柱的描述信息框；否则则要控制K线的范围
+         */
+        var fingerSize = {width: 30, height: 20};
+
+        function shouldDoControllerEvent(ev, evtType) {
+            if (evtType == undefined) return true;
+            if (typeof me.shouldController == 'undefined') me.shouldController = true;
+            if (evtType == 'touchstart') {
+                var offset = getEventOffsetPosition(ev);
+                var showTip = false;
+
+                var x = offset.offsetX;
+                x -= region.x;
+                var index = Math.ceil(x / (me.klOptions.spaceWidth + me.klOptions.barWidth)) - 1;
+
+                var indexRange = Math.ceil(fingerSize.width / (me.klOptions.spaceWidth + me.klOptions.barWidth)) + 1;
+
+                var indexStart = Math.max(0, index - indexRange / 2);
+                var indexTo = Math.min(me.filteredData.length - 1, index + indexRange / 2);
+                var yMin = 999999;
+                var yMax = -1;
+                for (index = indexStart; index <= indexTo; index++) {
+                    var dataAtIndex = me.filteredData[index];
+                    var yTop = region.y + (me.high - dataAtIndex.high) * region.height / (me.high - me.low) - fingerSize.height;
+                    var yBottom = region.y + (me.high - dataAtIndex.low) * region.height / (me.high - me.low) + fingerSize.height;
+                    yMin = Math.min(yTop, yMin);
+                    yMax = Math.max(yBottom, yMax);
+                }
+                showTip = offset.offsetY >= yMin && offset.offsetY <= yMax;
+                setDebugMsg('yMin=' + yMin + ',yMax=' + yMax + ',offsetY=' + offset.offsetY + ',showTip=' + showTip);
+                me.shouldController = !showTip;
+
+            }
+            //setDebugMsg('shouldController=' + me.shouldController);
+            return me.shouldController;
+        }
+
+        if (!me.crossLineAndTipMgrInstance) {
+            me.crossLineAndTipMgrInstance = new crossLinesAndTipMgr(me.canvas, {
+                getCrossPoint: function (ev) {
+                    return {x: getX(ev.offsetX), y: ev.offsetY};
+                },
+                triggerEventRanges: {
+                    x: region.x,
+                    y: region.y + 1,
+                    width: region.width,
+                    height: volumeRegion.y + volumeRegion.height - region.y
+                },
+                tipOptions: {
+                    getTipHtml: function (ev) {
+                        return getTipHtml(ev.offsetX);
+                    },
+                    size: {width: 150, height: 180},
+                    position: {x: false, y: region.y + (region.height - 150) / 3}, //position中的值是相对于canvas的左上角的
+                    opacity: 80,
+                    cssClass: '',
+                    offsetToPoint: 30
+                },
+                // 十字交叉线颜色
+                crossLineOptions: {
+                    color: '#007AFF'
+                },
+                shouldDoControllerEvent: shouldDoControllerEvent,
+                controllerEvents: controllerEvents
+            });
+            me.crossLineAndTipMgrInstance.addCrossLinesAndTipEvents();
+        }
+        else {
+            me.crossLineAndTipMgrInstance.updateOptions({
+                getCrossPoint: function (ev) {
+                    return {x: getX(ev.offsetX), y: ev.offsetY};
+                },
+                triggerEventRanges: {
+                    x: region.x,
+                    y: region.y + 1,
+                    width: region.width,
+                    height: volumeRegion.y + volumeRegion.height - region.y
+                },
+                tipOptions: {
+                    getTipHtml: function (ev) {
+                        return getTipHtml(ev.offsetX);
+                    },
+                    size: {width: 120, height: 180},
+                    position: {x: false, y: region.y + (region.height - 150) / 3}, //position中的值是相对于canvas的左上角的
+                    opacity: 80,
+                    cssClass: '',
+                    offsetToPoint: 30
+                },
+                // 十字交叉线颜色
+                crossLineOptions: {
+                    color: '#007AFF'
+                },
+                shouldDoControllerEvent: shouldDoControllerEvent,
+                controllerEvents: controllerEvents
+            });
+        }
+        if (!me.addOrentationChangedEvent) {
+            me.addOrentationChangedEvent = true;
+
+            addEvent(window, 'orientationchange', function (ev) {
+                me.requestController = true;
+                me.implement.onOrentationChanged.call(me);
+            });
+        }
+
+        me.painting = false;
+    },
+    paintItems: function () {
+        var options = this.klOptions;
+        var region = options.region;
+        var maxDataLength = this.data.ks.length;
+        var needCalcSpaceAndBarWidth = true;
+        if (this.dataRanges == null) {
+            //计算dataRanges
+            var dataCount = Math.ceil(region.width / (options.spaceWidth + options.barWidth)) - 1;
+            if (dataCount > maxDataLength) dataCount = maxDataLength;
+
+            this.dataRanges = {
+                start: 100 * (this.data.ks.length - dataCount) / this.data.ks.length,
+                to: 100
+            };
+
+            needCalcSpaceAndBarWidth = false;
+        }
+        var dataRanges = this.dataRanges;
+        var startIndex = Math.ceil(dataRanges.start / 100 * maxDataLength);
+        var toIndex = Math.ceil(dataRanges.to / 100 * maxDataLength) + 1;
+        if (toIndex == maxDataLength) toIndex = maxDataLength - 1;
+        this.startIndex = startIndex;
+        this.toIndex = toIndex;
+        var itemsCount = toIndex - startIndex + 1;
+        if (needCalcSpaceAndBarWidth) {
+            //重新计算spaceWidth和barWidth属性
+            function isOptionsOK() {
+                return (options.spaceWidth + options.barWidth) * itemsCount <= region.width;
+            }
+
+            var spaceWidth, barWidth;
+            if (isOptionsOK()) {
+                //柱足够细了
+                spaceWidth = 1;
+                barWidth = (region.width - spaceWidth * itemsCount) / itemsCount;
+                if (barWidth > 4) {
+                    spaceWidth = 2;
+                    barWidth = ((region.width - spaceWidth * itemsCount) / itemsCount);
+                }
+            } else {
+                spaceWidth = 1;
+                barWidth = (region.width - spaceWidth * itemsCount) / itemsCount;
+                if (barWidth <= 2) {
+                    spaceWidth = 0;
+                    barWidth = (region.width - spaceWidth * itemsCount) / itemsCount;
+                } else if (barWidth > 4) {
+                    spaceWidth = 2;
+                    barWidth = ((region.width - spaceWidth * itemsCount) / itemsCount);
+                }
+            }
+
+            options.barWidth = barWidth;
+            options.spaceWidth = spaceWidth;
+        }
+
+        var filteredData = [];
+        for (var i = startIndex; i <= toIndex && i < maxDataLength; i++) {
+            filteredData.push(this.data.ks[i]);
+        }
+        var high, low;
+        filteredData.each(function (val, a, i) {
+            if (i == 0) {
+                high = val.high;
+                low = val.low;
+            }
+            else {
+                high = Math.max(val.high, high);
+                low = Math.min(low, val.low);
+            }
+        });
+
+        this.high = high;
+        this.low = low;
+        var ctx = this.ctx;
+        var me = this;
+        //timer.start('paintItems:移动均线');
+        //画移动平均线
+        this.implement.paintMAs.call(this, filteredData, getY);
+        //timer.stop();
+        //timer.start('paintItems:画柱');
+        function getY(price) {
+            return (me.high - price) * region.height / (me.high - me.low);
+        }
+
+        function getCandleLineX(i) {
+            var result = i * (options.spaceWidth + options.barWidth) + (options.spaceWidth + options.barWidth) * .5;
+            if (result * 10 % 10 == 0) result += .5;
+            return result;
+        }
+
+        var currentX = 0;
+        var needCandleRect = options.barWidth > 1.5;
+        // 每日蜡烛图
+        var drawCandle = function (ki, a, i) {
+            var color;
+            if (ki.close > ki.preClose) {
+                color = riseColor;
+            } else if (ki.close < ki.preClose) {
+                color = fallColor;
+            } else {
+                color = normalColor;
+            }
+            var lineX = getCandleLineX(i);
+            if (currentX == 0) currentX = lineX;
+            else {
+                if (lineX - currentX < 1) return;
+            }
+            currentX = lineX;
+            var topY = getY(ki.high);
+            var bottomY = getY(ki.low);
+            if (needCandleRect) {
+                ctx.fillStyle = color;
+                ctx.strokeStyle = color;
+                var candleY, candleHeight;
+                if (ki.close > ki.open) {
+                    candleY = getY(ki.close);
+                    candleHeight = getY(ki.open) - candleY;
+                } else {
+                    candleY = getY(ki.open);
+                    candleHeight = getY(ki.close) - candleY;
+                }
+                candleHeight = candleHeight <= 0 ? 1 : candleHeight; // 设置最低高度为1，避免为0时不可见
+                //画线
+                ctx.beginPath();
+                ctx.moveTo(lineX, topY);
+                ctx.lineTo(lineX, bottomY);
+                ctx.stroke();
+                var candleX = lineX - options.barWidth / 2;
+                ctx.beginPath();
+                ctx.fillRect(candleX, candleY, options.barWidth, candleHeight);
+            } else {
+                ctx.strokeStyle = color;
+                //画线
+                ctx.beginPath();
+                ctx.moveTo(lineX, topY);
+                ctx.lineTo(lineX, bottomY);
+                ctx.stroke();
+            }
+
+        };
+        //画蜡烛
+        filteredData.each(drawCandle);
+        this.filteredData = filteredData;
+        //timer.stop();
+        //timer.start('paintItems:纵轴');
+        var yAxisOptions = options.yAxis;
+        yAxisOptions.region = yAxisOptions.region || {
+                    x: 0 - region.x,
+                    y: 0 - 3,
+                    height: region.height,
+                    width: region.x - 3
+                };
+        //画y轴
+        var yAxisImp = new yAxis(yAxisOptions);
+        var yPainter = new Painter(
+                this.canvas.id,
+                yAxisImp,
+                calcAxisValues(high, low, (options.horizontalLineCount + 2))
+        );
+        yPainter.paint();
+        //timer.stop();
+        //timer.start('paintItems:横轴');
+        //画X轴
+        var xAxisOptions = options.xAxis;
+        xAxisOptions.region = {x: 0, y: region.height + 2, width: region.width, height: 20};
+        var xAxisImp = new xAxis(xAxisOptions);
+        var xScalers = [];
+        var stepLength = filteredData.length / (options.xAxis.scalerCount - 1);
+        if (stepLength < 1) {
+            options.xAxis.scalerCount = filteredData.length;
+            stepLength = 1;
+        }
+        xScalers.push(convertDate(filteredData[0].quoteTime, false).substr(2));
+        for (var i = 1; i < options.xAxis.scalerCount; i++) {
+            var index = Math.ceil(i * stepLength);
+            if (index >= filteredData.length) index = filteredData.length - 1;
+            var quoteTime = convertDate(filteredData[index].quoteTime, false);
+            quoteTime = quoteTime.substr(2);
+            xScalers.push(quoteTime);
+        }
+        var xPainter = new Painter(this.canvas.id, xAxisImp, xScalers);
+        xPainter.paint();
+        // timer.stop();
+
+        //timer.start('volume');
+        //画量
+        this.implement.paintVolume.call(this, filteredData);
+        //timer.stop();
+        //画价格线
+        //this.implement.paintPriceLine.call(this);
+    },
+    paintPriceLine: function () {
+        if (this.hasPaintPriceLine) return;
+        this.hasPaintPriceLine = true;
+        var ctx = this.ctx;
+        var options = this.klOptions.priceLine;
+        var region = options.region;
+        ctx.save();
+        ctx.translate(region.x, region.y);
+
+        ctx.clearRect(0 - region.x, 0, this.canvas.width, region.height);
+        //画水平底纹线
+        var spaceHeight = region.height / (options.horizontalLineCount + 1);
+        for (var i = 1; i <= options.horizontalLineCount; i++) {
+            var y = spaceHeight * i;
+            if (y * 10 % 10 == 0) y += .5;
+            this.drawHLine(options.splitLineColor, 0, y, region.width, 1, options.lineStyle);
+        }
+        //画垂直底纹线
+        var spaceWidth = region.width / (options.verticalLineCount + 1);
+        for (var i = 1; i <= options.verticalLineCount; i++) {
+            var w = spaceWidth * i;
+            if (w * 10 % 10 == 0) w += .5;
+            this.drawVLine(options.splitLineColor, w, 0, region.height, 1, options.lineStyle);
+        }
+        var ks = this.data.ks;
+
+        var ksLength = ks.length;
+        var priceRange;
+        ks.each(function (val, arr, i) {
+            if (i == 0) {
+                priceRange = {high: val.high, low: val.low};
+            }
+            else {
+                priceRange.high = Math.max(priceRange.high, val.close);
+                priceRange.low = Math.min(priceRange.low, val.close);
+            }
+        });
+        if (priceRange.low > 1) priceRange.low -= 1;
+        function getRangeX(i) {
+            return i * region.width / ksLength;
+        }
+
+        function getRangeY(val) {
+            return (priceRange.high - val) * region.height / (priceRange.high - priceRange.low);
+        }
+
+        var currentX = 0;
+        ks.each(function (val, arr, i) {
+            var x = getRangeX(i);
+            if (currentX == 0) currentX = x;
+            else {
+                if (x - currentX < 1) return;
+            }
+            currentX = x;
+            var y = getRangeY(val.close);
+            if (i == 0) {
+                ctx.beginPath();
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+        });
+        ctx.strokeStype = options.borderColor;
+        ctx.stroke();
+        ctx.lineTo(region.width, region.height);
+        ctx.lineTo(0, region.height);
+        ctx.closePath();
+        ctx.fillStyle = options.fillColor;
+        ctx.globalAlpha = options.alpha;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        var yAxisOptions = options.yAxis;
+        yAxisOptions.region = yAxisOptions.region || {
+                    x: 0 - region.x,
+                    y: 0 - 3,
+                    height: region.height,
+                    width: region.x - 3
+                };
+        //画y轴
+        var yAxisImp = new yAxis(yAxisOptions);
+        var yPainter = new Painter(
+                this.canvas.id,
+                yAxisImp,
+                calcAxisValues(priceRange.high, priceRange.low, (options.horizontalLineCount + 2))
+        );
+
+        yPainter.paint();
+        ctx.restore();
+    },
+    paintMAs: function (filteredData, funcGetY) {
+        var ctx = this.ctx;
+        var options = this.klOptions;
+        var MAs = options.MAs;
+        var me = this;
+        MAs.each(function (val, arr, index) {
+            var MA = calcMAPrices(me.data.ks, me.startIndex, filteredData.length, val.daysCount);
+            val.values = MA;
+            MA.each(function (val, arr, i) {
+                if (val) {
+                    me.high = Math.max(me.high, val);
+                    me.low = Math.min(me.low, val);
+                }
+            });
+        });
+
+        MAs.each(function (val, arr, index) {
+            var MA = val.values;
+            ctx.strokeStyle = val.color;
+            ctx.beginPath();
+            var currentX = 0;
+            MA.each(function (val, arr, i) {
+                var x = i * (options.spaceWidth + options.barWidth) + (options.spaceWidth + options.barWidth) * .5;
+
+                if (!val) return;
+                var y = funcGetY(val);
+                if (y && i == 0) {
+                    ctx.moveTo(x, y);
+                } else {
+                    ctx.lineTo(x, y);
+                }
+            });
+            ctx.stroke();
+        });
+    },
+    // 底部成交额柱状图
+    paintVolume: function (filteredData) {
+        var ctx = this.ctx;
+        var options = this.klOptions;
+        //画量线
+        var volumeOptions = options.volume;
+        var volumeRegion = volumeOptions.region;
+        ctx.restore();
+        ctx.save();
+        ctx.translate(volumeRegion.x, volumeRegion.y);
+        ctx.globalAlpha = 1;
+        //画水平底纹线
+        var spaceHeight = volumeRegion.height / (volumeOptions.horizontalLineCount + 1);
+        for (var i = 1; i <= volumeOptions.horizontalLineCount; i++) {
+            var y = spaceHeight * i;
+            if (y * 10 % 10 == 0) y += .5;
+            this.drawHLine(options.splitLineColor, 0, y, options.region.width, 1, options.lineStyle);
+        }
+        //画垂直底纹线
+        var spaceWidth = options.region.width / (options.verticalLineCount + 1);
+        for (var i = 1; i <= options.verticalLineCount; i++) {
+            var w = spaceWidth * i;
+            if (w * 10 % 10 == 0) w += .5;
+            this.drawVLine(options.splitLineColor, w, 0, volumeRegion.height, 1, options.lineStyle);
+        }
+
+        ctx.strokeStyle = options.borderColor;
+        ctx.beginPath();
+        ctx.rect(0, 0, volumeRegion.width, volumeRegion.height);
+        ctx.stroke();
+        //drawLines(ctx, [{ direction: 'H', position: .50, color: 'lightgray'}]);
+        var maxVolume = 0;
+
+        filteredData.each(function (val, arr, i) {
+            maxVolume = Math.max(maxVolume, val.amount); // 底部为成交额，非成交量
+        });
+        maxVolume *= 1.05;
+        function getVolumeY(v) {
+            return volumeRegion.height - volumeRegion.height / maxVolume * v;
+        }
+
+        function getVolumeX(i) {
+            return i * (options.spaceWidth + options.barWidth) + (options.spaceWidth) * .5;
+        }
+
+        ctx.globalAlpha = 1;
+        filteredData.each(function (val, arr, i) {
+            var x = getVolumeX(i);
+            var y = getVolumeY(val.amount);// 底部为成交额，非成交量
+            ctx.beginPath();
+            ctx.rect(x, y, options.barWidth, volumeRegion.height / maxVolume * val.amount);// 底部为成交额，非成交量
+            if (val.close > val.preClose) { // 底部成交额柱状图颜色
+                ctx.fillStyle = riseColor;
+            } else if (val.close < val.preClose) {
+                ctx.fillStyle = fallColor;
+            } else {
+                ctx.fillStyle = normalColor;
+            }
+            ctx.fill();
+        });
+
+        //画y轴
+        var volumeLevel;
+        var volumeUnit;
+        if (maxVolume < 10000 * 100) {
+            volumeLevel = 10000;
+            volumeUnit = '万';
+        }
+        else {
+            volumeLevel = 10000 * 100;
+            volumeUnit = '百万';
+        }
+
+        var volumeScalers = [];
+        volumeScalers.push((maxVolume / volumeLevel).toFixed(2));
+        volumeScalers.push((maxVolume / 2 / volumeLevel).toFixed(2));
+        volumeScalers.push(volumeUnit);
+        var volumeScalerOptions = volumeOptions.yAxis;
+        volumeScalerOptions.region = volumeScalerOptions.region || {
+                    x: 0 - volumeRegion.x,
+                    y: -3,
+                    width: volumeRegion.x - 3,
+                    height: volumeRegion.height
+                };
+        var volumeScalerImp = new yAxis(volumeScalerOptions);
+        var volumeScalerPainter = new Painter(this.canvas.id, volumeScalerImp, volumeScalers);
+        volumeScalerPainter.paint();
+        ctx.restore();
+        ctx.save();
+    },
+    onOrentationChanged: function (e) {
+        var orientation = window.orientation;
+
+        function getWidth() {
+            return screen.width - 40;
+            /*((orientation == 90 || orientation == -90) ? screen.width : screen.height) - 40; */
+        }
+
+        if (typeof orientation != 'undefined') {
+            setDebugMsg('orientation=' + orientation + ',getWidth=' + getWidth());
+            //if(orientation == 90 || orientation == -90 || orientation == 0){
+            var me = this;
+            var width = getWidth();
+            //var rate = width/me.canvas.width;
+            me.canvas.width = width;
+            var options = me.klOptions;
+            var chartWidth = width - options.chartMargin.left - options.chartMargin.right;
+            me.klOptions.volume.region.width =
+                    me.klOptions.priceLine.region.width =
+                            me.klOptions.region.width = chartWidth;
+            //方向改变了，要重画controller
+            me.controller = null;
+            me.hasPaintPriceLine = false;
+            drawKL({start: me.dataRanges.start, to: me.dataRanges.to});
+            // }
+        }
+    }
+};
+
+var painter;// = new Painter('canvasKL', kl, data);
+var initialWidth = 640;
+function drawKL(ranges) {
+    var marginLeft = 40;
+    var marginRight = 20;
+    var kOptions = {
+        backgroundColor: '#1E1E26',
+        riseColor: '#FF2D41',
+        fallColor: '#04C192',
+        normalColor: '#fff',
+        //主图区域的边距
+        chartMargin: {left: marginLeft, top: 20.5, right: marginRight},
+        region: {x: marginLeft, y: 20.5, width: initialWidth - marginLeft - marginRight, height: 250},
+        barWidth: 12, // 柱状图的宽
+        spaceWidth: 1, // 柱状图间隙
+        horizontalLineCount: 3, // 水平分隔线数量
+        verticalLineCount: 3, // 垂直分隔线数量
+        lineStyle: 'solid',
+        borderColor: '#35353c', // 四周边框线的颜色
+        splitLineColor: '#35353c', // 水平垂直分割线颜色
+        lineWidth: 1,
+        MAs: [
+            {color: 'rgb(255,70,251)', daysCount: 5},
+            {color: 'rgb(227,150,34)', daysCount: 10},
+            {color: 'rgb(53,71,107)', daysCount: 20}/*,
+             { color: 'rgb(0,0,0)', daysCount: 60 }*/
+        ],
+        yAxis: {
+            font: '11px Arial', // region: { },
+            color: 'white',
+            align: 'right',
+            fontHeight: 8,
+            textBaseline: 'top'
+        },
+        // 日期
+        xAxis: {
+            font: '11px Arial', // region: { },
+            color: 'white',
+            align: 'right',
+            fontHeight: 8,
+            textBaseline: 'top',
+            scalerCount: 1 // 底部显示日期个数
+        },
+        // 成交额
+        volume: {
+            region: {x: marginLeft, y: 290.5, height: 80, width: initialWidth - marginLeft - marginRight},
+            horizontalLineCount: 1,
+            yAxis: {
+                font: '11px Arial', // region: { },
+                color: 'white',
+                align: 'right',
+                fontHeight: 8,
+                textBaseline: 'top'
+            }
+        },
+        priceLine: {
+            region: {x: marginLeft, y: 380.5, height: 60, width: initialWidth - marginLeft - marginRight},
+            verticalLineCount: 7,
+            horizontalLineCount: 1,
+            lineStyle: 'solid',
+            borderColor: 'gray',
+            splitLineColor: '#eeeeee',
+            fillColor: 'lightgray',
+            alpha: .5,
+            yAxis: {
+                font: '11px Arial', // region: { },
+                color: 'white',
+                align: 'right',
+                fontHeight: 8,
+                textBaseline: 'top'
+            }
+        },
+        controller: {
+            bar: {width: 20, height: 35, borderColor: 'black', fillColor: 'lightgray'},
+            minBarDistance: 20
+        }
+
+    };
+
+    if (!painter) {
+        var canvas = $id('canvasKL');
+        if (canvas.width != initialWidth) canvas.width = initialWidth;
+        var kl = new kLine(kOptions);
+        var data = getKLData();
+        painter = new Painter('canvasKL', kl, data);
+    }
+    painter.dataRanges = ranges;
+    painter.paint();
+}
+
+// 日K数据
+function getKLData() {
+    var result = {};
+    var ks = [];
+    var data = app.OBJECT.tInvestHisList;
+    for (var i = 0; i < data.length; i++) {
+        var rawData = data[i];
+        var item = {
+            quoteTime: rawData.investorsDate.replace(/-/g, ''), //日期
+            preClose: rawData.investorsClosePrice, // 昨收
+            open: rawData.investorsOpenPrice, // 今开
+            high: rawData.investorsHighestPrice, // 最高
+            low: rawData.investorsLowestPrice, // 最低
+            close: rawData.investorsTodayClosePrice, // 今收
+            uplow: rawData.uplow, // 涨跌额
+            uplowPrice: rawData.uplowPrice, // 涨跌幅
+            volume: rawData.investorsAllNum.substring(0, rawData.investorsAllNum.length - 2), // 成交额
+            amount: rawData.investorsAllMoney.substring(0, rawData.investorsAllMoney.length - 2) // 成交量
+        };
+        if (ks.length == 0) {
+            result.low = item.low;
+            result.high = item.high;
+        } else {
+            result.high = Math.max(result.high, item.high);
+            result.low = Math.min(result.low, item.low);
+        }
+        ks.push(item);
+    }
+    result.ks = ks;
+    return result;
+}
+</script>
+
+</html>
