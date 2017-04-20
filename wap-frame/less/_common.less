@@ -1,0 +1,95 @@
+//通用
+@a: (750/100);
+@r: (@a * 10);
+
+//
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+  zoom:1;
+}
+
+.cf:before, .cf:after {
+  content:" ";
+  display:table;
+}
+.cf:after {
+  clear:both;
+}
+.cf {
+  zoom:1;
+}
+@yahei:"\5FAE\8F6F\96C5\9ED1","Microsoft YaHei","Hiragino Sans GB";//字体微软雅黑
+@arial:Arial,Helvetica;
+.font-arial{
+   font-family: @arial;
+ }
+.font-arial(){
+  font-family: @arial;
+}
+.font-wr(){
+  font-family: @yahei;
+}
+
+.lt{
+  float: left;
+}
+.rt{
+  float: right;
+}
+.relative {
+  position: relative;
+}
+.gray{
+  -webkit-filter: grayscale(86%);
+  -moz-filter: grayscale(86%);
+  -ms-filter: grayscale(86%);
+  -o-filter: grayscale(86%);
+
+  filter: grayscale(86%);
+
+  filter: gray;
+}
+.border-radius(@radius){
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -ms-border-radius: @radius;
+}
+.opacity(@opacity) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+.border-radius-item(@radius1,@radius2,@radius3,@radius4){
+  border-radius: @radius1 @radius2 @radius3 @radius4;
+  -moz-border-radius: @radius1 @radius2 @radius3 @radius4;
+  -webkit-border-radius: @radius1 @radius2 @radius3 @radius4;
+  -ms-border-radius: @radius1 @radius2 @radius3 @radius4;
+}
+.transition(@seconds:0.15s){ //Internet Explorer 9 以及更早版本的浏览器不支持 transition 属性。
+  transition: all @seconds  ease-in-out;
+  -webkit-transition: all @seconds  ease-in-out;
+  -moz-transition: all @seconds  ease-in-out;
+  -o-transition :all @seconds  ease-in-out;
+}
+
+//input {
+//  -webkit-appearance:none; /*去除input默认样式*/
+//  -moz-appearance: none;
+//  appearance: none;
+//}
+
+//
+@color:#333;
+body{
+  color:@color;
+  .font-wr();
+}
