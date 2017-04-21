@@ -35,5 +35,23 @@ $(function () {
 
     });
 
+    /*
+    *提现
+    * */
+    $("[data-type='withdrawals']").on("click", function () {
+
+        $(".wapfm-maskv2").show();
+        $("[data-type='withdrawals-layer']").show();
+
+    });
+    $("[data-type='closed']").on("click", function () {
+
+        $(this).parent().hide();
+        $(".wapfm-maskv2").hide();
+
+    });
+
+
+
 });
 
