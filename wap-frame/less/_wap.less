@@ -45,6 +45,9 @@ body{
 .wapfm-banner{
   height: 408/@r*1rem;
   background-color: #00aff0;
+  .swiper-slide{
+    height: 408/@r*1rem;
+  }
 }
 .wapfm-classify{
   height: 170/@r*1rem;
@@ -73,7 +76,6 @@ body{
 .wapfm-title{
   height: 110/@r*1rem;
   padding-left: 30/@r*1rem;
-  background-color:gray;
   >span{
     display: block;
     float: left;
@@ -119,7 +121,7 @@ body{
     font-size: 26/@r*1rem;
   }
   .outlink{
-    width: 155/@r*1rem;
+    width: 175/@r*1rem;
     height: 42/@r*1rem;
     line-height: 42/@r*1rem;
     font-size: 20/@r*1rem;
@@ -135,12 +137,81 @@ body{
 }
 
 .wapfm-product{
+  .clearfix();
   >div{
     float: left;
     width: 120/@r*1rem;
     height: 120/@r*1rem;
     margin-left: 100/@r*1rem;
     background-color:#a4a4a4;
+  }
+}
+.wapfm-high120{
+  height: 120/@r*1rem;
+}
+.wapfm-footer{
+  position: fixed;
+  bottom:0px;
+  left: 0px;
+  width: 750/@r*1rem;
+  height: 100/@r*1rem;
+  background-color: #262626;
+  .clearfix();
+  >div{
+    float: left;
+    width: 150/@r*1rem;
+    height: 100/@r*1rem;
+    padding-top: 8/@r*1rem;
+    >span{
+      display: block;
+    }
+  }
+  .picico{
+    height: 47/@r*1rem;
+    text-align: center;
+    .a1{
+      display: inline-block;
+      width: 46/@r*1rem;
+      height: 47/@r*1rem;
+      &.active{
+        background: url("../images/a1_active.png") no-repeat left top;
+        background-size: cover;
+      }
+    }
+    .a2{
+      display: inline-block;
+      width: 44/@r*1rem;
+      height: 47/@r*1rem;
+      background: url("../images/a2.png") no-repeat left top;
+      background-size: cover;
+    }
+    .a3{
+      display: inline-block;
+      width: 72/@r*1rem;
+      height: 47/@r*1rem;
+      background: url("../images/a3.png") no-repeat left top;
+      background-size: cover;
+    }
+    .a4{
+      display: inline-block;
+      width: 44/@r*1rem;
+      height: 47/@r*1rem;
+      background: url("../images/a4.png") no-repeat left top;
+      background-size: cover;
+    }
+    .a5{
+      display: inline-block;
+      width: 38/@r*1rem;
+      height: 47/@r*1rem;
+      background: url("../images/a5.png") no-repeat left top;
+      background-size: cover;
+    }
+
+  }
+  .txt{
+    font-size: 24/@r*1rem;
+    color:#8f8f8f;
+    text-align: center;
   }
 }
 

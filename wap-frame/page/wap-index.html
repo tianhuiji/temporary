@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="../css/main.css">
 </head>
 <body>
@@ -17,7 +18,18 @@
 </div>
 <!--bannger-->
 <div class="wapfm-banner">
+    <!--sp-->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-color: green;">Slide 1</div>
+            <div class="swiper-slide" style="background-color: yellow">Slide 2</div>
+            <div class="swiper-slide" style="background-color: blue">Slide 3</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
 
+    </div>
+    <!--sp-end-->
 </div>
 <!--banner-end-->
 <div class="wapfm-classify">
@@ -40,7 +52,7 @@
         <div class="rowlay">
             <div class="name">价格:23元</div>
             <div class="outlink">
-                <a href="####">立即查看 >> </a>
+                <a href="####">立即查看>></a>
             </div>
         </div>
     </div>
@@ -49,7 +61,7 @@
         <div class="rowlay">
             <div class="name">价格:23元</div>
             <div class="outlink">
-                <a href="####">立即查看 >> </a>
+                <a href="####">立即查看>></a>
             </div>
         </div>
     </div>
@@ -58,7 +70,7 @@
         <div class="rowlay">
             <div class="name">价格:23元</div>
             <div class="outlink">
-                <a href="####">立即查看 >> </a>
+                <a href="####">立即查看>></a>
             </div>
         </div>
     </div>
@@ -67,7 +79,7 @@
         <div class="rowlay">
             <div class="name">价格:23元</div>
             <div class="outlink">
-                <a href="####">立即查看 >> </a>
+                <a href="####">立即查看>></a>
             </div>
         </div>
     </div>
@@ -82,9 +94,60 @@
     <div></div>
 </div>
 <!--content-end-->
+<div class="wapfm-high120"></div>
+<!--footer-->
+<div class="wapfm-footer">
+    <div>
+        <span class="picico">
+            <em class="a1 active"></em>
+        </span>
+        <span class="txt">首页</span>
+    </div>
+    <div>
+        <span class="picico">
+            <em class="a2"></em>
+        </span>
+        <span class="txt">分类</span>
+    </div>
+    <div>
+        <span class="picico">
+            <em class="a3"></em>
+        </span>
+        <span class="txt">分享</span>
+    </div>
+    <div>
+        <span class="picico">
+            <em class="a4"></em>
+        </span>
+        <span class="txt">购物车</span>
+    </div>
+    <div>
+        <span class="picico">
+            <em class="a5"></em>
+        </span>
+        <span class="txt">我的</span>
+    </div>
+</div>
+<!--footer-end-->
 
-
-
+<script src="../js/jquery1.10.2.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
 <script type="text/javascript" src="../js/flexible.js"></script>
+<script>
+    $(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+//            direction: 'vertical',
+            loop: true,
+
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            autoplayDisableOnInteraction : false,
+
+            autoplay: 3000,
+            speed:500
+
+        })
+    });
+</script>
 </body>
 </html>
