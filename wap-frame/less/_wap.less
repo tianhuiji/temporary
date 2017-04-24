@@ -3,6 +3,9 @@ body{
   margin: 0px auto;
   .font-wr();
 }
+.body-bg{
+  background-color: #efeded;
+}
 .wapfm-header{
   height: 88/@r*1rem;
   line-height: 88/@r*1rem;
@@ -942,7 +945,116 @@ body{
   }
 }
 
+.wapfm-address{
+  margin-top: 30/@r*1rem;
+  background-color: #fff;
+  .tit{
+    height: 80/@r*1rem;
+    line-height: 80/@r*1rem;
+    padding: 0px 30/@r*1rem;
+    font-size: 30/@r*1rem;
+    .tel{
+      float: right;
+    }
+  }
+  .adress{
+    line-height: 40/@r*1rem;
+    padding: 0px 30/@r*1rem  20/@r*1rem  30/@r*1rem;
+    font-size: 30/@r*1rem;
+    border-bottom:1px solid #efefef;
+  }
+  .setadress{
+    height: 80/@r*1rem;
+    line-height: 80/@r*1rem;
 
+    padding: 0px 30/@r*1rem;
+    font-size: 34/@r*1rem;
+    >span{
+      color:#db1919;
+      >a{
+        color:#db1919;
+      }
+    }
+    >a{
+      float: right;
+      margin-left: 50/@r*1rem;
+      color:#333;
+
+    }
+  }
+}
+.wapfm-btnadress{
+  padding-top: 150/@r*1rem;
+  text-align: center;
+  >a{
+    display: inline-block;
+    width: 500/@r*1rem;
+    height: 80/@r*1rem;
+    line-height: 80/@r*1rem;
+    font-size: 34/@r*1rem;
+    color:#fff;
+    text-align: center;
+    background-color: #DB1919;
+    text-decoration:none;
+    .border-radius(4px);
+  }
+}
+
+.wapfm-addlist{
+  padding: 0px 30/@r*1rem;
+  background-color: #fff;
+  .rowlv{
+    height: 100/@r*1rem;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 30/@r*1rem;
+    .clearfix();
+    .name{
+      float: left;
+      width: 160/@r*1rem;
+      height: 100/@r*1rem;
+      line-height: 100/@r*1rem;
+    }
+    .valcols{
+      float: right;
+      >.error{
+        display: block;
+        float: right;
+        width: 25/@r*1rem;
+        height: 25/@r*1rem;
+        margin-top: 35/@r*1rem;
+        border-top:3px solid #999999;
+        border-right:3px solid #999999;
+        transform:rotate(45deg);
+        -webkit-transform:rotate(45deg);
+      }
+    }
+  }
+}
+.wapfm-list-input,.wapfm-select{
+  width: 460/@r*1rem;
+  height: 50/@r*1rem;
+  line-height: 50/@r*1rem;
+  margin-top: 25/@r*1rem;
+  font-size: 30/@r*1rem;
+  color:#666;
+  vertical-align: middle;
+  border: 0px solid #fff;
+  outline:none;
+  background-color: #fff;
+  direction: rtl;
+}
+.wapfm-select{
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  direction: rtl;
+  option{
+    direction: ltr;
+  }
+  &.ltr{
+    direction: ltr;
+  }
+}
 
 
 
