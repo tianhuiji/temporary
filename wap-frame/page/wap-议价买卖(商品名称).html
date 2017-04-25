@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" name="viewport">
+    <title>商品名称</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+<div class="wapfm-conhead">
+    <em></em>
+    <span>商品名称</span>
+</div>
+<!--v1-->
+<div class="wapfm-celling-v1">
+    <div>
+        <span>
+            <span class="name ">最高价</span>
+            <span class="value color-red">999.00</span>
+        </span>
+        <span>
+            <span class="name ">最低价</span>
+            <span class="value">555.00</span>
+        </span>
+    </div>
+    <div>
+        <span>
+            <span class="name ">最高价</span>
+            <span class="value">999.00</span>
+        </span>
+        <span>
+            <span class="name ">最低价</span>
+            <span class="value">555.00</span>
+        </span>
+    </div>
+</div>
+<!--v1-end-->
+<!--v2-->
+<div class="wapfm-celling-v2">
+    <div>
+        <!--1-->
+        <div>
+            <span class="color-red">卖1</span>
+            <span class="text-underline">价格1</span>
+            <span class="text-underline">数量1</span>
+            <span></span>
+        </div>
+        <!--1-end-->
+        <div>
+            <span class="color-red">卖1</span>
+            <span class="text-underline">价格1</span>
+            <span class="text-underline">数量1</span>
+            <span></span>
+        </div>
+        <div>
+            <span class="color-red">卖1</span>
+            <span class="text-underline">价格1</span>
+            <span class="text-underline">数量1</span>
+            <span class="color-red">NEW</span>
+        </div>
+        <!--end-->
+    </div>
+</div>
+<!--v2-end-->
+<!--v3-->
+<div class="wapfm-celling-v3">
+    <div>
+
+    </div>
+</div>
+<!--v3-end-->
+
+
+<!--footer-->
+<div class="wapfm-cell-footer" data-type="wapfm-cellfooter">
+    <div class="mask" data-type="wapfm-cellmask"></div>
+    <span>买入</span>
+    <span class="md">卖出</span>
+    <span class="rt">交货</span>
+</div>
+<!--footer-end-->
+<div class="wapfm-mask" data-type="wapfm-mask"></div>
+<!--layer-->
+<div class="wapfm-cell-layer" data-type="wapfm-celllayer">
+    <div class="high30"></div>
+    <div class="rowls">
+        <span>商品名称 : </span>
+        <div>
+            阿里巴巴
+        </div>
+    </div>
+    <div class="rowls">
+        <span>持有数量 : </span>
+        <div>
+            88
+        </div>
+    </div>
+    <div class="rowls">
+        <span>卖出数量 : </span>
+        <div class="pd-top10">
+            <span class="reduce">-</span>
+            <span class="txt">8</span>
+            <span class="add">+</span>
+        </div>
+    </div>
+    <div class="rowls">
+        <span>成交价格 : </span>
+        <div>
+            <span class="reduce">-</span>
+            <span class="txt">123.22</span>
+            <span class="add">+</span>
+        </div>
+    </div>
+    <div class="btns">
+        <a href="####" class="yellow lt">确认</a>
+        <a href="####" class="rt" data-type="cancel">取消</a>
+    </div>
+</div>
+<!--layer-end-->
+<script src="../js/jquery1.10.2.min.js"></script>
+<script src="../js/flexible.js"></script>
+<script>
+$(function() {
+    $("[data-type='wapfm-cellfooter']>span").on("click", function () {
+
+        var _this = $(this);
+
+        $("[data-type='wapfm-cellmask']").show();
+        $("[data-type='wapfm-mask']").show();
+
+        $("[data-type='wapfm-cellfooter']>span").each(function () {
+            var _this = $(this);
+            _this.removeClass("relative");
+        });
+
+        _this.addClass("relative");
+
+        if (_this.index() == 2) {
+            $("[data-type='wapfm-celllayer']").addClass("center").show();
+        } else if(_this.index() == 3) {
+            $("[data-type='wapfm-celllayer']").css({"right":"0px","left":"auto","margin-left":"auto"}).show();
+        }else {
+            $("[data-type='wapfm-celllayer']").css({"right":"auto","left":"0px","margin-left":"auto"}).show();
+        }
+
+
+    });
+    //取消
+    $("[data-type='cancel']").on("click", function () {
+        $(this).parents("[data-type='wapfm-celllayer']").hide();
+        $("[data-type='wapfm-cellmask']").hide();
+        $("[data-type='wapfm-mask']").hide();
+    });
+
+});
+</script>
+</body>
+</html>
