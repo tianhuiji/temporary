@@ -25,7 +25,7 @@ $(function () {
             .find("em").addClass("active")
             .end()
             .find(".txt").addClass("orange")
-            .parents("[data-type='titfox']").find(".a1").removeClass("active")
+            .parents("[data-type='titfox']").find(".picico>em").removeClass("active")
             .end()
             .find(".mask").css("display","block")
         ;
@@ -50,7 +50,19 @@ $(function () {
         $(".wapfm-maskv2").hide();
 
     });
+    //个人中心-二维码
+    $("[data-type='qrcode']").on("click", function () {
 
+        $(".wapfm-maskv2").show();
+        $("[data-type='wapfm-qrcode']").show();
+
+    });
+    $("[data-type='qrcode-closed']").on('click', function () {
+        var _this = $(this);
+
+        _this.parents("[data-type='wapfm-qrcode']").hide();
+        $(".wapfm-maskv2").hide();
+    });
 
 
 });

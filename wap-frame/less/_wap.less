@@ -1606,7 +1606,41 @@ body{
 
 }
 
-
+.wapfm-qrcode{
+  position: fixed;
+  left: 50%;
+  top:50%;
+  z-index: 2;
+  display: none;
+  width: 530/@r*1rem;
+  height: 500/@r*1rem;
+  margin-left: -265/@r*1rem;
+  margin-top: -250/@r*1rem;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  .border-radius(20/@r*1rem);
+  .qrcode-img{
+    text-align: center;
+    >img{
+      width: 330/@r*1rem;
+      height: 330/@r*1rem;
+      border:1px solid #666;
+    }
+  }
+  .qrbox{
+    height: 80/@r*1rem;
+    padding-right: 30/@r*1rem;
+    >a{
+      display: block;
+      float: right;
+      width: 50/@r*1rem;
+      height: 50/@r*1rem;
+      margin-top: 15/@r*1rem;
+      background: url("../images/closed.png") no-repeat left top;
+      background-size: cover;
+    }
+  }
+}
 
 
 
